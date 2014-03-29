@@ -68,9 +68,8 @@ KeyboardInputManager.prototype.listen = function () {
     }
     
     //addMa
-    if(!modifiers && event.which === 77) {
-      event.preventDefault();
-      this.emit("addMa");
+    if(modifiers && event.which === 77) {
+      self.addMa.call(self, event);
     }
   });
 
@@ -136,6 +135,11 @@ KeyboardInputManager.prototype.listen = function () {
 KeyboardInputManager.prototype.restart = function (event) {
   event.preventDefault();
   this.emit("restart");
+};
+
+KeyboardInputManager.prototype.addMa = function (event) {
+  event.preventDefault();
+  this.emit("addMa");
 };
 
 KeyboardInputManager.prototype.keepPlaying = function (event) {
