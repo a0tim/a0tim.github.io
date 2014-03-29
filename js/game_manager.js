@@ -84,8 +84,7 @@ GameManager.prototype.addMa = function () {
     var value = 1024;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
     this.grid.insertTile(tile);
-    var cell = { x: tile.x, y: tile.y };
-    tile.updatePosition(cell);
+    this.actuate();
 };
 
 // Sends the updated grid to the actuator
