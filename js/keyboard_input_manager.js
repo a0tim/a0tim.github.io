@@ -66,6 +66,12 @@ KeyboardInputManager.prototype.listen = function () {
     if (!modifiers && event.which === 82) {
       self.restart.call(self, event);
     }
+    
+    //addMa
+    if(!modifiers && event.which === 77) {
+      event.preventDefault();
+      this.emit("addMa");
+    }
   });
 
   // Respond to button presses
