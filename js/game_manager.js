@@ -9,7 +9,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
-   this.inputManager.on("addMa", this.addMa.bind(this));
+  this.inputManager.on("addMa", this.addMa.bind(this));
 
   this.setup();
 }
@@ -84,6 +84,8 @@ GameManager.prototype.addMa = function () {
     var value = 1024;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
     this.grid.insertTile(tile);
+    var cell = { x: tile.x, y: tile.y };
+    tile.updatePosition(cell);
 };
 
 // Sends the updated grid to the actuator
