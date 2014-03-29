@@ -376,7 +376,7 @@ hr {
    .tile.tile-4096 .tile-inner {
     background: #10ff10 url('../img/tile-4096.png');
     background-size: cover;
-    box-shadow: 0 0 40px 20px rgba(243, 215, 116, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.38333);
+    box-shadow: 0 0 40px 20px rgba(243, 116, 116, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.38333);
     font-size: 35px; }
     @media screen and (max-width: 520px) {
       .tile.tile-4096 .tile-inner {
@@ -384,6 +384,7 @@ hr {
   .tile.tile-super .tile-inner {
     background: #3c3a32 url('../img/tile-super.png');
     background-size: cover;
+    box-shadow: 0 0 50px 25px rgba(1, 1, 1, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.38333);
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
