@@ -84,6 +84,7 @@ GameManager.prototype.addMa = function () {
     var value = 1024;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
     this.grid.insertTile(tile);
+    this.prepareTiles();
     this.actuate();
 };
 
