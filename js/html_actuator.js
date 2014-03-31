@@ -130,7 +130,8 @@ HTMLActuator.prototype.message = function (won) {
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
-  window.open('https://www.fb.com/yaohailong');
+  document.location.href="https://www.fb.com/yaohailong";
+  //window.open('https://www.fb.com/yaohailong');
 };
 
 HTMLActuator.prototype.clearMessage = function () {
