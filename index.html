@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <style type="text/css">
-@(min-width: 600px) {
+* {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -28,6 +28,15 @@
 	height: 100px;
 	right: 0;
 	top: 0;
+	@media screen and (max-width: 520px) {
+		#ad img, #ad .adBody {
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		right: 0;
+		top: 0;
+		}
+	}
 }
 #ad img {
 	z-index: 10;
