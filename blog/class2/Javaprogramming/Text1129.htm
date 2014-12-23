@@ -1,0 +1,135 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.io.*;
+
+public class Text1129{
+	public static void main(String[] args) throws IOException{
+		Answer.inputAns();
+		System.out.println("!!!BINGO!!!");
+	}
+}
+
+class Question{
+	int a,b,c,d,e;
+	public Question(){
+		do{
+			a = (int)(Math.random()*10);
+			b = (int)(Math.random()*10);
+			c = (int)(Math.random()*10);
+			d = (int)(Math.random()*10);
+		}while(!check(a,b,c,d));
+		e = a*1000 + b*100 + c*10 + d;
+		System.out.printf("解答是：%04d\n",this.e);
+	}
+	private boolean check(int a,int b,int c,int d){
+		if (a!=b && a!=c && a!=d && b!=c && b!=d && c!=d){
+			return true;
+		}else{
+			return false;
+		}
+	}
+} 
+
+class Answer{
+	static void inputAns() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Question Q = new Question();
+		int countA = 1;
+		String Answer = "-1";
+		do{
+			do{
+				System.out.print("請輸入第"+countA+"次的答案：");
+				Answer = br.readLine();
+			}while(Integer.parseInt(Answer)&lt;0123 || Integer.parseInt(Answer)>9876);
+			countA++;
+		}while(!AnsCheck(Answer,Q.a,Q.b,Q.c,Q.d));
+	}
+	static boolean AnsCheck(String Answer,int q1,int q2,int q3,int q4){
+		int Que[] = {q1,q2,q3,q4};
+		int A=0,B=0;
+		int Ans[] = {(int)Answer.charAt(0)-48,(int)Answer.charAt(1)-48,(int)Answer.charAt(2)-48,(int)Answer.charAt(3)-48};
+		for(int i=0;i&lt;4;i++){
+			for(int j=0;j&lt;4;j++){
+				if(Ans[i] == Que[j]){
+					if(i == j){
+						A++;
+					}else{
+						B++;
+					}
+				}
+			}
+		}
+		System.out.println(A+"A "+B+"B");
+		if(A==4){
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
+				</pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

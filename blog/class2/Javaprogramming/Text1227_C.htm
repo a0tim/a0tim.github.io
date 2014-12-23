@@ -1,0 +1,151 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.io.*;
+import java.net.Socket;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class Text1227_C {
+	public static void main(String args[]) throws IOException, IOException{
+		Socket SC = new Socket("127.0.0.1",8888);
+		PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(SC.getOutputStream())));
+		BufferedReader br = new BufferedReader(new InputStreamReader(SC.getInputStream()));
+		BufferedReader bri = new BufferedReader(new InputStreamReader(System.in));
+		String Ss = "";
+		String Rs = "";
+		Question_1227 setQ = new Question_1227();
+		ClientGuess CG = new ClientGuess(setQ.getQ());
+		
+		while(true){
+			System.out.print("\r請猜Server端答案:");
+			Ss = bri.readLine();
+			pw.println(Ss);
+			pw.flush();
+			if(Ss.equals("end")){
+				System.out.println("\n\nEND!!!");
+				break;
+			}
+			Rs = br.readLine();
+			if(Rs.equals("經過Server判斷:BINGO!!!")){
+				System.out.println(Rs);
+				System.out.println("\n\nEND!!!");
+				break;
+			}else{
+				System.out.println(Rs);
+			}
+			System.out.print("等待伺服器訊息......");
+			Rs = br.readLine();
+			if(Rs.equals("end")){
+				System.out.println("\n\nEND!!!");
+				break;
+			}
+			if(CG.ServerGuess(Rs).equals("BINGO!!!")){
+				pw.println("經過Client判斷:"+CG.ServerGuess(Rs));
+				pw.flush();
+				System.out.println("Server端獲勝...\n\nEND!!!");
+				break;
+			}else{
+				pw.println("經過Client判斷:"+CG.ServerGuess(Rs));
+				pw.flush();
+			}
+		}		
+		pw.close();
+		SC.close();
+	}
+}
+
+class ClientGuess{
+	String Que;
+	int A=0,B=0;
+	public ClientGuess(String Q){
+		Que = Q;
+	}
+	String ServerGuess(String Ans){
+		A = 0;
+		B = 0;
+		for(int i=0;i&lt;4;i++){
+			for(int j=0;j&lt;4;j++){
+				if(Ans.charAt(i) == Que.charAt(j)){
+					if(i == j){
+						A++;
+					}else{
+						B++;
+					}
+				}
+			}
+		}
+		if(A == 4){
+			return ("BINGO!!!");
+		}else{
+			return (A+"A"+B+"B");
+		}
+	}
+}
+				</pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

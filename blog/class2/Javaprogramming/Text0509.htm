@@ -1,0 +1,110 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+public class Text0509 {
+	public static void main(String[] args) {
+		Boolean Man[] = {false,false,false,false,false,false};
+		Boolean hasAns = false;
+		String S;
+		for(int i=0;i&lt;Math.pow(2,6);i++){
+			S = Integer.toBinaryString(i);
+			if(S.length()&lt;6){\
+				int X = S.length();
+				for(int k=0;k&lt;6-X;k++){
+					S = "0"+S;
+				}
+			}
+			for(int j=0;j&lt;6;j++){
+				if(S.charAt(j) == '1'){
+					Man[j] = true;
+				}else{
+					Man[j] = false;
+				}
+			}
+			if(Man[0]||Man[1]){
+				if(Man[0]&&Man[4] || Man[0]&&Man[5] || Man[4]&&Man[5]){
+					if(!(Man[0]&&Man[3])){
+						if(Man[1]&&Man[2] || (!Man[1]&&!Man[2])){
+							if(!Man[2]&&Man[3] || Man[2]&&!Man[3]){
+								if(Man[3] || !Man[4]){
+									hasAns = true;
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(hasAns){
+			System.out.println("A:"+(Man[0]?"犯人":"不是犯人")+"\nB:"+(Man[1]?"犯人":"不是犯人")+"\nC:"+(Man[2]?"犯人":"不是犯人")+"\nD:"+(Man[3]?"犯人":"不是犯人")+"\nE:"+(Man[4]?"犯人":"不是犯人")+"\nF:"+(Man[5]?"犯人":"不是犯人"));
+		}else{
+			System.out.println("Have No Answers!!");
+		}
+	}
+}
+            </pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

@@ -1,0 +1,523 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <link rel="icon" href="img/web.ico" type="img/x-icon">
+        <link rel="bookmark" href="img/web.ico" type="img/x-icon">
+        <link rel="shortcut icon" href="img/web.ico" type="img/x-icon">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="js/SpryMenuBar.js" type="text/javascript"></script>
+        <script src="js/font.js" type="text/javascript"></script>
+        <link href="css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+        <script type='text/javascript' src='js/basic.js'></script>
+        <title>OCJP - 嶢's BLOG</title>
+
+        <style>
+			body {
+				margin: 0;
+				padding: 0;
+				background: #000000 url(img/b_02.jpg) center center fixed no-repeat;
+				-moz-background-size: cover;
+				background-size: cover;
+			}
+			a {
+				color: #444;
+				text-decoration: none;
+			}
+			a:hover {
+				color: blue;
+				text-decoration: underline;
+			}
+			#name {
+				font-size: 2rem;
+				text-shadow: 1px 2px 8px #333;
+				letter-spacing: 9px;
+				color: #BBFF88;
+				line-height: 1em;
+				text-align: center;
+			}
+			#title {
+				background-color: #5A5A5A;
+				color: #000000;
+				font-size: 28px;
+				text-align: center;
+				font-weight: bold;
+			}
+			#block {
+				width: 60%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+
+			#mwt_mwt_slider_scroll {
+				top: 0;
+				left: -240px;
+				width: 240px;
+				position: fixed;
+				z-index: 9999;
+			}
+
+			#mwt_slider_content {
+				background: #70BFFF;
+				text-align: center;
+				padding-top: 100px;
+			}
+
+			#mwt_fb_tab {
+				position: absolute;
+				top: 100px;
+				right: -24px;
+				width: 24px;
+				background: #3c5a98;
+				color: #ffffff;
+				font-family: Arial, Helvetica, sans-serif;
+				text-align: center;
+				padding: 9px 0;
+				-moz-border-radius-topright: 10px;
+				-moz-border-radius-bottomright: 10px;
+				-webkit-border-top-right-radius: 10px;
+				-webkit-border-bottom-right-radius: 10px;
+			}
+			#mwt_fb_tab span {
+				display: block;
+				height: 12px;
+				padding: 1px 0;
+				line-height: 12px;
+				text-transform: uppercase;
+				font-size: 12px;
+			}
+
+			/*彈出視窗*/
+			#basic-modal-content {
+				display: none;
+			}
+			#simplemodal-overlay {
+				background-color: #000;
+			}
+			#simplemodal-container {
+				height: 70%;
+				width: 60%;
+				color: #bbb;
+				background-color: #333;
+				border: 4px solid #444;
+				padding: 12px;
+			}
+			#simplemodal-container .simplemodal-data {
+				padding: 8px;
+			}
+			#simplemodal-container a.modalCloseImg {
+				background: url(img/x.png) no-repeat;
+				width: 25px;
+				height: 29px;
+				display: inline;
+				z-index: 3200;
+				position: absolute;
+				top: -15px;
+				right: -16px;
+				cursor: pointer;
+			}
+        </style>
+
+        <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+        <script>
+			//側邊伸縮欄
+			$(function() {
+				var w = $("#mwt_slider_content").width();
+				$('#mwt_slider_content').css('height', ($(window).height() - 20) + 'px');
+
+				$("#mwt_fb_tab").mouseover(function() {
+					if ($("#mwt_mwt_slider_scroll").css('left') == '-' + w + 'px') {
+						$("#mwt_mwt_slider_scroll").animate({
+							left : '0px'
+						}, 600, 'swing');
+					}
+				});
+
+				$("#mwt_slider_content").mouseleave(function() {
+					$("#mwt_mwt_slider_scroll").animate({
+						left : '-' + w + 'px'
+					}, 600, 'swing');
+				});
+			});
+
+			function showcode(src) {
+				var f = document.getElementById('codeFrame');
+				;
+				f.src = src;
+			}
+        </script>
+
+    </head>
+
+    <body>
+        <div id="title">
+            <img src="img/logo.png">
+            <a href="index1.htm"><script type="text/javascript" src="http://counter1.fc2.com/counter.php?id=13254546&main=1"></script></a>
+        </div>
+        <br>
+        <div class="font_kai">
+            <ul id="Menu" class="MenuBarHorizontal" style="left: 50%">
+                <li>
+                    <a href="index.htm">首　　頁</a>
+                </li>
+                <li>
+                    <a href="#" class="MenuBarItemSubmenu">課　　程</a>
+                    <ul>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">數理基礎</a>
+                            <ul>
+                                <li>
+                                    <a href="Calculus.htm">微積分</a>
+                                </li>
+                                <li>
+                                    <a href="LinearAlgebra.htm">線性代數</a>
+                                </li>
+                                <li>
+                                    <a href="DiscreteMathematics.htm">離散數學</a>
+                                </li>
+                                <li>
+                                    <a href="Probability.htm">機率論</a>
+                                </li>
+                                <li>
+                                    <a href="#">工程數學</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">資訊基礎</a>
+                            <ul>
+                                <li>
+                                    <a href="InformationLiteracy.htm">資訊素養</a>
+                                </li>
+                                <li>
+                                    <a href="InformationEthics.htm">資訊倫理</a>
+                                </li>
+                                <li>
+                                    <a href="IntroductionOfCsie.htm">資訊工程導論</a>
+                                </li>
+                                <li>
+                                    <a href="InformationSecurity.htm">資訊安全導論</a>
+                                </li>
+                                <li>
+                                    <a href="ElectronicCircuit.htm">電子電路</a>
+                                </li>
+                                <li>
+                                    <a href="#">計算機結構</a>
+                                </li>
+                                <li>
+                                    <a href="OperatingSystem.htm">作業系統</a>
+                                </li>
+                                <li>
+                                    <a href="SoftwareEngineering.htm">軟體工程</a>
+                                </li>
+                                <li>
+                                    <a href="DataMining.htm">資料探勘</a>
+                                </li>
+                                <li>
+                                    <a href="#">系統程式</a>
+                                </li>
+                                <li>
+                                    <a href="#">密碼學</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">程式設計</a>
+                            <ul>
+                                <li>
+                                    <a href="DigitalLogic.htm">數位邏輯設計</a>
+                                </li>
+                                <li>
+                                    <a href="MicroProcessor.htm">微處理機系統</a>
+                                </li>
+                                <li>
+                                    <a href="DataStructure.htm">資料結構</a>
+                                </li>
+                                <li>
+                                    <a href="Algorithm.htm">演算法</a>
+                                </li>
+                                <li>
+                                    <a href="CProgramming.htm">C_程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="JavaProgramming.htm">Java_物件導向程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="#">Android_程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="Database.htm">資料庫應用系統設計</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">多媒體</a>
+                            <ul>
+                                <li>
+                                    <a href="Multimedia.htm">多媒體軟體應用</a>
+                                </li>
+                                <li>
+                                    <a href="FlashProgramming.htm">Flash_程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="#">Matlab_影像處理</a>
+                                </li>
+                                <li>
+                                    <a href="#">C#_視窗程式設計</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">電腦網路</a>
+                            <ul>
+                                <li>
+                                    <a href="WebDesign.htm">網頁程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="#">計算機網路</a>
+                                </li>
+                                <li>
+                                    <a href="SiteCreation.htm">網站管理實務</a>
+                                </li>
+                                <li>
+                                    <a href="WirelessNetworking.htm">無線網路概論</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="MenuBarItemSubmenu">考試資訊</a>
+                    <ul>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">100學年度</a>
+                            <ul>
+                                <li>
+                                    <a href="#">上學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">上學期_期末考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期末考</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">101學年度</a>
+                            <ul>
+                                <li>
+                                    <a href="Mid_exam101-1.htm">上學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="Last_exam101-1.htm">上學期_期末考</a>
+                                </li>
+                                <li>
+                                    <a href="Mid_exam101-2.htm">下學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="Last_exam101-2.htm">下學期_期末考</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">102學年度</a>
+                            <ul>
+                                <li>
+                                    <a href="#">上學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">上學期_期末考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期末考</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">103學年度</a>
+                            <ul>
+                                <li>
+                                    <a href="#">上學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">上學期_期末考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期末考</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="Others.htm" class="MenuBarItemSubmenu">其　　他</a>
+                    <ul>
+                        <li>
+                            <a href="#">各類教學</a>
+                            <ul>
+                                <li>
+                                    <a href="Java_PathSet.htm">Java環境設置</a>
+                                </li>
+                                <li>
+                                    <a href="Java_Opencv.htm">Java_OpenCV環境設置</a>
+                                </li>
+                                <li>
+                                    <a href="Java_OCJP.htm">Java_OCJP考取證照教學</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="Curriculum.htm">課表</a>
+                        </li>
+                        <li>
+                            <a href="Links.htm">連結</a>
+                        </li>
+                        <li>
+                            <a href="Downloads.htm">檔案下載</a>
+                        </li>
+                        <li>
+                            <a href="Update.htm">更新日誌</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="About.htm">關於我</a>
+                </li>
+            </ul>
+            <script type="text/javascript">
+				var MenuBar1 = new Spry.Widget.MenuBar("Menu", {
+					imgDown : "img/SpryMenuBarDownHover.gif",
+					imgRight : "img/SpryMenuBarRightHover.gif"
+				});
+            </script>
+        </div>
+        <br>
+        <br>
+        <div id="name" class="font_kai">
+            JAVA 證照考照重點教學
+        </div>
+        <br>
+        <div id="block" class="font_text" align="left">
+            <br>
+            <div align="left" style="font-size: 1.5rem">
+                Introduction--
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;Java語言擁有跨平台、物件導向、泛型程式設計的特性，廣泛應用於企業級Web應用開發和行動應用開發。
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Java程式語言的風格十分接近C++語言。繼承了C++語言物件導向技術的核心，Java捨棄了C++語言中容易引起錯誤的指標，改以參照取代，同時解除安裝原C++與原來運算子多载，也解除安裝多重繼承特性，改用介面取代，增加垃圾回收器功能。在Java SE 1.5版本中引入了泛型程式設計、型別安全的列舉、不定長參數和自動裝/拆箱特性。昇陽電腦對Java語言的解釋是：「Java程式語言是個簡單、物件導向、分布式、解釋性、健壯、安全與系統無關、可移植、高效能、多執行緒和動態的語言」。
+            <br>
+            <div align="right">
+                <a href="http://zh.wikipedia.org/wiki/Java">--節錄自 維基百科</a>
+            </div>
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;目前有許多公司在應徵新人時、或者是研究所甄選時會參考相關證照，對Java語言而言，相關的國際證照考試就是其所屬的Oracle公司所舉辦的OCA/P/M(Oracle Certification Associate/Professional/Master)，至於本站所介紹的僅只是考取證照所需的相關知識為主，報考方式請詳見<a href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=651#5">甲骨文官網</a>。
+            <br>
+            <br>
+            <div align="left" style="font-size: 1.5rem">
+                Documents--
+            </div>
+            <br>
+            <div align="center" style="font-size: 1.7rem">
+                <a href="https://www.dropbox.com/s/wy2pjj1gp10mz2u/0_%E8%AD%89%E7%85%A7%E8%B3%87%E8%A8%8A.pdf" target="_blank">證照相關資訊</a>
+                <br>
+                <a href="https://www.dropbox.com/s/nfxww09qfchrjp2/1_%E8%AA%9E%E8%A8%80%E5%9F%BA%E7%A4%8E.pdf" target="_blank">Chapter 1 - 語言基礎</a>
+                <br>
+                <a href="https://www.dropbox.com/s/cf1w9e28gbx328m/2_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6.pdf" target="_blank">Chapter 2 - 流程控制</a>
+                <br>
+                <a href="https://www.dropbox.com/s/twnf1p2swbhcvtb/3_%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91.pdf" target="_blank">Chapter 3 - 物件導向</a>
+                <br>
+                <a href="https://www.dropbox.com/s/279mqd2pyjzgkqx/4_%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86.pdf" target="_blank">Chapter 4 - 例外處理</a>
+                <br>
+                <a href="https://www.dropbox.com/s/z9mht6pdjmaislb/5_%E5%A4%9A%E5%9F%B7%E8%A1%8C%E7%B7%92.pdf" target="_blank">Chapter 5 - 多執行緒</a>
+                <br>
+                <a href="https://www.dropbox.com/s/uaqadfmupwgl9l8/6_%E8%B3%87%E6%BA%90%E5%9B%9E%E6%94%B6.pdf" target="_blank">Chapter 6 - 資源回收</a>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <br>
+
+        <div id="end" align="center" class="font_kai">
+            <table style="font-size: 20px;border: none;background-color: rgba(180,255,140,0.8);text-shadow: 2px 2px 3px #CCC">
+                <tr>
+                    <td>│<a href="WebMap.htm">網站地圖</a>│<a href="index.htm">首　　頁</a>│<a href="Class.htm">課　　程</a>│<a href="Others.htm">考試資訊</a>│<a href="Class.htm">其　　他</a>│<a href="About.htm">關 於 我</a>│</td>
+                </tr>
+            </table>
+            <p align="center" style="font-size: 16px;background-color: rgba(192,192,192,0.7)">
+                <a href="http://creativecommons.org/licenses/by-nc/3.0/tw/" target="_blank"><img src="https://i.creativecommons.org/l/by-nc/3.0/tw/88x31.png"></a>
+                <br>
+                a0tim&copy;2014 ‧ 真理大學資訊工程學系-黃騰嶢
+                <br>
+                <a href="mailto:a0tim82326@gmail.com">a0tim82326@gmail.com</a>
+            </p>
+        </div>
+
+        <div id="mwt_mwt_slider_scroll">
+            <div id="mwt_fb_tab">
+                <span>F</span>
+                <span>a</span>
+                <span>c</span>
+                <span>e</span>
+                <span>b</span>
+                <span>o</span>
+                <span>o</span>
+                <span>o</span>
+                <span>k</span>
+            </div>
+            <div id="mwt_slider_content">
+                <a href="https://www.facebook.com/yaohailong" target="_blank"> <img src="img/lute.png"> </a>
+                <br>
+                嶢 海 龍
+                <br>
+                <hr>
+                <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fyaohailong&width=960&layout=standard&action=like&show_faces=true&share=true&height=80&appId=705644162835492" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:270px;" allowTransparency="true"></iframe>
+            </div>
+        </div>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

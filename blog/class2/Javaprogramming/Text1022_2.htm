@@ -1,0 +1,147 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.io.*;
+public class Text1022_2{
+	public static void main(String args[])throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("請輸入A的分數：");
+		int A = Integer.parseInt(br.readLine());
+		System.out.print("請輸入B的分數：");
+		int B = Integer.parseInt(br.readLine());
+		System.out.print("請輸入C的分數：");
+		int C = Integer.parseInt(br.readLine());
+		String As = (A >= 60)?"PASS":"FAIL";
+		String Bs = (B >= 60)?"PASS":"FAIL";
+		String Cs = (C >= 60)?"PASS":"FAIL";
+		switch((A/10)){
+			case 10:
+				As += "\t\tS";
+				break;
+			case 9:
+				As += "\t\tA";
+				break;
+			case 8:
+				As += "\t\tB";
+				break;
+			case 7:
+				As += "\t\tC";
+				break;
+			case 6:
+				As += "\t\tD";
+				break;
+			default:
+				As += "\t\tE";
+				break;
+		}
+		switch((B/10)){
+			case 10:
+				Bs += "\t\tS";
+				break;
+			case 9:
+				Bs += "\t\tA";
+				break;
+			case 8:
+				Bs += "\t\tB";
+				break;
+			case 7:
+				Bs += "\t\tC";
+				break;
+			case 6:
+				Bs += "\t\tD";
+				break;
+			default:
+				Bs += "\t\tE";
+				break;
+		}
+		switch((C/10)){
+			case 10:
+				Cs += "\t\tS";
+				break;
+			case 9:
+				Cs += "\t\tA";
+				break;
+			case 8:
+				Cs += "\t\tB";
+				break;
+			case 7:
+				Cs += "\t\tC";
+				break;
+			case 6:
+				Cs += "\t\tD";
+				break;
+			default:
+				Cs += "\t\tE";
+				break;
+		}
+		System.out.println("\n\t人名\t是否及格\t分數級距");
+		System.out.println("\tA"+"\t"+As);
+		System.out.println("\tB"+"\t"+Bs);
+		System.out.println("\tC"+"\t"+Cs);
+	}
+}
+            </pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

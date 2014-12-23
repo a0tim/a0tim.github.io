@@ -1,0 +1,284 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <link rel="icon" href="img/web.ico" type="img/x-icon">
+        <link rel="bookmark" href="img/web.ico" type="img/x-icon">
+        <link rel="shortcut icon" href="img/web.ico" type="img/x-icon">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <title>嶢's BLOG</title>
+        <style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				background: #000000 url(img/b_01.jpg) center center fixed no-repeat;
+				-moz-background-size: cover;
+				background-size: cover;
+			}
+			#title {
+				background-color: #5A5A5A;
+				color: #000000;
+				font-size: 28px;
+				text-align: center;
+				font-weight: bold;
+			}
+			#button {
+				margin: 0 auto;
+				color: #656C71;
+				font-size: 25px;
+				line-height: 40px;
+				text-align: center;
+				width: 120px;
+				background: #fa9335;
+				border-radius: 15px;
+			}
+			#abgne_float_ad {
+				display: none;
+				position: absolute;
+			}
+			#abgne_float_ad img {
+				border: none;
+			}
+			#abgneBlock {
+				width: 940px;
+				height: 562px;
+				position: relative;
+				overflow: hidden;
+				border: 3px solid #ccc;
+				margin: 0px auto;
+			}
+			#abgneBlock ul.list {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				position: absolute;
+				width: 9999px;
+				height: 100%;
+			}
+			#abgneBlock ul.list li {
+				float: left;
+				width: 940px;
+				height: 100%;
+			}
+			#abgneBlock .list img {
+				width: 100%;
+				height: 100%;
+				border: 0;
+			}
+			#abgneBlock ul.playerControl {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				bottom: 5px;
+				right: 5px;
+				height: 14px;
+			}
+			#abgneBlock ul.playerControl li {
+				float: left;
+				width: 10px;
+				height: 10px;
+				cursor: pointer;
+				margin: 0px 2px;
+				background: url(img/index/cir_ctrl.png) no-repeat -10px 0;
+			}
+			#abgneBlock ul.playerControl li.current {
+				background-position: 0 0;
+			}
+			#ad .adBody {
+				overflow: hidden;
+			}
+        </style>
+        <script type="text/javascript">
+			var $win = $(window);
+			$(window).load(function() {
+				var $ad = $('#abgne_float_ad').css('opacity', 0).show(), // 讓廣告區塊變透明且顯示出來
+				_width = $ad.width(), _height = $ad.height(), _diffY = 20, _diffX = 20, // 距離右及下方邊距
+				_moveSpeed = 800;
+				// 移動的速度
+
+				// 先把 #abgne_float_ad 移動到定點
+				$ad.css({
+					top : 0,
+					left : $win.width() - _width - _diffX,
+					opacity : 1
+				});
+
+				// 幫網頁加上 scroll 及 resize 事件
+				$win.bind('scroll resize', function() {
+					var $this = $(this);
+
+					// 控制 #abgne_float_ad 的移動
+					$ad.stop().animate({
+						top : $this.scrollTop() + $this.height() - (_height - _diffY) * 2.7,
+						left : $this.scrollLeft() + $this.width() - _width - _diffX
+					}, _moveSpeed);
+				}).scroll();
+				// 觸發一次 scroll()
+			});
+
+			$(function() {
+				// 先取得必要的元素並用 jQuery 包裝
+				// 再來取得 $block 的高度及設定動畫時間
+				var $block = $('#abgneBlock'), $slides = $('ul.list', $block), _width = $block.width(), $li = $('li', $slides), _animateSpeed = 600,
+				// 加入計時器, 輪播時間及控制開關
+				timer, _showSpeed = 3000, _stop = false;
+
+				// 產生 li 選項
+				var _str = '';
+				for (var i = 0, j = $li.length; i < j; i++) {
+					// 每一個 li 都有自己的 className = playerControl_號碼
+					_str += '<li class="playerControl_' + (i + 1) + '"></li>';
+				}
+
+				// 產生 ul 並把 li 選項加到其中
+				var $playerControl = $('<ul class="playerControl"></ul>').html(_str).appendTo($slides.parent()).css('left', function() {
+					// 把 .playerControl 移到置中的位置
+					return (_width - $(this).width()) / 2;
+				});
+
+				// 幫 li 加上 click 事件
+				var $playerControlLi = $playerControl.find('li').click(function() {
+					var $this = $(this);
+					$this.addClass('current').siblings('.current').removeClass('current');
+
+					clearTimeout(timer);
+					// 移動位置到相對應的號碼
+					$slides.stop().animate({
+						left : _width * $this.index() * -1
+					}, _animateSpeed, function() {
+						// 當廣告移動到正確位置後, 依判斷來啟動計時器
+						if (!_stop)
+							timer = setTimeout(move, _showSpeed);
+					});
+
+					return false;
+				}).eq(0).click().end();
+
+				// 如果滑鼠移入 $block 時
+				$block.hover(function() {
+					// 關閉開關及計時器
+					_stop = true;
+					clearTimeout(timer);
+				}, function() {
+					// 如果滑鼠移出 $block 時
+					// 開啟開關及計時器
+					_stop = false;
+					timer = setTimeout(move, _showSpeed);
+				});
+
+				// 計時器使用
+				function move() {
+					var _index = $('.current').index();
+					$playerControlLi.eq((_index + 1) % $playerControlLi.length).click();
+				}
+
+				var $button = $("#button");
+				$button.hover(function() {
+					$button.animate({
+						width : "360px",
+						letterSpacing : "15px"
+					});
+				}, function() {
+					$button.animate({
+						width : "120px",
+						letterSpacing : ""
+					});
+				});
+
+				var $ad = $('#abgne_float_ad');
+				// 幫 #ad 加上 hover() 事件
+				$ad.hover(function() {// 當滑鼠移進時..
+					// 先停止未完成的動畫後再進行新的動畫
+					// 圖片放大展示
+					$("a img, a .adBody", this).stop().animate({
+						width : 100,
+						height : 100
+					}, 200);
+					$("a img, a .adBody", this).animate({
+						width : 160,
+						height : 160
+					}, 200);
+				}, function() {// 當滑鼠移出時..
+					// 先停止未完成的動畫後再進行新的動畫
+					// 圖片恢復原狀
+					$("a img, a .adBody", this).stop().animate({
+						width : 160,
+						height : 160
+					}, 200);
+				});
+			});
+        </script>
+    </head>
+
+    <body>
+        <div id="title">
+            <img src="img/logo.png">
+            <a href="index1.htm"><script language="javascript" type="text/javascript" src="http://counter1.fc2.com/counter.php?id=13254546&main=1"></script></a>
+        </div>
+        <hr>
+        <div id="abgneBlock">
+            <ul class="list">
+                <li>
+                    <img src="img/index/01.jpg">
+                </li>
+                <li>
+                    <img src="img/index/02.jpg">
+                </li>
+                <li>
+                    <img src="img/index/03.jpg">
+                </li>
+                <li>
+                    <img src="img/index/04.jpg">
+                </li>
+                <li>
+                    <img src="img/index/05.jpg">
+                </li>
+                <li>
+                    <img src="img/index/06.jpg">
+                </li>
+                <li>
+                    <img src="img/index/07.jpg">
+                </li>
+            </ul>
+        </div>
+        <br>
+        <a href="index1.htm">
+        <div id="button">
+            <span>-Enter-</span>
+        </div> </a>
+
+        <div id="abgne_float_ad" >
+            <a href="https://www.facebook.com/yaohailong" target="_blank"> <img src="img/ad.png" title="嶢海龍官方粉絲頁" /> </a>
+            <span class="adBody"></span>
+        </div>
+    </body>
+
+    <script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

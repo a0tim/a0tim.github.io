@@ -1,0 +1,593 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <link rel="icon" href="img/web.ico" type="img/x-icon">
+        <link rel="bookmark" href="img/web.ico" type="img/x-icon">
+        <link rel="shortcut icon" href="img/web.ico" type="img/x-icon">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="js/SpryMenuBar.js" type="text/javascript"></script>
+        <script src="js/font.js" type="text/javascript"></script>
+        <link href="css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <title>Java環境設置教學 - 嶢's BLOG</title>
+
+        <style>
+			body {
+				margin: 0;
+				padding: 0;
+				background: #000000 url(img/b_02.jpg) center center fixed no-repeat;
+				-moz-background-size: cover;
+				background-size: cover;
+			}
+			a {
+				color: #444;
+				text-decoration: none;
+			}
+			a:hover {
+                color: blue;
+                text-decoration: underline;
+            }
+			#name {
+				font-size: 2rem;
+				text-shadow: 1px 2px 8px #333;
+				letter-spacing: 9px;
+				color: #BBFF88;
+				line-height: 1em;
+				text-align: center;
+			}
+			#title {
+				background-color: #5A5A5A;
+				color: #000000;
+				font-size: 28px;
+				text-align: center;
+				font-weight: bold;
+			}
+			#block {
+				width: 60%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+
+			#mwt_mwt_slider_scroll {
+				top: 0;
+				left: -240px;
+				width: 240px;
+				position: fixed;
+				z-index: 9999;
+			}
+
+			#mwt_slider_content {
+				background: #70BFFF;
+				text-align: center;
+				padding-top: 100px;
+			}
+
+			#mwt_fb_tab {
+				position: absolute;
+				top: 100px;
+				right: -24px;
+				width: 24px;
+				background: #3c5a98;
+				color: #ffffff;
+				font-family: Arial, Helvetica, sans-serif;
+				text-align: center;
+				padding: 9px 0;
+				-moz-border-radius-topright: 10px;
+				-moz-border-radius-bottomright: 10px;
+				-webkit-border-top-right-radius: 10px;
+				-webkit-border-bottom-right-radius: 10px;
+			}
+			#mwt_fb_tab span {
+				display: block;
+				height: 12px;
+				padding: 1px 0;
+				line-height: 12px;
+				text-transform: uppercase;
+				font-size: 12px;
+			}
+
+        </style>
+
+        <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+        <script>
+			//側邊伸縮欄
+			$(function() {
+				var w = $("#mwt_slider_content").width();
+				$('#mwt_slider_content').css('height', ($(window).height() - 20) + 'px');
+
+				$("#mwt_fb_tab").mouseover(function() {
+					if ($("#mwt_mwt_slider_scroll").css('left') == '-' + w + 'px') {
+						$("#mwt_mwt_slider_scroll").animate({
+							left : '0px'
+						}, 600, 'swing');
+					}
+				});
+
+				$("#mwt_slider_content").mouseleave(function() {
+					$("#mwt_mwt_slider_scroll").animate({
+						left : '-' + w + 'px'
+					}, 600, 'swing');
+				});
+			});
+
+        </script>
+
+    </head>
+
+    <body>
+        <div id="title">
+            <img src="img/logo.png">
+            <a href="index1.htm"><script language="javascript" type="text/javascript" src="http://counter1.fc2.com/counter.php?id=13254546&main=1"></script></a>
+        </div>
+        <br>
+        <div class="font_kai">
+            <ul id="Menu" class="MenuBarHorizontal" style="left: 50%">
+                <li>
+                    <a href="index.htm">首　　頁</a>
+                </li>
+                <li>
+                    <a href="#" class="MenuBarItemSubmenu">課　　程</a>
+                    <ul>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">數理基礎</a>
+                            <ul>
+                                <li>
+                                    <a href="Calculus.htm">微積分</a>
+                                </li>
+                                <li>
+                                    <a href="LinearAlgebra.htm">線性代數</a>
+                                </li>
+                                <li>
+                                    <a href="DiscreteMathematics.htm">離散數學</a>
+                                </li>
+                                <li>
+                                    <a href="Probability.htm">機率論</a>
+                                </li>
+                                <li>
+                                    <a href="#">工程數學</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">資訊基礎</a>
+                            <ul>
+                                <li>
+                                    <a href="InformationLiteracy.htm">資訊素養</a>
+                                </li>
+                                <li>
+                                    <a href="InformationEthics.htm">資訊倫理</a>
+                                </li>
+                                <li>
+                                    <a href="IntroductionOfCsie.htm">資訊工程導論</a>
+                                </li>
+                                <li>
+                                    <a href="InformationSecurity.htm">資訊安全導論</a>
+                                </li>
+                                <li>
+                                    <a href="ElectronicCircuit.htm">電子電路</a>
+                                </li>
+                                <li>
+                                    <a href="#">計算機結構</a>
+                                </li>
+                                <li>
+                                    <a href="OperatingSystem.htm">作業系統</a>
+                                </li>
+                                <li>
+                                    <a href="SoftwareEngineering.htm">軟體工程</a>
+                                </li>
+                                <li>
+                                    <a href="DataMining.htm">資料探勘</a>
+                                </li>
+                                <li>
+                                    <a href="#">系統程式</a>
+                                </li>
+                                <li>
+                                    <a href="#">密碼學</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">程式設計</a>
+                            <ul>
+                                <li>
+                                    <a href="DigitalLogic.htm">數位邏輯設計</a>
+                                </li>
+                                <li>
+                                    <a href="MicroProcessor.htm">微處理機系統</a>
+                                </li>
+                                <li>
+                                    <a href="DataStructure.htm">資料結構</a>
+                                </li>
+                                <li>
+                                    <a href="Algorithm.htm">演算法</a>
+                                </li>
+                                <li>
+                                    <a href="CProgramming.htm">C_程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="JavaProgramming.htm">Java_物件導向程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="#">Android_程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="Database.htm">資料庫應用系統設計</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">多媒體</a>
+                            <ul>
+                                <li>
+                                    <a href="Multimedia.htm">多媒體軟體應用</a>
+                                </li>
+                                <li>
+                                    <a href="FlashProgramming.htm">Flash_程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="#">Matlab_影像處理</a>
+                                </li>
+                                <li>
+                                    <a href="#">C#_視窗程式設計</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">電腦網路</a>
+                            <ul>
+                                <li>
+                                    <a href="WebDesign.htm">網頁程式設計</a>
+                                </li>
+                                <li>
+                                    <a href="#">計算機網路</a>
+                                </li>
+                                <li>
+                                    <a href="SiteCreation.htm">網站管理實務</a>
+                                </li>
+                                <li>
+                                    <a href="WirelessNetworking.htm">無線網路概論</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="MenuBarItemSubmenu">考試資訊</a>
+                    <ul>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">100學年度</a>
+                            <ul>
+                                <li>
+                                    <a href="#">上學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">上學期_期末考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期末考</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="MenuBarItemSubmenu">101學年度</a>
+                            <ul>
+                                <li>
+                                    <a href="Mid_exam101-1.htm">上學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="Last_exam101-1.htm">上學期_期末考</a>
+                                </li>
+                                <li>
+                                    <a href="Mid_exam101-2.htm">下學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="Last_exam101-2.htm">下學期_期末考</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">102學年度</a>
+                            <ul>
+                                <li>
+                                    <a href="#">上學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">上學期_期末考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期末考</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">103學年度</a>
+                            <ul>
+                                <li>
+                                    <a href="#">上學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">上學期_期末考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期中考</a>
+                                </li>
+                                <li>
+                                    <a href="#">下學期_期末考</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="Others.htm" class="MenuBarItemSubmenu">其　　他</a>
+                    <ul>
+                        <li>
+                            <a href="#">各類教學</a>
+                            <ul>
+                                <li>
+                                    <a href="Java_PathSet.htm">Java環境設置</a>
+                                </li>
+                                <li>
+                                    <a href="Java_Opencv.htm">Java_OpenCV環境設置</a>
+                                </li>
+                                <li>
+                                    <a href="Java_OCJP.htm">Java_OCJP考取證照教學</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="Curriculum.htm">課表</a>
+                        </li>
+                        <li>
+                            <a href="Links.htm">連結</a>
+                        </li>
+                        <li>
+                            <a href="Downloads.htm">檔案下載</a>
+                        </li>
+                        <li>
+                            <a href="Update.htm">更新日誌</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="About.htm">關於我</a>
+                </li>
+            </ul>
+            <script type="text/javascript">
+				var MenuBar1 = new Spry.Widget.MenuBar("Menu", {
+					imgDown : "img/SpryMenuBarDownHover.gif",
+					imgRight : "img/SpryMenuBarRightHover.gif"
+				});
+            </script>
+        </div>
+        <br>
+        <br>
+        <div id="name" class="font_kai">
+            JAVA環境變數設置教學
+        </div>
+        <br>
+        <div id="block" class="font_text" align="center">
+            <br>
+            JRE:Java Runtime Environment(Java執行環境)
+            <br>
+            JDK:Java Development Kit(Java編輯工具)
+            <hr>
+            <p>
+                <b><span style="background-color: #FFFF00">STEP1</span></b>&nbsp;&nbsp;&nbsp;
+                下載JAVA SE----JDK &amp; JRE
+                <br>
+                請至http://www.oracle.com/technetwork/java/javase/downloads/index.html
+                <br>
+                <br>
+                <img border="0" src="class2/Javaprogramming/pathset/01.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP2</span>&nbsp;&nbsp;&nbsp; 分別下載<font color="#0000FF">JDK</font>和<font color="#0000FF">JRE</font>(<b>注意!我們要用的是JAVA
+                SE</b>)
+                <br>
+                <br>
+                <img border="0" src="class2/Javaprogramming/pathset/02.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP3</span>&nbsp;&nbsp;&nbsp; 本例先從JDK開始下載，必須先點選Accept同意後再點選下列連結，
+                <br>
+                下載版本依照安裝主機系統選擇，<font color="#0000FF">32位元請下載x86版本</font>，<font color="#0000FF">64位元請下載x64版本</font>。
+                <br>
+                <br>
+                <img border="0" src="class2/Javaprogramming/pathset/03.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP4</span>&nbsp;&nbsp;&nbsp; 接著回到上一頁，繼續下載JRE，一樣要先點選Accept同意後再點選下列連結，
+                <br>
+                下載版本依照安裝主機系統選擇，<font color="#0000FF">32位元請下載x86版本</font>，<font color="#0000FF">64位元請下載x64版本</font>。
+                <br>
+                <br>
+                <img border="0" src="class2/Javaprogramming/pathset/04.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP5</span>&nbsp;&nbsp;&nbsp; 接下來等待下載完成後安裝，(安裝就不用我再教了吧ˊ_&gt;ˋ,路徑沒必要<b>不要更改</b>)，
+                <br>
+                安裝完成後請到<font color="#0000FF">&quot;本機磁碟C:&quot;</font><b>&gt;</b><font color="#0000FF">&quot;Program
+                    Files&quot;</font><b>&gt;</b><font color="#0000FF">&quot;Java&quot;</font><b>&gt;</b><font color="#FF0000">&quot;jdk1.7.0_07&quot;</font>
+                <br>
+                <font color="#FF0000">(如果你安裝的版本不同，此處資料夾請選取JDK的最新版)</font><b>&gt;</b><font color="#0000FF">&quot;bin&quot;</font>，
+                <br>
+                然後把路徑複製下來，本例為<font color="#0000FF">&quot;C:\Program
+                    Files\Java\jdk1.7.0_07\bin&quot;</font>
+                <br>
+                <br>
+                <img border="0" src="class2/Javaprogramming/pathset/12.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP6</span>&nbsp;&nbsp;&nbsp;
+                <table style="text-align: center;">
+                    <tr>
+                        <td><font color="#FFFFFF"><span style="font-weight: 700; background-color: #FF0000">XP版本</span> </font>回到桌面，點選<font color="#0000FF">&quot;我的電腦&quot;</font>右鍵，點選<font color="#0000FF">&quot;內容&quot;</font>。
+                        <br>
+                        <br>
+                        <img border="0" src="class2/Javaprogramming/pathset/05.jpg" width="80%"></td>
+                        <td><font color="#FFFFFF"> <span style="font-weight: 700; background-color: #FF0000">W7版本</span></font>回到桌面，點選<font color="#0000FF">&quot;電腦&quot;</font>右鍵
+                        ，點選<font color="#0000FF">&quot;內容&quot;</font>。
+                        <br>
+                        <br>
+                        <img border="0" src="class2/Javaprogramming/pathset/w7-01.jpg" width="80%"></td>
+                    </tr>
+                </table>
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP7</span>&nbsp;&nbsp;&nbsp;
+                <table style="text-align: center;">
+                    <tr>
+                        <td><font color="#FFFFFF"> <span style="font-weight: 700; background-color: #FF0000">XP版本</span></font>點選<font color="#0000FF">&quot;進階&quot;</font>&gt;<font color="#0000FF">&quot;環境變數&quot;</font>
+                            <br><br><img border="0" src="class2/Javaprogramming/pathset/06.jpg" width="80%"></td>
+                        <td><font color="#FFFFFF"> <span style="font-weight: 700; background-color: #FF0000">W7版本</span></font>點選<font color="#0000FF">&quot;進階系統設定&quot;</font>&gt;<font color="#0000FF">&quot;環境變數&quot;</font>
+                        <br><br><img border="0" src="class2/Javaprogramming/pathset/w7-02.jpg" width="80%">
+                        <br><br><img border="0" src="class2/Javaprogramming/pathset/w7-03.jpg" width="80%"></td>
+                    </tr>
+                </table>
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP8</span>&nbsp;&nbsp;&nbsp; 在下方的<font color="#0000FF">[系統變數]</font>欄找到<font color="#0000FF">&quot;Path&quot;</font>變數並點選<font color="#0000FF">&quot;編輯&quot;</font>
+            <br><br><img border="0" src="class2/Javaprogramming/pathset/07.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP9</span>&nbsp;&nbsp;&nbsp; 在<font color="#0000FF">&quot;Path&quot;</font>變數的變數值欄中向右移到最後面，加上<font color="#0000FF">分號(；)</font>，
+                <br>
+                再加上剛才複製的路徑，然後點選確定。
+            <br><br><img border="0" src="class2/Javaprogramming/pathset/08.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP10</span>&nbsp;&nbsp;&nbsp; 在下方的<font color="#0000FF">[系統變數]</font>欄點選<font color="#0000FF">&quot;新增&quot;</font>
+            <br><br><img border="0" src="class2/Javaprogramming/pathset/09.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP11</span>&nbsp;&nbsp;&nbsp; 變數名稱填入<font color="#0000FF">&quot;classpath&quot;</font>，變數值填入<font color="#0000FF">&quot;.&quot;</font>(沒錯!!!就是一個點)，
+            <br>
+                然後點選<font color="#0000FF">&quot;確定&quot;</font>。
+            <br><br><img border="0" src="class2/Javaprogramming/pathset/10.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP12</span>&nbsp;&nbsp;&nbsp; 最後再點選<font color="#0000FF">&quot;確定&quot;</font>離開。
+            <br><br><img border="0" src="class2/Javaprogramming/pathset/11.jpg" width="65%">
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP13</span>&nbsp;&nbsp;&nbsp; 基本上環境設定到此完成，如果你/妳怕有哪個步驟做錯了，請繼續看下去。
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP14</span>&nbsp;&nbsp;&nbsp; ==以下步驟試驗環境變數是否設置完成==
+            <br>
+                點選<font color="#0000FF">&quot;開始&quot;&gt;&quot;程式集&quot;&gt;&quot;附屬應用程式&quot;&gt;&quot;命令提示字元&quot;</font>
+            </p>
+            <p>
+                (快一點的方法是：<font color="#0000FF">&quot;win&quot;</font>鍵+<font color="#0000FF">&quot;R&quot;</font>&gt;輸入<font color="#0000FF">&quot;cmd&quot;</font>&gt;點選<font color="#0000FF">&quot;確定&quot;</font>)
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP15</span>&nbsp;&nbsp;&nbsp; 輸入<font color="#0000FF">&quot;java&quot;&gt;&quot;Enter&quot;</font>
+            </p>
+            <hr>
+            <p>
+                <span style="font-weight: 700; background-color: #FFFF00"> STEP16</span>&nbsp;&nbsp;&nbsp; 如果跑出一堆東西表示環境變數設置成功，
+            </p>
+            <p>
+                如果跑出<font color="#0000FF">&quot;'java'不是內部或外部命令，可執行的程式或批次檔&quot;</font>，
+            <br>
+                請從STEP5到STEP12重新操作一次!!!!
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <br>
+
+        <div id="end" align="center" class="font_kai">
+            <table style="font-size: 20px;border: none;background-color: rgba(180,255,140,0.8);text-shadow: 2px 2px 3px #CCC">
+                <tr>
+                    <td>│<a href="WebMap.htm">網站地圖</a>│<a href="index.htm">首　　頁</a>│<a href="Class.htm">課　　程</a>│<a href="Others.htm">考試資訊</a>│<a href="Class.htm">其　　他</a>│<a href="About.htm">關 於 我</a>│</td>
+                </tr>
+            </table>
+            <p align="center" style="font-size: 16px;background-color: rgba(192,192,192,0.7)">
+                <a href="http://creativecommons.org/licenses/by-nc/3.0/tw/" target="_blank"><img src="https://i.creativecommons.org/l/by-nc/3.0/tw/88x31.png"></a>
+                <br>
+                a0tim&copy;2014 ‧ 真理大學資訊工程學系-黃騰嶢
+                <br>
+                <a href="mailto:a0tim82326@gmail.com">a0tim82326@gmail.com</a>
+            </p>
+        </div>
+
+        <div id="mwt_mwt_slider_scroll">
+            <div id="mwt_fb_tab">
+                <span>F</span>
+                <span>a</span>
+                <span>c</span>
+                <span>e</span>
+                <span>b</span>
+                <span>o</span>
+                <span>o</span>
+                <span>o</span>
+                <span>k</span>
+            </div>
+            <div id="mwt_slider_content">
+                <a href="https://www.facebook.com/yaohailong" target="_blank"> <img src="img/lute.png"> </a>
+                <br>
+                嶢 海 龍
+                <br>
+                <hr>
+                <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fyaohailong&width=960&layout=standard&action=like&show_faces=true&share=true&height=80&appId=705644162835492" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:270px;" allowTransparency="true"></iframe>
+            </div>
+        </div>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

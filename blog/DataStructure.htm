@@ -1,0 +1,362 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+
+
+<head>
+<style type=text/css>
+<!--
+body{
+background-image:url('images/b_02.jpg');
+background-position: 50% 50%;
+background-attachment:fixed;
+background-repeat:no-repeat}
+.style10 {
+				text-align: left;
+}
+.style1 {
+	text-align: center;
+}
+.style11 {
+	text-align: left;
+	margin-left: 80px;
+}
+.style12 {
+	text-align: left;
+	margin-left: 40px;
+}
+.style13 {
+				background-color: #FFFF00;
+}
+.style14 {
+				border-collapse: collapse;
+				border: 1px solid #0000FF;
+}
+.style16 {
+				text-align: center;
+				background-color: #BFE5FE;
+}
+.style17 {
+				font-size: 16pt;
+}
+.style18 {
+				border-style: solid;
+				border-width: 0;
+}
+.style19 {
+				text-align: center;
+				border: 1px solid #BFE5FE;
+}
+.style21 {
+				border: 1px solid #0000FF;
+}
+.style22 {
+				text-align: center;
+				font-weight: bold;
+				border: 1px solid #BFE5FE;
+}
+.style23 {
+				text-align: center;
+				border: 1px solid #BFE5FE;
+				background-color: #CCFFCC;
+}
+.style24 {
+				border-collapse: collapse;
+}
+.style25 {
+				font-weight: bold;
+				border-style: solid;
+				border-width: 0;
+}
+.style26 {
+				border-width: 0;
+				text-align: center;
+}
+.style27 {
+				background-color: #FF0000;
+				color: #FFFFFF;
+}
+.style28 {
+				text-align: center;
+				border: 1px solid #BFE5FE;
+				background-color: #FFFF99;
+}
+-->
+</style>
+<meta http-equiv="Content-Language" content="zh-tw">
+
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+
+
+
+<title>資料結構</title>
+
+
+
+<base target="_blank">
+
+
+
+<link rel="icon" href="images/web.ico" type="image/x-icon">
+<link rel="bookmark" href="images/web.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/web.ico" type="image/x-icon">
+</head>
+
+
+
+
+
+
+
+<body bgcolor="#BFE5FE">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37662952-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+
+
+
+<p align="center">
+<a href="index.htm">
+<img border="0" src="images/title_image.gif" width="900" height="120"></a></p>
+<center>
+<!-- Begin Publishing Scripts of Flash Menu menu -->
+<div id="fm_placeholder_menu" style="width: 814px; height: 34px ">
+Loading Flash Menu</div><script type="text/javascript" defer>//<![CDATA[
+var fm_menu = function() {
+  function getPos() {
+    var p=[0,0]; var e=document.getElementById('fm_placeholder_menu');
+    do { p[0]+=e.offsetTop; p[1]+=e.offsetLeft; } while (e=e.offsetParent); return p; }
+  function move() {
+    var p=getPos(); var m=document.getElementById('fm_wrapper_menu'); m.style.top=p[0]+'px'; m.style.left=p[1]+'px'; }
+  var create = function() {
+    var s; if (document.all && !window.opera) {
+      s='<object id="fm_menu_menu" width="814px" height="394px" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" '
+        +'codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">'
+        +'<param name="quality" value="high" /><param name="scale" value="noscale" /><param name="salign" value="LT" />'
+        +'<param name="movie" value="menu.swf" /><param name="menu" value="false" />'
+        +'<param name="wmode" value="transparent" /></object>'; }
+    else {
+      s='<embed type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" '
+        +'id="fm_menu_menu" width="814px" height="34px" src="menu.swf" wmode="transparent" '
+        +'flashvars="callback=fm_menu" quality="high" scale="noscale" menu="false" salign="LT" />'; }
+    var p=getPos(); var m=document.createElement('div'); m.id='fm_wrapper_menu'; m.style.position='absolute';
+    m.style.zIndex='100'; m.style.top=p[0]+'px'; m.style.left=p[1]+'px'; m.innerHTML=s;
+    document.body.insertBefore(m, document.body.firstChild); setInterval(move, 500); }(); 
+  return {
+    expand: function() { 
+      document.getElementById('fm_menu_menu').style.height='394px'; },
+    collapse: function() {
+      document.getElementById('fm_menu_menu').style.height='34px'; }};}();//]]></script>
+<!-- End Publishing Scripts of Flash Menu menu --></center>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" bordercolor="#A4C7F8" width="80%" height="571" class="style24">
+    <tr>
+      <td width="100%" align="center" height="20" bordercolor="#A4C7F8" class="style25">
+      <p><font face="標楷體"><script language="javascript" type="text/javascript" src="http://counter1.fc2.com/counter.php?id=13254546&main=1"></script>
+      <font size="4">資 料 結 構</font></font></td>
+    </tr>
+    <tr>
+      <td width="100%" align="center" height="299" bordercolor="#A4C7F8" valign="top" class="style18">
+      　<p class="style10"><strong>課程名稱：</strong>資料結構<p class="style10"><strong>授課教師：</strong>王慶生<p class="style10">
+		<strong>必/選修：</strong>必修(學期)<p class="style10"><strong>學分數：</strong>3<p class="style10">
+		<strong>教學網站：</strong><a href="http://cswang.wwwts.au.edu.tw/front/bin/home.phtml">http://cswang.wwwts.au.edu.tw/front/bin/home.phtml</a><p class="style12">
+		帳號：(請自行申請)<p class="style12">
+		密碼：(請自行申請)<p class="style11">
+		&nbsp;<a href="http://ds.csie.au.edu.tw/ds/index.php">http://ds.csie.au.edu.tw/ds/index.php</a><p class="style12">
+		帳號：csie2a<p class="style12">
+		密碼：CSIE2A<p class="style11">
+		<a href="https://www.facebook.com/groups/424851794248787/">
+		https://www.facebook.com/groups/424851794248787/</a>&nbsp;<p class="style10">
+		<strong>聯絡電話：</strong>(02)2621-2121 #3204<p class="style10"><strong>
+		聯絡信箱：</strong><a href="mailto:cswang@email.au.edu.tw"><font size="4">cswang@email.au.edu.tw</font></a><p class="style11">&nbsp;<a href="mailto:cswang@mail.au.edu.tw"><font size="4">cswang@mail.au.edu.tw</font></a><p class="style10">
+		<strong>作業FTP：----</strong><p class="style10">
+		<strong>辦公室：</strong>5901<p class="style10"><strong>Office Hours：</strong>(三)6-9、(四)6-9<p class="style10">
+		<strong>教學計劃表：</strong><a href="https://docs.google.com/file/d/0B3kp2TJABLycREpCSk1ScTRKR2c/edit?usp=sharing">資料結構</a><hr><p>
+		<strong><span class="style13">==作業內容==</span></strong><table class="style14" style="width: 440px; height: 118px;">
+					<tr>
+									<th style="width: 94px" class="style16">
+									<strong>公布日期</strong></th>
+									<th style="width: 194px" class="style16">
+									<strong>作業內容</strong></th>
+									<th style="width: 94px" class="style16">
+									<strong>繳交期限</strong></th>
+									<th class="style16"><strong class="style16">備註</strong></th>
+					</tr>
+					<tr>
+									<td style="width: 94px" class="style1">
+									20121024</td>
+									<td style="width: 194px" class="style1">
+									<span class="style13">1)</span>使用stack或queue讓使用者輸入幾行字串,並可新增刪除<br>
+									<br>
+									<span class="style13">2)</span>使用stack做出老鼠走迷宮(以p.123頁迷宮為例),印出每一個步驟</td>
+									<td style="width: 94px" class="style1">期中考前<br>
+									(11/12前)</td>
+									<td style="width: 94px" class="style1">
+									<em>兩題挑一題做</em>,第二題迷宮助教更改也能跑才成功</td>
+					</tr>
+					<tr>
+									<td style="width: 94px" class="style1">&nbsp;</td>
+									<td style="width: 194px" class="style1">&nbsp;</td>
+									<td style="width: 94px" class="style1">&nbsp;</td>
+									<td style="width: 94px" class="style1">&nbsp;</td>
+					</tr>
+					<tr>
+									<td style="width: 94px" class="style1">&nbsp;</td>
+									<td style="width: 194px" class="style1">&nbsp;</td>
+									<td style="width: 94px" class="style1">&nbsp;</td>
+									<td style="width: 94px" class="style1">&nbsp;</td>
+					</tr>
+		</table>
+		<p class="style17">
+		&nbsp;<p class="style17">
+		<strong><span class="style13">期</span><span class="style27">中</span><span class="style13">考出題型態及配分方式</span></strong><table class="style14" style="width: 340px; height: 223px;" align="center">
+					<tr>
+									<th class="style21" style="width: 32px">&nbsp;</th>
+									<th class="style21" style="width: 61px">比例</th>
+									<th class="style21">內容</th>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">1</td>
+									<td class="style23" style="width: 61px">15%</td>
+									<td class="style19">時間、空間複雜度</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">2</td>
+									<td class="style23" style="width: 61px">15%</td>
+									<td class="style19">上、下三角</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">3</td>
+									<td class="style23" style="width: 61px">10%</td>
+									<td class="style19">中敘 轉 前敘</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">4</td>
+									<td class="style23" style="width: 61px">10%</td>
+									<td class="style19">中敘 轉 後敘</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">5</td>
+									<td class="style23" style="width: 61px">20%</td>
+									<td class="style19">中敘 轉 後敘 轉 答案(表格)</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">6</td>
+									<td class="style23" style="width: 61px">15%</td>
+									<td class="style19">老鼠走迷宮</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">7</td>
+									<td class="style23" style="width: 61px">15%</td>
+									<td class="style19">Stack + Queue</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">8</td>
+									<td class="style23" style="width: 61px">10%</td>
+									<td class="style19">指標</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">&nbsp;</td>
+									<td class="style23" style="width: 61px">
+									共110%</td>
+									<td class="style19">&nbsp;</td>
+					</tr>
+		</table>
+		<p>&nbsp;<p class="style17">
+		<strong><span class="style13">期</span><span class="style27">末</span><span class="style13">考出題型態及配分方式</span></strong><table class="style14" style="width: 340px; height: 223px;" align="center">
+					<tr>
+									<th class="style21" style="width: 32px">&nbsp;</th>
+									<th class="style21" style="width: 61px">比例</th>
+									<th class="style21">內容</th>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">1</td>
+									<td class="style23" style="width: 61px">20%</td>
+									<td class="style19">Ch 6&nbsp; Graphs&nbsp; 
+									p.52後</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">2</td>
+									<td class="style23" style="width: 61px">20%</td>
+									<td class="style19">Ch 7&nbsp; Sorting&nbsp; 
+									兩種排序</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">3</td>
+									<td class="style23" style="width: 61px">20%</td>
+									<td class="style19">Ch 8&nbsp; Hashing&nbsp; 
+									雜湊</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px" rowspan="2">
+									4</td>
+									<td class="style28" style="width: 61px">10%</td>
+									<td class="style19">Ch 9&nbsp; min-max Heap</td>
+					</tr>
+					<tr>
+									<td class="style28" style="width: 61px">10%</td>
+									<td class="style19">Ch 9&nbsp; D-E-AP</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">6</td>
+									<td class="style23" style="width: 61px">20%</td>
+									<td class="style19">Ch 10-11&nbsp; AVL Tree</td>
+					</tr>
+					<tr>
+									<td class="style22" style="width: 32px">&nbsp;</td>
+									<td class="style23" style="width: 61px">
+									共100%</td>
+									<td class="style19">&nbsp;</td>
+					</tr>
+		</table>
+		<p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="100%" align="center" bordercolor="#A4C7F8" style="height: 73px" class="style18">
+		&nbsp;</td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<table style="width: 100%">
+	<tr>
+		<td class="style26">│<a href="WebMap.htm">網站地圖</a>│<a href="index.htm">首頁</a>│<a href="Class1.htm">大一課程</a>│<a href="Class2.htm">大二課程</a>│<a href="Class3.htm">大三課程</a>│<a href="Others.htm">其他資訊</a>│<a href="About.htm">關於我</a>│</td>
+	</tr>
+</table>
+<p align="center"><font size="2">a0tim<span style="font-family: arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none"> 
+&copy; </span>2012 ‧中文(台灣) ‧最佳瀏覽解析度1440*900</font></p>
+<p align="center"><font size="2">真理大學數理資訊學院資訊工程學系一百級A班‧黃騰嶢</font></p>
+<p align="center"><a href="mailto:a0tim82326@gmail.com"><font size="2">
+a0tim82326@gmail.com</font></a></p><br>
+線上訪客人數<script language="javascript" type="text/javascript" src="http://counter1.fc2.com/views.php?id=13254546&main=1"></script><noscript><img src="http://counter1.fc2.com/counter_now.php?id=13254546&main=1" /></noscript>
+
+
+
+
+
+
+
+
+<!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+<script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+<noscript><div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+<script type="text/javascript" src="http://13254546.ranking.fc2.com/analyze.js" charset="utf-8"></script>
+
+</body></html></style>

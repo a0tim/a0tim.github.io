@@ -1,0 +1,137 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+
+public class Text0523 {
+	public static void main(String[] args) {
+		String data[][] = new String[11][3];
+		String query = "SELECT id,sname,score FROM student";
+		int i=0;
+		try {
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			Connection con = DriverManager.getConnection("jdbc:odbc:tim000");
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			while(rs.next()){
+				data[i][0] = rs.getString("id");
+				data[i][1] = rs.getString("sname");
+				data[i][2] = String.valueOf(rs.getInt("score"));
+				i++;
+			}
+			con.close();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		new MyFrame(data);
+	}
+}
+
+class MyFrame extends JFrame{
+	String colN[] = {"id","sname","score"};
+	JScrollPane JSP;
+	
+	MyFrame(String data[][]){
+		setBounds(100,150,300,250);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLayout(null);
+		setResizable(false);
+		
+		JTable JT = new JTable(data,colN);
+		JSP = new JScrollPane(JT);
+		JSP.setBounds(5,40,285,150);
+		JSP.setVisible(false);
+				
+		JButton JB = new JButton("查詢");
+		JB.setBounds(50,10,200,20);
+		JB.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JSP.setVisible(true);
+			}
+		});
+		
+		add(JB);
+		add(JSP);
+		setVisible(true);
+	}
+}
+            </pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

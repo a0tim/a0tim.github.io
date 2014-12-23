@@ -1,0 +1,149 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.awt.Cursor;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JApplet;
+import javax.swing.JLabel;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.IconifyAction;
+
+
+public class Text0328 extends JApplet{
+	JLabel JL1;
+	JLabel JL2 = new JLabel();
+	JLabel JL3;
+	ImageIcon img1 = new ImageIcon("C:\\01.jpg");
+	ImageIcon img2 = new ImageIcon("C:\\02.jpg");
+	ImageIcon img3 = new ImageIcon("C:\\03.jpg");
+	ImageIcon img4 = new ImageIcon("C:\\04.jpg");
+	public void init(){
+		setLayout(null);
+		setSize(800,600);
+		JL1 = new JLabel(img1);
+		JL1.setBounds(50,10,90,125);
+		JL1.addMouseListener(new MAction());
+		JL2.setBounds(60,150,90,20);
+		JL2.setText("王慶生  主任");
+		JL3 = new JLabel(img4);
+		JL3.setBounds(-100,-100,50,50);
+		add(JL1);
+		add(JL2);
+		add(JL3);
+		addKeyListener(new KAction());
+		addMouseMotionListener(new MAction2());
+		setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	}
+	public class MAction extends MouseAdapter{
+		public void mouseEntered(MouseEvent e){
+			JL1.setIcon(img2);
+			JL2.setText("黃信貿  老師");
+		}
+		public void mouseExited(MouseEvent e){
+			JL1.setIcon(img1);
+			JL2.setText("王慶生  主任");
+		}
+		public void mouseClicked(MouseEvent e){
+			JL1.setIcon(img3);
+			JL2.setText("陳炯良  老師");
+		}
+	}
+	public class MAction2 extends MouseAdapter{
+		public void mouseMoved(MouseEvent e){
+			JL3.setLocation(JL3.getLocation().x + ((e.getPoint().x-JL3.getLocation().x)/20),JL3.getLocation().y + ((e.getPoint().y-JL3.getLocation().y)/20));
+		}
+	}
+	public class KAction extends KeyAdapter{
+		public void keyPressed(KeyEvent e){
+			int k = e.getKeyCode();
+			switch(k){
+				case KeyEvent.VK_UP:
+					JL1.setLocation(JL1.getLocation().x,JL1.getLocation().y -= 3);
+					JL2.setLocation(JL2.getLocation().x,JL2.getLocation().y -= 3);
+					break;
+				case KeyEvent.VK_DOWN:
+					JL1.setLocation(JL1.getLocation().x,JL1.getLocation().y += 3);
+					JL2.setLocation(JL2.getLocation().x,JL2.getLocation().y += 3);
+					break;
+				case KeyEvent.VK_LEFT:
+					JL1.setLocation(JL1.getLocation().x -= 3,JL1.getLocation().y);
+					JL2.setLocation(JL2.getLocation().x -= 3,JL2.getLocation().y);
+					break;
+				case KeyEvent.VK_RIGHT:
+					JL1.setLocation(JL1.getLocation().x += 3,JL1.getLocation().y);
+					JL2.setLocation(JL2.getLocation().x += 3,JL2.getLocation().y);
+					break;
+				default:
+			}
+		}
+	}
+}
+            </pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

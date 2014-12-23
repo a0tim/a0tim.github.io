@@ -1,0 +1,132 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.io.*;
+
+public class Text0418 {
+	public static void main(String[] args) {
+		BufferedReader SBR = new BufferedReader(new InputStreamReader(System.in));
+		while(true){
+			System.out.println("1.Reader\n2.Stream\n3.Exit");
+			try {
+				int i = Integer.parseInt(SBR.readLine());
+				switch(i){
+					case 1:
+						BufferedReader BR = new BufferedReader(new FileReader("C:\\test.txt"));
+						File F = new File("C:\\test2.txt");
+						F.createNewFile();
+						FileWriter FW = new FileWriter(F);
+							
+						String Str = "";
+						String S1 = BR.readLine();
+						System.out.print(S1);
+						Str += S1+SBR.readLine()+"\r\n";
+						S1 = BR.readLine();
+						System.out.print(S1);
+						Str += S1+SBR.readLine()+"\r\n";
+						S1 = BR.readLine();
+						System.out.print(S1);
+						Str += S1+SBR.readLine()+"\r\n";
+							
+						System.out.println(Str);
+						FW.write(Str);
+						FW.flush();
+						break;
+					case 2:
+						BufferedReader BR1 = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\test.txt")));
+						File F1 = new File("C:\\test3.txt");
+						F1.createNewFile();
+						FileOutputStream FOS = new FileOutputStream(F1);
+						
+						String Str1 = "";
+						String S2 = BR1.readLine();
+						System.out.print(S2);
+						Str1 += S2+SBR.readLine()+"\r\n";
+						S2 = BR1.readLine();
+						System.out.print(S2);
+						Str1 += S2+SBR.readLine()+"\r\n";
+						S2 = BR1.readLine();
+						System.out.print(S2);
+						Str1 += S2+SBR.readLine()+"\r\n";
+							
+						System.out.println(Str1);
+						FOS.write(Str1.getBytes());
+						FOS.flush();
+						break;
+					case 3:
+						System.exit(0);
+						break;
+				}
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+            </pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

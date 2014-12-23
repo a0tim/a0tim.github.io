@@ -1,0 +1,98 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.io.*;		//匯入IO函式庫
+
+public class Text1004{
+	public static void main(String args[])throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//宣告BufferedReader為br,並且br的值為鍵盤輸入的值
+
+		System.out.println("請輸入兩數:");
+		
+		String str1 = br.readLine();		//宣告新的字串,值從鍵盤輸入的一行指定
+		String str2 = br.readLine();		//宣告新的字串,值從鍵盤輸入的一行指定
+		System.out.print("未經轉換str1+str2的結果:");
+		System.out.println(str1+str2);		//顯示未轉換前的字串相加結果
+		
+		int num1 = Integer.parseInt(str1);	//將str1字串轉換為INT的值給新變數num1
+		int num2 = Integer.parseInt(str2);	//將str2字串轉換為INT的值給新變數num2
+		System.out.print("經Integer轉換str1+str2的結果:");
+		System.out.println(num1+num2);		//顯示轉換後整數相加的結果
+		
+		float f1 = Float.parseFloat(str1);	//將str1字串轉換為Float的值給新變數f1
+		float f2 = Float.parseFloat(str2);	//將str1字串轉換為Float的值給新變數f2
+		System.out.print("經Float轉換str1+str2的結果:");
+		System.out.println(f1+f2);		//顯示轉換後浮點數相加的結果
+		
+		str1 = String.valueOf(f1);		//將str1的值更改為f1的值
+		str2 = String.valueOf(f2);		//將str2的值更改為f2的值
+		System.out.print("f1,f2經String.valueOf轉換str1+str2的結果:");
+		System.out.println(str1+str2);		//顯示str1,str2的值
+	}
+}
+            </pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

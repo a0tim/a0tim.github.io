@@ -1,0 +1,326 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+
+
+<head>
+<style type=text/css>
+<!--
+body{
+background-image:url('images/b_02.jpg');
+background-position: 50% 50%;
+background-attachment:fixed;
+background-repeat:no-repeat}
+.style1 {
+	text-align: center;
+}
+.style2 {
+				text-align: left;
+}
+.style4 {
+				font-size: medium;
+}
+.style5 {
+				text-align: center;
+				font-size: 14pt;
+}
+.style7 {
+				background-color: #BFE5FE;
+				color: #0000FF;
+}
+.style8 {
+				color: #000000;
+}
+.style10 {
+	font-size: 16pt;
+}
+.style11 {
+	font-size: large;
+	text-align: left;
+}
+.style12 {
+	border-collapse: collapse;
+	border-left: 0px solid #000000;
+	border-right: 1px solid #000000;
+	border-top: 0px solid #000000;
+	border-bottom: 0px solid #000000;
+}
+.style16 {
+	text-align: left;
+	border: 1px solid #000000;
+}
+.style17 {
+	color: #FF0000;
+	background-color: #FFFF00;
+}
+.style18 {
+	background-color: #FFFF00;
+}
+.style19 {
+				border-style: solid;
+				border-width: 0;
+}
+.style20 {
+				border-style: solid;
+				border-width: 0;
+				text-align: left;
+}
+.style21 {
+				border-width: 0;
+				text-align: center;
+}
+-->
+</style>
+<meta http-equiv="Content-Language" content="zh-tw">
+
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+
+
+
+<title>Bubble Sort氣泡排序</title>
+
+
+
+<base target="_self">
+
+
+
+<link rel="icon" href="images/web.ico" type="image/x-icon">
+<link rel="bookmark" href="images/web.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/web.ico" type="image/x-icon">
+</head>
+
+
+
+
+
+
+
+<body bgcolor="#BFE5FE">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37662952-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+
+
+
+<p align="center">
+<a href="index.htm">
+<img border="0" src="images/title_image.gif" width="900" height="120"></a></p>
+<center>
+<!-- Begin Publishing Scripts of Flash Menu menu -->
+<div id="fm_placeholder_menu" style="width: 814px; height: 34px ">
+Loading Flash Menu</div><script type="text/javascript" defer>//<![CDATA[
+var fm_menu = function() {
+  function getPos() {
+    var p=[0,0]; var e=document.getElementById('fm_placeholder_menu');
+    do { p[0]+=e.offsetTop; p[1]+=e.offsetLeft; } while (e=e.offsetParent); return p; }
+  function move() {
+    var p=getPos(); var m=document.getElementById('fm_wrapper_menu'); m.style.top=p[0]+'px'; m.style.left=p[1]+'px'; }
+  var create = function() {
+    var s; if (document.all && !window.opera) {
+      s='<object id="fm_menu_menu" width="814px" height="394px" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" '
+        +'codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">'
+        +'<param name="quality" value="high" /><param name="scale" value="noscale" /><param name="salign" value="LT" />'
+        +'<param name="movie" value="menu.swf" /><param name="menu" value="false" />'
+        +'<param name="wmode" value="transparent" /></object>'; }
+    else {
+      s='<embed type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" '
+        +'id="fm_menu_menu" width="814px" height="34px" src="menu.swf" wmode="transparent" '
+        +'flashvars="callback=fm_menu" quality="high" scale="noscale" menu="false" salign="LT" />'; }
+    var p=getPos(); var m=document.createElement('div'); m.id='fm_wrapper_menu'; m.style.position='absolute';
+    m.style.zIndex='100'; m.style.top=p[0]+'px'; m.style.left=p[1]+'px'; m.innerHTML=s;
+    document.body.insertBefore(m, document.body.firstChild); setInterval(move, 500); }(); 
+  return {
+    expand: function() { 
+      document.getElementById('fm_menu_menu').style.height='394px'; },
+    collapse: function() {
+      document.getElementById('fm_menu_menu').style.height='34px'; }};}();//]]></script>
+<!-- End Publishing Scripts of Flash Menu menu --></center>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#A4C7F8" width="80%" height="571">
+    <tr>
+      <td width="100%" align="center" height="20" bordercolor="#A4C7F8" class="style19">
+      <p><font face="標楷體"><b><script language="javascript" type="text/javascript" src="http://counter1.fc2.com/counter.php?id=13254546&main=1"></script>
+      </b><strong>Bubble Sort氣泡排序</strong></font></td>
+    </tr>
+    <tr>
+      <td width="100%" bordercolor="#A4C7F8" valign="top" class="style20" style="height: 386px">
+      <p class="style2"><br><strong><span class="style4">氣泡排序</span></strong>是一種簡單的排序演算法。它重複地走訪過要排序的數列，<span class="style18">一次比較兩個元素</span>，如果他們的順序錯誤就把他們交換過來。走訪數列的工作是<span class="style18">重複地進行直到沒有再需要交換</span>，也就是說該數列已經排序完成。這個演算法的名字由來是因為越小的元素會經由交換慢慢「浮」到數列的頂端。 &nbsp;<p class="style5">
+		<strong>==以下用五個數(5,2,4,1,3)，由小排到大作為例子說明==</strong><p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/001.gif" width="400" height="89">&nbsp;<p class="style1">
+		<strong><span class="style7">&lt;&lt;第一次排序&gt;&gt;</span></strong><p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/1-1.gif" width="400" height="89"><br>
+		<span class="style8">&nbsp;1.先比較第一個數與第二個數，5比2大所以兩數交換</span><p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/1-2.gif" width="400" height="89"><br>
+		2.再比較第二個數與第三個數，5比4大所以兩數交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/1-3.gif" width="400" height="89"><br>
+		3.再比較第三個數與第四個數，5比1大所以兩數交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/1-4.gif" width="400" height="89"><br>
+		4.再比較第四個數與第五個數，5比3大所以兩數交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/1-5.gif" width="400" height="89"><br>
+		5.經過四次比較後可知道5為最大數，並且將5固定不再做比較<p class="style1">
+		<strong><span class="style7">&lt;&lt;第二次排序&gt;&gt;</span></strong><p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/2-1.gif" width="400" height="89"><br>
+		1.先比較第一個數與第二個數，2沒有比4大所以不交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/2-2.gif" width="400" height="89"><br>
+		2.再比較第二個數與第三個數，4比1大所以交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/2-3.gif" width="400" height="89"><br>
+		3.再比較第三個數與第四個數，4比3大所以交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/2-4.gif" width="400" height="89"><br>
+		4.經過三次比較後可知道4為原本2.4.1.3四個數裡的最大數，將4固定不再比較<p class="style1">
+		<strong><span class="style7">&lt;&lt;第三次排序&gt;&gt;</span></strong><p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/3-1.gif" width="400" height="89"><br>
+		1.先比較第一個數與第二個數，2比1大所以交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/3-2.gif" width="400" height="89"><br>
+		2.再比較第二個數與第三個數，2沒有比3大所以不交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/3-3.gif" width="400" height="89"><br>
+		3.經過兩次比較後可知道3為原本2.1.3裡的最大數，將3固定不再比較<p class="style1">
+		<strong><span class="style7">&lt;&lt;第四次排序&gt;&gt;</span></strong><p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/4-1.gif" width="400" height="89"><br>
+		1.先比較第一個數與第二個數，1沒有比2大所以不交換<p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/4-2.gif" width="400" height="89"><br>
+		2.經過一次比較後可知2為原本1.2兩數裡的最大數，將2固定不再比較<p class="style1">
+		<strong><span class="style7">&lt;&lt;第五次排序&gt;&gt;</span></strong><p class="style1">
+		<img src="class2/Javaprogramming/bubblesort/5-1.gif" width="400" height="89"><br>
+		1.只剩最後一個數不用比較，全部排序完成<p class="style11">
+		&nbsp;<div class="style2" style="height: 737px">
+		<span class="style10">※根據以上範例，五個數至少需要排序五次，<br>
+		因此可得知當<strong>N個數時需要排列N次</strong>，<br>
+		於是程式碼可先寫為：<br>
+		</span><br>
+		<table align="left" class="style12" style="width: 392px">
+			<tr>
+				<td class="style16" valign="top" style="width: 21px">01<br>
+				02<br>
+				03</td>
+				<td style="width: 416px" class="style16" valign="top">&nbsp;&nbsp; 
+				for(i=0 ; i&lt;N-1 ; i++){<br>
+				<br>
+&nbsp; }</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<br>
+		<br>
+		<span class="style10">※再來可以知道當5個數時，每兩個做一次比較，<br>
+		第一次排序共比較4次，第二次排序因為前次固定最後一個數所以比較3次...<br>
+		以此類推可得知<strong>每一次排序所需要比較的次數跟第幾次排序有關係</strong>，<br>
+		得知第二層迴圈的中止條件隨著上一層迴圈條件子變化，<br>
+		程式碼可寫為：</span><br>
+		<br>
+		<table align="left" class="style12" style="width: 392px">
+			<tr>
+				<td class="style16" valign="top" style="width: 21px">01<br>
+				02<br>
+				03<br>
+				04<br>
+				05</td>
+				<td style="width: 416px" class="style16" valign="top">&nbsp;&nbsp; 
+				for(i=0 ; i&lt;N-1 ; i++){<br>
+&nbsp;&nbsp;&nbsp;&nbsp; for(j=0 ; j&lt;(N-1)-i ; j++){<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp; }</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<span class="style10">※接著是兩數比較部份，本例以小到大排序，<br>
+		所以當<strong>左數大於右數</strong>時必須將兩數位置交換，<br>
+		程式碼可寫為：<br>
+		<br>
+		<table align="left" class="style12" style="width: 392px">
+			<tr>
+				<td class="style16" valign="top" style="width: 21px">01<br>
+				02<br>
+				03<br>
+				04<br>
+				05<br>
+				06<br>
+				07<br>
+				08<br>
+				09</td>
+				<td style="width: 416px" class="style16" valign="top">&nbsp;&nbsp; 
+				for(i=0 ; i&lt;N-1 ; i++){<br>
+&nbsp;&nbsp;&nbsp;&nbsp; for(j=0 ; j&lt;(N-1)-i ; j++){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(NUM[j] &gt; NUM[j+1]){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int temp = 
+				NUM[j];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NUM[j] = 
+				NUM[j+1];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NUM[j+1] = 
+				temp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp; }</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		※到此已將氣泡排序原理及程式編撰方式介紹完畢，<br>
+		但是必須注意本例為<span class="style17">由小到大</span>排序，<br>
+		由大到小排序程式撰寫方式不同，請依氣泡排序規則另外撰寫。<br>
+		</span></div>
+		</td>
+    </tr>
+    <tr>
+      <td width="100%" align="center" bordercolor="#A4C7F8" style="height: 124px" class="style19">　</td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center">&nbsp;</p>
+<table style="width: 100%">
+	<tr>
+		<td class="style21">│<a href="WebMap.htm">網站地圖</a>│<a href="index.htm">首頁</a>│<a href="Class1.htm">大一課程</a>│<a href="Class2.htm">大二課程</a>│<a href="Class3.htm">大三課程</a>│<a href="Others.htm">其他資訊</a>│<a href="About.htm">關於我</a>│</td>
+	</tr>
+</table>
+<p align="center"><font size="2">a0tim<span style="font-family: arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none"> 
+&copy; </span>2012 ‧中文(台灣) ‧最佳瀏覽解析度1440*900</font></p>
+<p align="center"><font size="2">真理大學數理資訊學院資訊工程學系一百級A班‧黃騰嶢</font></p>
+<p align="center"><a href="mailto:a0tim82326@gmail.com"><font size="2">
+a0tim82326@gmail.com</font></a></p><br>
+線上訪客人數<script language="javascript" type="text/javascript" src="http://counter1.fc2.com/views.php?id=13254546&main=1"></script><noscript><img src="http://counter1.fc2.com/counter_now.php?id=13254546&main=1" /></noscript>
+
+
+
+
+
+
+
+
+<!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+<script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+<noscript><div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+<script type="text/javascript" src="http://13254546.ranking.fc2.com/analyze.js" charset="utf-8"></script>
+
+</body></html></style>

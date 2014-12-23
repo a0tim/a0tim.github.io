@@ -1,0 +1,385 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+
+
+<head>
+<style type=text/css>
+<!--
+body{
+background-image:url('images/b_02.jpg');
+background-position: 50% 50%;
+background-attachment:fixed;
+background-repeat:no-repeat}
+.style1 {
+				border-style: solid;
+				border-width: 0;
+}
+.style2 {
+				text-align: center;
+				border-width: 0;
+}
+.style3 {
+				font-family: 標楷體;
+				font-weight: bold;
+				font-size: medium;
+}
+.style10 {
+				text-align: left;
+}
+.style11 {
+				text-align: center;
+}
+.style12 {
+				margin-left: 80px;
+}
+.style13 {
+				color: #FF0000;
+}
+.style16 {
+				border-width: 0px;
+}
+.style17 {
+				text-align: center;
+				font-size: medium;
+}
+.style18 {
+				font-size: x-small;
+				background-color: #FFFF00;
+}
+.style19 {
+				border: 1px solid #0000FF;
+				text-align: center;
+				font-size: medium;
+}
+.style20 {
+				border-collapse: collapse;
+				border: 1px solid #0000FF;
+}
+.style21 {
+				text-align: center;
+				font-size: medium;
+				background-color: #FFCC99;
+}
+.style22 {
+				font-size: large;
+}
+.style23 {
+				font-size: medium;
+}
+.style24 {
+				font-size: x-large;
+}
+-->
+</style>
+<meta http-equiv="Content-Language" content="zh-tw">
+
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+
+
+
+<title>線性代數</title>
+
+
+
+<base target="_self">
+
+
+
+<link rel="icon" href="images/web.ico" type="image/x-icon">
+<link rel="bookmark" href="images/web.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/web.ico" type="image/x-icon">
+</head>
+
+
+
+
+
+
+
+<body bgcolor="#BFE5FE">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37662952-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+
+
+
+<p align="center">
+<a href="index.htm">
+<img border="0" src="images/title_image.gif" width="900" height="120"></a></p>
+<center>
+<!-- Begin Publishing Scripts of Flash Menu menu -->
+<div id="fm_placeholder_menu" style="width: 814px; height: 34px ">
+Loading Flash Menu</div><script type="text/javascript" defer>//<![CDATA[
+var fm_menu = function() {
+  function getPos() {
+    var p=[0,0]; var e=document.getElementById('fm_placeholder_menu');
+    do { p[0]+=e.offsetTop; p[1]+=e.offsetLeft; } while (e=e.offsetParent); return p; }
+  function move() {
+    var p=getPos(); var m=document.getElementById('fm_wrapper_menu'); m.style.top=p[0]+'px'; m.style.left=p[1]+'px'; }
+  var create = function() {
+    var s; if (document.all && !window.opera) {
+      s='<object id="fm_menu_menu" width="814px" height="394px" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" '
+        +'codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">'
+        +'<param name="quality" value="high" /><param name="scale" value="noscale" /><param name="salign" value="LT" />'
+        +'<param name="movie" value="menu.swf" /><param name="menu" value="false" />'
+        +'<param name="wmode" value="transparent" /></object>'; }
+    else {
+      s='<embed type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" '
+        +'id="fm_menu_menu" width="814px" height="34px" src="menu.swf" wmode="transparent" '
+        +'flashvars="callback=fm_menu" quality="high" scale="noscale" menu="false" salign="LT" />'; }
+    var p=getPos(); var m=document.createElement('div'); m.id='fm_wrapper_menu'; m.style.position='absolute';
+    m.style.zIndex='100'; m.style.top=p[0]+'px'; m.style.left=p[1]+'px'; m.innerHTML=s;
+    document.body.insertBefore(m, document.body.firstChild); setInterval(move, 500); }(); 
+  return {
+    expand: function() { 
+      document.getElementById('fm_menu_menu').style.height='394px'; },
+    collapse: function() {
+      document.getElementById('fm_menu_menu').style.height='34px'; }};}();//]]></script>
+<!-- End Publishing Scripts of Flash Menu menu --></center>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; height: 13px;" bordercolor="#A4C7F8" width="80%">
+    <tr>
+      <td width="100%" align="center" height="20" bordercolor="#A4C7F8" class="style1">
+      <p><font face="標楷體"><b><script language="javascript" type="text/javascript" src="http://counter1.fc2.com/counter.php?id=13254546&main=1"></script>
+      </b></font><span class="style3">線 性 代 數</span></td>
+    </tr>
+    <tr>
+      <td width="100%" align="center" bordercolor="#A4C7F8" valign="top" class="style1">
+      　<p class="style10"><strong>課程名稱：</strong>線性代數<p class="style10"><strong>授課教師：</strong>王忠信<p class="style10">
+		<strong>必/選修：</strong>必修(學期)<p class="style10"><strong>學分數：</strong>3<p class="style10">
+		<strong>聯絡電話：</strong>(02)2621-2121 #3205<p class="style10"><strong>
+		聯絡信箱：</strong><a href="mailto:au1089@mail.au.edu.tw">au1089@mail.au.edu.tw</a><p class="style10">
+		<strong>辦公室：</strong>5902<p class="style10"><strong>Office Hours：</strong>(三)6,7、(四)6,7<p class="style10">
+		<strong>教學計劃表：</strong><a target="_blank" href="https://docs.google.com/file/d/0B3kp2TJABLycTTJuNjVCUFFJVzg/edit?usp=sharing">線性代數</a><hr>
+		<p class="style22"><strong>====評分方式====</strong></p>
+		<ul class="style12">
+						<li class="style10"><strong>出缺、上課態度&nbsp;&nbsp;&nbsp;
+						</strong><span class="style11"><strong>20%</strong><br>
+						(缺課第一次扣1分,第兩次扣2分...超過四次20%全扣光)</span></li>
+						<li class="style10"><strong>平時成績&nbsp;&nbsp;&nbsp; 10%</strong><ul>
+										<li class="style10">筆記&nbsp;&nbsp;&nbsp; 
+										5%</li>
+										<li class="style10">作業&nbsp;&nbsp;&nbsp; 
+										5%</li>
+										<li class="style10">小考&nbsp;&nbsp;&nbsp; 
+										0~5% (Extra)</li>
+						</ul>
+						</li>
+						<li class="style10"><strong>期中考&nbsp;&nbsp;&nbsp;
+						</strong><span class="style11"><strong>30%</strong></span></li>
+						<li class="style10"><strong>期末考&nbsp;&nbsp;&nbsp; 40</strong><span class="style11">%</span></li>
+		</ul>
+		<p class="style11">
+		<span class="style13"><strong>每週作業繳交期限：</strong></span>星期五12:00前交至辦公室<hr>
+		<p class="style11">
+		<strong><span class="style22">====課程投影片====<br>
+		</span>
+		</strong><span class="style18">(投影片內容僅限本班教學使用)</span><p class="style11">
+		<table style="width: 80%" class="style20" align="center">
+					<tr>
+									<td class="style19" style="width: 145px; height: 31px">
+									<strong>週次/日期</strong></td>
+									<td class="style19" style="height: 31px; width: 357px">
+									<strong>上課內容</strong></td>
+									<td class="style19" style="height: 31px">
+									<strong>投影片連結</strong></td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 31px">
+									W2/0306</td>
+									<td class="style17" style="height: 31px; width: 357px">
+									Ch 1.1 線性方程式系統簡介</td>
+									<td class="style17" style="height: 31px">
+									<a target="_blank" href="https://docs.google.com/file/d/0B3kp2TJABLycbFhuZUhyUXV1bVk/edit?usp=sharing">
+									<img src="images/save.gif" width="21" height="20" class="style16"></a></td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									W3/0313</td>
+									<td class="style17" style="height: 32px; width: 357px">
+									Ch 1.2 高斯消去法與高斯喬登消去法</td>
+									<td class="style17" style="height: 32px">
+									<a href="https://docs.google.com/file/d/0B3kp2TJABLycZU5aWTBHTDYtZ1E/edit?usp=sharing" target="_blank">
+									<img src="images/save.gif" width="21" height="20" class="style16"></a></td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									W4/0320</td>
+									<td class="style17" style="height: 32px; width: 357px">
+									Ch 1.3 線性方程式系統的應用</td>
+									<td class="style17" style="height: 32px">
+									<a target="_blank" href="https://docs.google.com/file/d/0B3kp2TJABLycOVVYbmdmeGxudVk/edit?usp=sharing">
+									<img src="images/save.gif" width="21" height="20" class="style16"></a></td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									W5/0327</td>
+									<td class="style17" style="height: 32px; width: 357px">
+									Ch 2.1 矩陣運算</td>
+									<td class="style17" style="height: 32px">
+									<a target="_blank" href="https://docs.google.com/file/d/0B3kp2TJABLycSWFoR3ctdGZKZDQ/edit?usp=sharing">
+									<img src="images/save.gif" width="21" height="20" class="style16"></a></td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									W7/0410</td>
+									<td class="style17" style="height: 32px; width: 357px">
+									Ch 2.2<br>
+									Ch 2.3</td>
+									<td class="style17" style="height: 32px">
+									<img src="images/save.gif" width="21" height="20" class="style16"></td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									<img src="images/new.gif" class="style16" width="32" height="10">...</td>
+									<td class="style17" style="height: 32px; width: 357px">
+									<a href="https://drive.google.com/folderview?id=0B3kp2TJABLycRTY4ZVp4WXlzYXc&amp;usp=sharing">
+									線性代數投影片共用資料夾</a></td>
+									<td class="style17" style="height: 32px">
+									&nbsp;</td>
+					</tr>
+		</table>
+		<br>
+		<hr>
+		<p class="style11">
+		<strong><span class="style22">====每週作業====</span></strong><table style="width: 80%" class="style20" align="center">
+					<tr>
+									<td class="style19" style="width: 145px; height: 31px">
+									<strong>週次/日期</strong></td>
+									<td class="style19" style="height: 31px; width: 1135px">
+									<strong>作業內容</strong></td>
+									<td class="style19" style="height: 31px; width: 357px">
+									<strong>必要繳交</strong></td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 31px">
+									W2/0306</td>
+									<td class="style17" style="height: 31px; width: 1135px">
+									<strong>Ch 1.1習題：</strong>2, 4, 5, 8, 10, 
+									12, 19, 27, 28, 30, 38, 43, 48, 56, 74, 78, 
+									79, 83</td>
+									<td class="style21" style="height: 31px; width: 357px">
+									是</td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									W3/0313</td>
+									<td class="style17" style="height: 32px; width: 1135px">
+									<strong>Ch 1.2習題：</strong>2, 4, 5, 8, 9, 12, 14, 15, 18, 20, 23, 27, 30</td>
+									<td class="style21" style="height: 32px; width: 357px">
+									是</td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									W4/0320</td>
+									<td class="style17" style="height: 32px; width: 1135px">
+									<strong>Ch 1.2習題：</strong>32, 33, 36, 38, 
+									47, 48, 50, 53, 54, 63, 64</td>
+									<td class="style17" style="height: 32px; width: 357px">
+									否</td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									W5/0327</td>
+									<td class="style17" style="height: 32px; width: 1135px">
+									<strong>Ch 1.3習題：</strong>3, 6, 29, 30, 33<strong><br>
+									Ch 2.1習題：</strong>2, 8, 10, 13, 16, 21, 24, 
+									30, 44, 48, 49, 50, 53, 56, 58, 63</td>
+									<td class="style21" style="height: 32px; width: 357px">
+									是</td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									<img src="images/new.gif" class="style16" width="32" height="10">W7/0410</td>
+									<td class="style17" style="height: 32px; width: 1135px">
+									<strong>Ch 2.2習題：</strong>2, 4, 14, 20, 38, 
+									49, 54, 55, 56, 67, 70</td>
+									<td class="style17" style="height: 32px; width: 357px">
+									否</td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 86px">
+									...</td>
+									<td class="style17" style="height: 86px; width: 1135px">
+									Ch 2.3習題：9, 13, 16, 20, 47, 53, 56, 58<br>
+									Ch 2.4習題：2, 5, 8, 9, 10, 13, 15, 28, 31, 34, 
+									43, 44<br>
+									Ch 3.1習題：4, 6, 8, 11, 15, 16, 20, 28, 33, 
+									46, 52<br>
+									Ch 3.2習題：26, 27, 30, 31, 36<br>
+									Ch 3.3習題：18, 19, 27, 40, 42, 54, 56<br>
+									Ch 3.4習題：5, 6, 7, 26, 27<br>
+									.<br>
+									.<br>
+									.</td>
+									<td class="style17" style="height: 86px; width: 357px">
+									</td>
+					</tr>
+					<tr>
+									<td class="style17" style="width: 145px; height: 32px">
+									&nbsp;</td>
+									<td class="style17" style="height: 32px; width: 1135px">
+									&nbsp;</td>
+									<td class="style17" style="height: 32px; width: 357px">
+									&nbsp;</td>
+					</tr>
+		</table>
+		<p class="style11">
+		&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="100%" align="center" bordercolor="#A4C7F8" style="height: 121px" class="style1">
+		<strong><span class="style24"><a name="exam"></a>期末考題</span><span class="style23"><br>
+		1.一個矩陣求{特徵多項式,解特徵方程式,特徵值與特徵向量}<br>
+		2.一個矩陣轉換基本矩陣乘積<br>
+		3.計算行列式{3階,4階}<br>
+		4.行列式應用題<br>
+		5.幾個向量找出{線性獨立,線性相依},寫出線性組合<br>
+		6.找出基底<br>
+		7.座標變換</span></strong></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center"><font size="2"></p>
+<table style="width: 100%">
+	<tr>
+		<td class="style2">│<a href="WebMap.htm">網站地圖</a>│<a href="index.htm">首頁</a>│<a href="Class1.htm">大一課程</a>│<a href="Class2.htm">大二課程</a>│<a href="Class3.htm">大三課程</a>│<a href="Others.htm">其他資訊</a>│<a href="About.htm">關於我</a>│</td>
+</tr>
+</table>
+<p align="center"><font size="2">a0tim<span style="font-family: arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none"> 
+&copy; </span>2012 ‧中文(台灣) ‧最佳瀏覽解析度1440*900</font></p>
+<p align="center"><font size="2">真理大學數理資訊學院資訊工程學系一百級A班‧黃騰嶢</font></p>
+<p align="center"><a href="mailto:a0tim82326@gmail.com"><font size="2">
+a0tim82326@gmail.com</font></a></p><br>
+線上訪客人數<script language="javascript" type="text/javascript" src="http://counter1.fc2.com/views.php?id=13254546&main=1"></script><noscript><img src="http://counter1.fc2.com/counter_now.php?id=13254546&main=1" /></noscript>
+
+
+
+
+
+
+
+<!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+<script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+<noscript><div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+<script type="text/javascript" src="http://13254546.ranking.fc2.com/analyze.js" charset="utf-8"></script>
+
+</body></html></style>

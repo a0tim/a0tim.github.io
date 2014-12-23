@@ -1,0 +1,99 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.io.*;		//匯入IO函式庫
+
+public class Text1015{
+	public static void main(String args[]){		
+		Console CS = System.console();		//定義CS為Console
+		char[] b1;		//宣告字元陣列b1用來儲存驗證密碼
+		Boolean end = false;	//宣告布林變數end當作迴圈中止條件
+		
+		System.out.println("\t======註冊======");
+		System.out.print("\t-請設定帳號：");
+		String a = CS.readLine();
+		char[] b = CS.readPassword("\t-請設定密碼：");	//宣告字元陣列b並用readPassword的方式儲存密碼
+		
+		do{
+			System.out.println("\n\t======驗證======");
+			System.out.print("\t-請輸入帳號：");
+			String a1 = CS.readLine();
+			b1 = CS.readPassword("\t-請輸入密碼：");
+			if(a.equals(a1)){		//檢查帳號
+				if(new String(b).equals(new String(b1))){		//檢查密碼
+					end = true;		//設定終止變數end為true
+					System.out.println("\t！！登入成功！！");
+				}else{
+					System.out.println("\t！！帳號正確，密碼錯誤，登入失敗！！");
+				}
+			}else{
+				System.out.println("\t！！帳號錯誤，登入失敗！！");
+			}
+		}while(!end);		//終止條件
+	}
+}
+            </pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>

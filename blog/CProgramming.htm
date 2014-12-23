@@ -1,0 +1,621 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+
+
+<head>
+<style type=text/css>
+<!--
+body{
+background-image:url('images/b_02.jpg');
+background-position: 50% 50%;
+background-attachment:fixed;
+background-repeat:no-repeat}
+.style1 {
+				border-collapse: collapse;
+				border-style: solid;
+				border-width: 1px;
+	margin-right: 31px;
+}
+.style2 {
+				font-size: medium;
+				font-weight: bold;
+}
+.style3 {
+				font-size: medium;
+				font-weight: bold;
+				border-style: solid;
+				border-width: 0;
+				background-color: #FFCCFF;
+}
+.style4 {
+				border-style: solid;
+				border-width: 0;
+				background-color: #FFCCFF;
+}
+.style5 {
+				border-style: solid;
+				border-width: 0;
+				background-color: #CCFFCC;
+}
+.style6 {
+				text-align: center;
+				border-width: 0;
+				background-color: #FFFFFF;
+}
+.style7 {
+				text-align: center;
+				border-style: solid;
+				border-width: 0;
+				background-color: #FFFFFF;
+}
+.style8 {
+				border-style: solid;
+				border-width: 0;
+				background-color: #CCFFFF;
+}
+.style9 {
+				font-size: medium;
+	background-color: #CCFFFF;
+}
+.style10 {
+				text-align: left;
+}
+.style11 {
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 0;
+	text-align: center;
+	margin-right: 31px;
+}
+.style12 {
+	text-align: left;
+	margin-left: 40px;
+}
+.style13 {
+				border-style: solid;
+				border-width: 0;
+}
+.style14 {
+				font-weight: bold;
+				border-style: solid;
+				border-width: 0;
+}
+-->
+</style>
+<meta http-equiv="Content-Language" content="zh-tw">
+
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+
+
+
+<title>C 程式設計</title>
+
+
+
+<base target="_self">
+
+
+
+<link rel="icon" href="images/web.ico" type="image/x-icon">
+<link rel="bookmark" href="images/web.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/web.ico" type="image/x-icon">
+</head>
+
+
+
+
+
+
+
+<body bgcolor="#BFE5FE">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37662952-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+
+
+
+<p align="center">
+<a href="index.htm">
+<img border="0" src="images/title_image.gif" width="900" height="120"></a></p>
+<center>
+<!-- Begin Publishing Scripts of Flash Menu menu -->
+<div id="fm_placeholder_menu" style="width: 814px; height: 34px ">
+Loading Flash Menu</div><script type="text/javascript" defer>//<![CDATA[
+var fm_menu = function() {
+  function getPos() {
+    var p=[0,0]; var e=document.getElementById('fm_placeholder_menu');
+    do { p[0]+=e.offsetTop; p[1]+=e.offsetLeft; } while (e=e.offsetParent); return p; }
+  function move() {
+    var p=getPos(); var m=document.getElementById('fm_wrapper_menu'); m.style.top=p[0]+'px'; m.style.left=p[1]+'px'; }
+  var create = function() {
+    var s; if (document.all && !window.opera) {
+      s='<object id="fm_menu_menu" width="814px" height="394px" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" '
+        +'codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">'
+        +'<param name="quality" value="high" /><param name="scale" value="noscale" /><param name="salign" value="LT" />'
+        +'<param name="movie" value="menu.swf" /><param name="menu" value="false" />'
+        +'<param name="wmode" value="transparent" /></object>'; }
+    else {
+      s='<embed type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" '
+        +'id="fm_menu_menu" width="814px" height="34px" src="menu.swf" wmode="transparent" '
+        +'flashvars="callback=fm_menu" quality="high" scale="noscale" menu="false" salign="LT" />'; }
+    var p=getPos(); var m=document.createElement('div'); m.id='fm_wrapper_menu'; m.style.position='absolute';
+    m.style.zIndex='100'; m.style.top=p[0]+'px'; m.style.left=p[1]+'px'; m.innerHTML=s;
+    document.body.insertBefore(m, document.body.firstChild); setInterval(move, 500); }(); 
+  return {
+    expand: function() { 
+      document.getElementById('fm_menu_menu').style.height='394px'; },
+    collapse: function() {
+      document.getElementById('fm_menu_menu').style.height='34px'; }};}();//]]></script>
+<!-- End Publishing Scripts of Flash Menu menu --></center>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#A4C7F8" width="80%" height="571">
+    <tr>
+      <td width="100%" align="center" height="20" bordercolor="#A4C7F8" class="style14">
+      <p><font face="標楷體"><script language="javascript" type="text/javascript" src="http://counter1.fc2.com/counter.php?id=13254546&main=1"></script>
+      <font size="4">C 程 式 設 計</font></font></td>
+    </tr>
+    <tr>
+      <td width="100%" align="center" height="299" bordercolor="#A4C7F8" valign="top" class="style13">
+      　<p class="style10"><strong>課程名稱：</strong>程式設計<p class="style10"><strong>授課教師：</strong>黃信貿<p class="style10">
+		<strong>必/選修：</strong>必修(學年)<p class="style10"><strong>學分數：</strong>3<p class="style10">
+		<strong>教學網站：</strong><p class="style10"><strong>聯絡電話：</strong>(02)2621-2121 #3212<p class="style10">
+		<strong>聯絡信箱：</strong><a href="mailto:xmhuang@au.edu.tw">xmhuang@au.edu.tw</a><p class="style10">
+		<strong>作業FTP：</strong><a href="ftp://140.131.152.13">ftp://140.131.152.13</a><p class="style12">
+		帳號：CCC<p class="style12">
+		密碼：564D<p class="style10">
+		<strong>辦公室：</strong>5909<p class="style10"><strong>Office Hours：----</strong><p class="style10">
+		<strong>教學計劃表：----</strong><hr><p><strong>
+		<span class="style9">====程式設計每週作業====</span></strong><table cellpadding="0" cellspacing="0" bordercolor="#111111" height="1098" class="style1" style="width: 696px">
+    <tr>
+      <td align="center" class="style3" style="width: 104px">
+      <font face="標楷體">作業日期</font></td>
+      <td align="center" style="width: 357px" class="style3">
+      <font face="標楷體">作業內容</font></td>
+      <td align="center" class="style4" style="width: 116px" valign="middle">
+      <font size="5" face="標楷體" class="style2">.C/.Cpp</font></td>
+      <td align="center" style="width: 117px" class="style3" valign="middle">
+      <font face="標楷體">.Exe</font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1007</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">兩數加減乘除</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111007).cpp">20111007.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111007).exe">20111007.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1014</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">三數相加,平均,比大小</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111014).cpp">20111014.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111014).exe">20111014.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1020</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">分數級距</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111020).c">20111020.c</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111020).exe">20111020.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1027</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">分數級距</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111027).cpp">20111027.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111027).exe">20111027.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1028</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">奇數偶數</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111028).cpp">20111028.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111028).exe">20111028.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1201</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">反向輸出</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111201).cpp">20111201.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111201).exe">20111201.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1201-2</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">碼表</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111201)_2.cpp">20111201-2.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111201)_2.exe">20111201-2.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1202</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">鬧鐘</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111202).cpp">20111202.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111202).exe">20111202.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px; height: 27px;">
+      <font size="4">2011-1206</font></td>
+      <td align="center" style="width: 357px; height: 27px;" class="style5">
+      <font size="4">猜數值(20)</font></td>
+      <td align="center" class="style5" style="width: 116px; height: 27px;" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111206).cpp">20111206.cpp</a></font></td>
+      <td align="center" style="width: 117px; height: 27px;" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111206).exe">20111206.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px; height: 32px;">
+      <font size="4">2011-1206-2</font></td>
+      <td align="center" style="width: 357px; height: 32px;" class="style5">
+      <font size="4">陣列使用</font></td>
+      <td align="center" class="style5" style="width: 116px; height: 32px;" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111206)_2.cpp">20111206-2.cpp</a></font></td>
+      <td align="center" style="width: 117px; height: 32px;" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111206)_2.exe">20111206-2.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1208</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4"><i><b>期中補考</b></i>,99乘法倒過來</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111208).cpp">20111208.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111208).exe">20111208.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1209</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">陣列使用</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111209).cpp">20111209.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111209).exe">20111209.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1215</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">1A2B猜數字</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111215).cpp">20111215.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111215).exe">20111215.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2011-1222</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">成績單</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111222).cpp">20111222.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20111222).exe">20111222.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2012-0106</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4">成績單(多個人查詢)</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120106).cpp">20120106.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120106).exe">20120106.exe</a></font></td>
+    </tr>
+    <tr>
+      <td align="center" class="style5" style="width: 104px">
+      <font size="4">2012-0113</font></td>
+      <td align="center" style="width: 357px" class="style5">
+      <font size="4"><i><b>期末考</b></i>,電費計算</font></td>
+      <td align="center" class="style5" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120113).cpp">20120113.cpp</a></font></td>
+      <td align="center" style="width: 117px" class="style5" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120113).exe">20120113.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <font size="4">2012-0216</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">輸入數值,列印出99乘法答案為數值+-2的式子</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120216).cpp">20120216.cpp</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120216).exe">20120216.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <font size="4">2012-0301</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">5數排序</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120301).cpp">20120301.cpp</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120301).exe">20120301.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">2012-0302</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">5數排序</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120302).c">20120302.c</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120302).exe">20120302.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">2012-0308</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">河內塔(加上計數)</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <a href="class1/Cprogramming/(20120308).c"><font size="4">20120308.c</font></a></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <a href="class1/Cprogramming/(20120308).exe"><font size="4">20120308.exe</font></a></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">2012-0315</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">傳值呼叫與傳址呼叫的運用</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <a href="class1/Cprogramming/(20120315).c"><font size="4">20120315.c</font></a></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <a href="class1/Cprogramming/(20120315).exe"><font size="4">20120315.exe</font></a></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">2012-0315-2</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">利用一個函數做兩數加減乘除</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120315)_2.c">20120315_2.c</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120315)_2.exe">      20120315_2.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">2012-0316</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">輸入數值,利用遞迴函數算出其階乘值,以及本身的次方值</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120316).c">20120316.c</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120316).exe">20120316.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">2012-0316-2</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">輸入兩數,利用遞迴函數算出其最大公因數與最小公倍數</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120316)_2.c">20120316_2.c</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120316)_2.exe">      20120316_2.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr">
+
+      <font size="4">&nbsp;2012-0322</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">指定排序方式(科目、順序),將內定成績表重新排序</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120322).c">20120322.c</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120322).exe">20120322.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">
+
+      2012-0329</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">將0322題目改用指標陣列</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120329).c">20120329.c</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120329).exe">20120329.exe</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">
+
+      2012-0419</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">排序五科成績(國英數自社)</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120419).c">20120419.c</a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120419).exe">20120419.exe </a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">
+
+      2012-0426</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">將0419題目學生資料檔案化</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120426).c">20120426.c </a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120426).exe">20120426.exe </a></font></td>
+    </tr>
+    <tr>
+      <td class="style6" style="width: 104px">
+      <font size="4">
+
+      2012-0426</font></td>
+      <td align="center" colspan="2" class="style8">
+      <font size="4">
+
+      學生資料檔案</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/score.txt">score.txt</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">
+
+      2012-0503</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">struct應用</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120503).c">20120503.c </a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120503).exe">20120503.exe </a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <font size="4">
+
+      2012-0503-2</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">學生成績系統,功能:(讀取檔案.列印資料.離開)</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120503)_2.c">20120503-2.c </a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120503)_2.exe">20120503-2.exe </a></font></td>
+    </tr>
+    <tr>
+      <td class="style7" style="width: 104px">
+      <font size="4">
+
+      2012-0503</font></td>
+      <td align="center" colspan="2" class="style8">
+      <font size="4">
+
+      學生資料檔案(適用0510.0524)</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/myscore.txt">myscore.txt</a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <font size="4">
+
+      2012-0510</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">0503-2增加新功能:(新增資料.寫入檔案)</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120510).c">20120510.c </a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120510).exe">20120510.exe </a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <font size="4">
+
+      2012-0524</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">0510增加新功能:(修改/刪除資料)</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120524).c">20120524.c </a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120524).exe">20120524.exe </a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">
+
+      2012-0525</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">貪吃蛇</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120525).c">20120525.c </a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120525).exe">20120525exe </a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      <p dir="ltr"><font size="4">
+
+      2012-0610</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">
+      <font size="4">malloc最終版</font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120610).c">20120610.c </a></font></td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">
+      <font size="4"><a href="class1/Cprogramming/(20120610).exe">20120610exe </a></font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" align="center" style="width: 104px">
+      　</td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 357px">　</td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 116px" valign="middle">　</td>
+      <td bgcolor="#FFFFFF" align="center" style="width: 117px" valign="middle">　</td>
+    </tr>
+    </table>
+  	</td>
+    </tr>
+    <tr>
+      <td width="100%" align="center" bordercolor="#A4C7F8" style="height: 118px" class="style13">　</td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<table style="width: 100%">
+	<tr>
+		<td class="style11">│<a href="WebMap.htm">網站地圖</a>│<a href="index.htm">首頁</a>│<a href="Class1.htm">大一課程</a>│<a href="Class2.htm">大二課程</a>│<a href="Class3.htm">大三課程</a>│<a href="Others.htm">其他資訊</a>│<a href="About.htm">關於我</a>│</td>
+	</tr>
+</table>
+<p align="center"><font size="2">a0tim<span style="font-family: arial, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none"> 
+&copy; </span>2012 ‧中文(台灣) ‧最佳瀏覽解析度1440*900</font></p>
+<p align="center"><font size="2">真理大學數理資訊學院資訊工程學系一百級A班‧黃騰嶢</font></p>
+<p align="center"><a href="mailto:a0tim82326@gmail.com"><font size="2">
+a0tim82326@gmail.com</font></a></p><br>
+線上訪客人數<script language="javascript" type="text/javascript" src="http://counter1.fc2.com/views.php?id=13254546&main=1"></script><noscript><img src="http://counter1.fc2.com/counter_now.php?id=13254546&main=1" /></noscript>
+
+
+
+
+
+
+
+
+<!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+<script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+<noscript><div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+<script type="text/javascript" src="http://13254546.ranking.fc2.com/analyze.js" charset="utf-8"></script>
+
+</body></html></style>

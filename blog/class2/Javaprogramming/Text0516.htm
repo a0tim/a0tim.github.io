@@ -1,0 +1,219 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>    
+        <style>
+			#block {
+				width: 90%;
+				border: 3;
+				margin-left: auto;
+				margin-right: auto;
+				background: rgba(215,200,160,0.9);
+				border-radius: 1em;
+				padding: 1em;
+				font-size: 1.5 rem;
+			}
+			.codeblock {
+				display: block; /* fixes a strange ie margin bug */
+				font-family: Courier New;
+				font-size: 10pt;
+				overflow: auto;
+				background: #DDD url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+				border: 1px solid #ccc;
+				padding: 1px 1px 1px 15px;
+				max-height: 1000px;
+				line-height: 1.2em;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="block" class="font_text" align="center">
+            <div class="codeblock">
+                <pre class="prettyprint lang-java linenums" id="java_lang" style="text-align: left;background-color: #DDD;">
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class Text0516 extends JFrame implements ActionListener{
+	JButton B1,B2,B3,B4,B5,B6;
+	JLabel L1 = new JLabel("我");
+	JLabel L2 = new JLabel("電腦");
+	JLabel L3 = new JLabel("請開始");
+	JLabel L4_1 = new JLabel("贏");
+	JLabel L4_2 = new JLabel("0");
+	JLabel L4_3 = new JLabel("次");
+	JLabel L5_1 = new JLabel("輸");
+	JLabel L5_2 = new JLabel("0");
+	JLabel L5_3 = new JLabel("次");
+	JLabel L6_1 = new JLabel("平手");
+	JLabel L6_2 = new JLabel("0");
+	JLabel L6_3 = new JLabel("次");
+	ImageIcon I1 = new ImageIcon("01.jpg");
+	ImageIcon I2 = new ImageIcon("02.jpg");
+	ImageIcon I3 = new ImageIcon("03.jpg");
+	int ME = 0,COM = 0,WIN = 0,LOSE = 0,NONE = 0;
+	
+	public static void main(String[] args) {
+		new Text0516();
+	}
+	public Text0516(){
+		setBounds(200,50,350,205);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLayout(null);
+		setResizable(false);
+		setTitle("TIM_猜拳遊戲");
+		getContentPane().setBackground(Color.cyan);
+		
+		B1 = new JButton(I1);
+		B1.setBounds(10,5,50,50);
+		B1.addActionListener(this);
+		B2 = new JButton(I2);
+		B2.setBounds(10,60,50,50);
+		B2.addActionListener(this);
+		B3 = new JButton(I3);
+		B3.setBounds(10,115,50,50);
+		B3.addActionListener(this);
+		B4 = new JButton();
+		B4.setBounds(100,60,50,50);
+		B4.setEnabled(false);
+		B5 = new JButton();
+		B5.setBounds(200,60,50,50);
+		B5.setEnabled(false);
+		B6 = new JButton("離開");
+		B6.setBounds(265,135,70,30);
+		B6.setFont(new Font("標楷體", Font.BOLD, 16));
+		B6.addActionListener(this);
+		L1.setBounds(115,30,50,20);
+		L1.setFont(new Font("標楷體", Font.BOLD, 18));
+		L2.setBounds(205,30,50,20);
+		L2.setFont(new Font("標楷體", Font.BOLD, 18));
+		L3.setBounds(140,130,100,20);
+		L3.setFont(new Font("標楷體", Font.BOLD, 18));
+		L4_1.setBounds(285,10,15,15);
+		L4_2.setBounds(302,10,20,15);
+		L4_3.setBounds(320,10,15,15);
+		L5_1.setBounds(285,30,15,15);
+		L5_2.setBounds(302,30,20,15);
+		L5_3.setBounds(320,30,15,15);
+		L6_1.setBounds(273,50,30,15);
+		L6_2.setBounds(302,50,20,15);
+		L6_3.setBounds(320,50,15,15);
+		
+		add(B1);
+		add(B2);
+		add(B3);
+		add(B4);
+		add(B5);
+		add(B6);
+		add(L1);
+		add(L2);
+		add(L3);
+		add(L4_1);
+		add(L4_2);
+		add(L4_3);
+		add(L5_1);
+		add(L5_2);
+		add(L5_3);
+		add(L6_1);
+		add(L6_2);
+		add(L6_3);
+		setVisible(true);
+	}
+	public void update(){
+		L4_2.setText(String.valueOf(WIN));
+		L5_2.setText(String.valueOf(LOSE));
+		L6_2.setText(String.valueOf(NONE));
+	}
+	private void cal(){
+		COM = (int)((Math.random()*10)%3);
+		if(COM==0){
+			B5.setIcon(I1);
+		}else if(COM==1){
+			B5.setIcon(I2);
+		}else{
+			B5.setIcon(I3);
+		}
+		
+		if(ME == COM){
+			NONE++;
+			L3.setText("平手");
+		}else if(ME==0 && COM==1){
+			LOSE++;
+			L3.setText("你輸了");
+		}else if(ME==0 && COM==2){
+			WIN++;
+			L3.setText("你贏了");
+		}else if(ME==1 && COM==0){
+			WIN++;
+			L3.setText("你贏了");
+		}else if(ME==1 && COM==2){
+			LOSE++;
+			L3.setText("你輸了");
+		}else if(ME==2 && COM==0){
+			LOSE++;
+			L3.setText("你輸了");
+		}else if(ME==2 && COM==1){
+			WIN++;
+			L3.setText("你贏了");
+		}
+		update();
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource().equals(B1)){
+			B4.setIcon(I1);
+			ME = 0;
+			cal();
+		}else if(e.getSource().equals(B2)){
+			B4.setIcon(I2);
+			ME = 1;
+			cal();
+		}else if(e.getSource().equals(B3)){
+			B4.setIcon(I3);
+			ME = 2;
+			cal();
+		}else if(e.getSource().equals(B6)){
+			String Str = "贏"+WIN+"\n輸"+LOSE+"\n平手"+NONE;
+			JOptionPane.showMessageDialog(null,Str);
+			System.exit(0);
+		}
+	}
+}
+            </pre>
+            </div>
+        </div>
+        <br>
+    </body>
+
+    <script>
+		/*GOOGLE分析*/
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] ||
+			function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-37662952-1', 'educities.edu.tw');
+		ga('send', 'pageview');
+    </script>
+
+    <!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+    <script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+    <noscript>
+        <div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" />
+        </div>
+    </noscript>
+    <!-- [FC2 Analyzer]  -->
+</html>
