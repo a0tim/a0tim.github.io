@@ -37,6 +37,7 @@
 </script>
 
 
+
 </head>
 
 
@@ -68,7 +69,8 @@
 </ul>
 </nav>
 <div id="gotop"><i class="icon-collapse-top"></i></div>
-<div id="fm2048"><a href="./fm2048"><h1>服貿2048</h1><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_b.jpg" width="250" alt="服貿2048"></a></div>
+<div id="fm2048"><a href="./fm2048"><h1>>>服貿2048<<</h1><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_b.jpg" width="150" alt="服貿2048"></a></div>
+
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
@@ -183,6 +185,18 @@
 <script src="/js/gallery.js"></script>
 
 
+<script type="text/javascript">
+var disqus_shortname = 'yaos';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
 
 <script type="text/javascript">
 $(function(){
@@ -199,6 +213,21 @@ $(function(){
         }
     });
 });
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		$("#fm2048").hover(function(){
+			$("a img", this).stop().animate({
+					width: 300
+				}, 500);
+
+		}, function(){
+			$("a img", this).stop().animate({
+					width: 150
+				}, 200);
+		});
+	});
 </script>
 
 
