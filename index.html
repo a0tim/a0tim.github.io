@@ -1,259 +1,213 @@
-<!DOCTYPE html>
-<html manifest="cache.manifest">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-  <title>服貿2048</title>
+  <meta charset="utf-8">
+  
+  <title>嶢&#39;s Blog</title>
+  <meta name="author" content="Tim-Huang">
+  
+  <meta name="description" content="關於程序生活的點滴">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link href="style/main.css" rel="stylesheet" type="text/css">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <meta property="og:site_name" content="嶢&#39;s Blog"/>
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <style type="text/css">
-@media screen and (min-width: 600px){
-* {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
-#ad {
-	position: relative;
-}
-#ad img, #ad .adBody {
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	right: 0;
-	top: 0;
-}
-#ad img {
-	z-index: 10;
-}
-#ad .adBody {
-	overflow: hidden;
-	background: url(img/adBody.gif) no-repeat right top;
-}
+  
+    <meta property="og:image" content="undefined"/>
+  
 
-}
-@media screen and (max-width: 599px){
-* {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
-#ad {
-	position: relative;
-}
-#ad img, #ad .adBody {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	right: 0;
-	top: 0;
-}
-#ad img {
-	z-index: 10;
-}
-#ad .adBody {
-	overflow: hidden;
-}
-
-}
-</style>
-  <script type="text/javascript">
-	$(function(){
-		// 幫 #ad 加上 hover() 事件
-		$("#ad").hover(function(){	// 當滑鼠移進時..
-			// 先停止未完成的動畫後再進行新的動畫
-			// 圖片放大展示
-			$("a img, a .adBody", this).stop().animate({
-					width: 500,
-					height: 500
-				}, 500);
-
-		}, function(){	// 當滑鼠移出時..
-			// 先停止未完成的動畫後再進行新的動畫
-			// 圖片恢復原狀
-			$("a img, a .adBody", this).stop().animate({
-					width: 100,
-					height: 100
-				}, 200);
-		});
-	});
-</script>
-</head>
-
-<body>
-<div id="ad">
-	<a href="http://fb.com/yaohailong">
-		<img src="img/peel.gif" alt="嶢海龍" />
-		<span class="adBody"></span>
-	</a>
-</div>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- github.io -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-5127175046202916"
-     data-ad-slot="7329709984"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  <div class="container">
-    <div class="heading">
-      <h1 class="title">服貿2048</h1>
-      <div class="scores-container">
-        <div class="score-container">0</div>
-        <div class="best-container">0</div>
-      </div>
-    </div>
-
-    <div class="above-game">
-      <p class="game-intro">想知道下一張卡牌是什麼?玩下去吧~</p>
-      <a class="restart-button">New game</a>
-    </div>
-
-    <div class="game-container">
-      <div class="game-message">
-        <p></p>
-        <div class="lower">
-	        <a class="keep-playing-button">Keep playing</a>
-          <a class="retry-button">Try again!</a>
-        </div>
-      </div>
-
-      <div class="grid-container">
-		<div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-		  <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-		  <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-		  <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-		  <div class="grid-cell"></div>
-        </div>
-      </div>
-
-      <div class="tile-container">
-
-      </div>
-    </div>
-    </br>
-    
- <center>   
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="charset" value="utf-8" >
-<input type="hidden" name="hosted_button_id" value="4FBHMLKGZDXJL">
-<table>
-<tr><td><input type="hidden" name="on0" value="贊助給作者">贊助給作者</td></tr><tr><td><select name="os0">
-	<option value="100元鼓勵">100元鼓勵 NT$100 TWD</option>
-	<option value="500元鼓勵">500元鼓勵 NT$500 TWD</option>
-	<option value="1000元鼓勵">1000元鼓勵 NT$1,000 TWD</option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="TWD">
-<input type="image" src="https://www.paypalobjects.com/zh_TW/TW/i/btn/btn_buynowCC_LG_wCUP.gif" border="0" name="submit" alt="PayPal － 更安全、更簡單的線上付款方式！">
-<img alt="" border="0" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1" height="1">
-</form>
-</center>
-
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=150288681839";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <link href="//img/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="嶢&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
 <script type="text/javascript">
-  window.___gcfg = {lang: 'zh-TW'};
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37662952-5']);
+  
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
 
-<div>
-<div class="fb-like-box" data-href="https://www.facebook.com/YaoHaiLong" data-width="200" data-height="30" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
-<div class="fb-share-button" data-href="http://a0tim.github.io/" data-width="200" data-type="button_count" style="float: right"></div>
-<p><a title="Share to Plurk" href="javascript:void(window.open('http://www.plurk.com/?qualifier=shares&amp;status='.concat(encodeURIComponent(window.location.href)).concat(' ').concat('(').concat(encodeURIComponent(document.title)).concat(')')));"><img title="share" src="http://statics.plurk.com/bda225d234426cccca300c551f60438e.png" alt="" width="97" height="20" align="absmiddle" border="0" /></a> </p>
-<div class="g-plus" data-action="share" data-href="http://a0tim.github.io/" style="float: right"></div>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><img src="/./img/favicon.ico" width=32px/><a href="/">嶢&#39;s Blog</a></h1>
+  <h2><a href="/">嶢海龍Studio<I>&nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp關於程序生活的點滴</I></a></h2>
+</div>
+
+<nav id="main-nav" class="alignright">
+<ul>
+
+  
+    <li><a class="main-nav-link" href="/"><i class=icon-home title='Home'></i></a>
+  
+
+  
+    <li><a class="main-nav-link" href="/about"><i class=icon-user title='About'></i></a>
+  
+
+  
+    <li><a class="main-nav-link" href="/archives"><i class=icon-archive title='Archives'></i></a>
+  
+
+  
+    <li><a class="main-nav-link" href="/tags"><i class=icon-tags title='Tags'></i></a>
+  
+
+</ul>
+</nav>
+<div id="gotop"><i class="icon-collapse-top"></i></div>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-04T04:14:39.834Z"><a href="/2015/10/hello-world/">2015-10-04</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/hello-world/">Hello World</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a><br>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/10/hello-world/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:a0tim.github.io">
+  </form>
+</div>
+
+  
+
+  
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2015/10/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
 </div>
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-document.write('<div class="fb-comments" data-href="'+document.location+'" data-num-posts="5" data-width="500"></div>');
-</script>
-
-    <hr>
-    <p align="center">&nbsp;<a target="_blank" href="http://www.facebook.com/YaoHaiLong"><img src="img/lute.png" width="255" height="255" style="float: right"></a></p>
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> 使用 <strong>方向鍵</strong> 移動卡牌. 當兩張相同卡片碰觸時, 會合併並 <strong>升級!</strong>
-	  </br>
-	  本遊戲純屬娛樂性質
-	</p>
-	
-    </br></br><hr>
-    <p>
-    Created by <a href="http://fb.com/yaohailong" target="_blank">真理資工 嶢海龍</a>, based on <a href="http://gabrielecirulli.com" target="_blank">2048 by Gabriele Cirulli</a>.
-    </p>
+  <div class="widget tag">
+<h3 class="title">連結</h3>
+<ul class="entry">
+<li><a href="http://fb.com/a0tim" title="Tim-Huang's facebook"><i class="icon-facebook-sign"></i> 黃騰嶢 Tim-Huang</a></li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
   </div>
+  <footer id="footer" class="inner"><div>
+  <div class="footer-text">
+    <div class="social-group">
+      
+        <a href="https://github.com/a0tim" target="_blank" title="github"><i class="icon-github"></i></a>
+      
+      
+        <a href="https://plus.google.com/u/0/+黃騰嶢" target="_blank" title="Google+"><i class="icon-google-plus-sign"></i></a>
+      
+      
+        <a href="https://www.facebook.com/a0tim" target="_blank" title="facebook"><i class="icon-facebook-sign"></i></a>
+      
+    </div>
+    
+    <ul class="site-footer-links">
+  	  <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &copy; 2015 Tim-Huang</li>
+  	  <li><a href="mailto://a0tim82326@gmail.com">a0tim82326@gmail.com</a></li>
+	  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	  <li><span id="busuanzi_container_page_pv">本頁閱讀次數:<span id="busuanzi_value_page_pv"></span>次</span></li>
+	  <li><span id="busuanzi_container_site_pv">本站總瀏覽量:<span id="busuanzi_value_site_pv"></span>次</span></li>
+      <li><span id="busuanzi_container_site_uv">本站總訪客數:<span id="busuanzi_value_site_uv"></span>人次</span></li>
+	</ul>
+    
+  </div>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
-  <script src="js/bind_polyfill.js"></script>
-  <script src="js/classlist_polyfill.js"></script>
-  <script src="js/animframe_polyfill.js"></script>
-  <script src="js/keyboard_input_manager.js"></script>
-  <script src="js/html_actuator.js"></script>
-  <script src="js/grid.js"></script>
-  <script src="js/tile.js"></script>
-  <script src="js/local_storage_manager.js"></script>
-  <script src="js/game_manager.js"></script>
-  <script src="js/application.js"></script>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-37662952-2', 'a0tim.github.io');
-  ga('send', 'pageview');
 
+<script type="text/javascript">
+$(function(){
+    $("#gotop").click(function(){
+        jQuery("html,body").animate({
+            scrollTop:0
+        },1000);
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 200){
+            $('#gotop').fadeIn("fast");
+        } else {
+            $('#gotop').stop().fadeOut("fast");
+        }
+    });
+});
 </script>
 
-<!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
-<script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
-<noscript><div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
-<!-- [FC2 Analyzer]  -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 </body>
 </html>

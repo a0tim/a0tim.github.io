@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+  <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <title>服貿2048</title>
+
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <style type="text/css">
+@media screen and (min-width: 600px){
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#ad {
+	position: relative;
+}
+#ad img, #ad .adBody {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	right: 0;
+	top: 0;
+}
+#ad img {
+	z-index: 10;
+}
+#ad .adBody {
+	overflow: hidden;
+	background: url(img/adBody.gif) no-repeat right top;
+}
+
+}
+@media screen and (max-width: 599px){
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#ad {
+	position: relative;
+}
+#ad img, #ad .adBody {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	right: 0;
+	top: 0;
+}
+#ad img {
+	z-index: 10;
+}
+#ad .adBody {
+	overflow: hidden;
+}
+
+}
+</style>
+  <script type="text/javascript">
+	$(function(){
+		// 幫 #ad 加上 hover() 事件
+		$("#ad").hover(function(){	// 當滑鼠移進時..
+			// 先停止未完成的動畫後再進行新的動畫
+			// 圖片放大展示
+			$("a img, a .adBody", this).stop().animate({
+					width: 500,
+					height: 500
+				}, 500);
+
+		}, function(){	// 當滑鼠移出時..
+			// 先停止未完成的動畫後再進行新的動畫
+			// 圖片恢復原狀
+			$("a img, a .adBody", this).stop().animate({
+					width: 100,
+					height: 100
+				}, 200);
+		});
+	});
+</script>
+</head>
+
+<body>
+<div id="ad">
+	<a href="http://fb.com/yaohailong">
+		<img src="img/peel.gif" alt="嶢海龍" />
+		<span class="adBody"></span>
+	</a>
+</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github.io -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-5127175046202916"
+     data-ad-slot="7329709984"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">服貿2048</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+    <div class="above-game">
+      <p class="game-intro">想知道下一張卡牌是什麼?玩下去吧~</p>
+      <a class="restart-button">New game</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep playing</a>
+          <a class="retry-button">Try again!</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+		<div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+		  <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+		  <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+		  <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+		  <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+    </br>
+    
+ <center>   
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="charset" value="utf-8" >
+<input type="hidden" name="hosted_button_id" value="4FBHMLKGZDXJL">
+<table>
+<tr><td><input type="hidden" name="on0" value="贊助給作者">贊助給作者</td></tr><tr><td><select name="os0">
+	<option value="100元鼓勵">100元鼓勵 NT$100 TWD</option>
+	<option value="500元鼓勵">500元鼓勵 NT$500 TWD</option>
+	<option value="1000元鼓勵">1000元鼓勵 NT$1,000 TWD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="TWD">
+<input type="image" src="https://www.paypalobjects.com/zh_TW/TW/i/btn/btn_buynowCC_LG_wCUP.gif" border="0" name="submit" alt="PayPal － 更安全、更簡單的線上付款方式！">
+<img alt="" border="0" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1" height="1">
+</form>
+</center>
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=150288681839";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+  window.___gcfg = {lang: 'zh-TW'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<div>
+<div class="fb-like-box" data-href="https://www.facebook.com/YaoHaiLong" data-width="200" data-height="30" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+<div class="fb-share-button" data-href="http://a0tim.github.io/" data-width="200" data-type="button_count" style="float: right"></div>
+<p><a title="Share to Plurk" href="javascript:void(window.open('http://www.plurk.com/?qualifier=shares&amp;status='.concat(encodeURIComponent(window.location.href)).concat(' ').concat('(').concat(encodeURIComponent(document.title)).concat(')')));"><img title="share" src="http://statics.plurk.com/bda225d234426cccca300c551f60438e.png" alt="" width="97" height="20" align="absmiddle" border="0" /></a> </p>
+<div class="g-plus" data-action="share" data-href="http://a0tim.github.io/" style="float: right"></div>
+</div>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+document.write('<div class="fb-comments" data-href="'+document.location+'" data-num-posts="5" data-width="500"></div>');
+</script>
+
+    <hr>
+    <p align="center">&nbsp;<a target="_blank" href="http://www.facebook.com/YaoHaiLong"><img src="img/lute.png" width="255" height="255" style="float: right"></a></p>
+    <p class="game-explanation">
+      <strong class="important">How to play:</strong> 使用 <strong>方向鍵</strong> 移動卡牌. 當兩張相同卡片碰觸時, 會合併並 <strong>升級!</strong>
+	  </br>
+	  本遊戲純屬娛樂性質
+	</p>
+	
+    </br></br><hr>
+    <p>
+    Created by <a href="http://fb.com/yaohailong" target="_blank">真理資工 嶢海龍</a>, based on <a href="http://gabrielecirulli.com" target="_blank">2048 by Gabriele Cirulli</a>.
+    </p>
+  </div>
+
+  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37662952-2', 'a0tim.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- [FC2 Analyzer] http://analyzer.fc2.com/  -->
+<script language="javascript" src="http://analyzer55.fc2.com/ana/processor.php?uid=2085668" type="text/javascript"></script>
+<noscript><div align="right"><img src="http://analyzer55.fc2.com/ana/icon.php?uid=2085668&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+
+</body>
+</html>

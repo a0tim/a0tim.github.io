@@ -155,7 +155,7 @@ a:hover {
 article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
-  background: rgba(255,255,255,0.2);
+  background: rgba(100,100,120,0.5);
 }
 article.page {
   padding-left: 20px;
