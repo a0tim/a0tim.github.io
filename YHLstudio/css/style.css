@@ -657,7 +657,13 @@ article footer .addthis iframe {
   display: inline-block;
 }
 #footer {
+  background-color: rgba(0,0,0,0.3);
   color: #fff;
+  width: 100%;
+}
+.footer-text {
+  width: 1200px;
+  margin: 0 auto;
   margin-bottom: 50px;
   font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
