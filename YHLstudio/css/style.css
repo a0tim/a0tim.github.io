@@ -19,7 +19,7 @@ body {
   background-attachment: fixed;
   color: #fff;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   text-shadow: 0 0 1px transparent;
 }
 @media screen and (max-width: 1260px) {
@@ -108,7 +108,7 @@ a:hover {
   }
 }
 #header {
-  text-shadow: 0 0 1px #fff;
+  text-shadow: 3px 3px 5px #ccc;
   margin: 50px auto;
 }
 #header a {
@@ -139,6 +139,18 @@ a:hover {
 #header #main-nav ul li {
   float: left;
   margin-left: 30px;
+}
+#gotop {
+  display: none;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  padding: 10px 15px;
+  font-size: 2em;
+  background: #777;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: none;
 }
 article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
@@ -569,12 +581,12 @@ article footer .addthis iframe {
 }
 #sidebar .widget .title {
   padding: 15px 20px;
-  font-size: 1em;
+  font-size: 1.5em;
   border-bottom: 1px solid #ddd;
   font-weight: normal;
 }
 #sidebar .widget .entry {
-  font-size: 0.9em;
+  font-size: 1em;
   padding: 15px 20px;
 }
 #sidebar .widget ul,
@@ -651,11 +663,22 @@ article footer .addthis iframe {
   text-shadow: 0 0 1px #fff;
 }
 .social-group {
-  font-size: 4em;
+  font-size: 3em;
   margin: 5px 0;
 }
 .social-group a {
   padding: 0 4px;
+}
+.site-footer-links {
+  margin: 0;
+  list-style: none;
+}
+.site-footer-links li {
+  display: inline-block;
+  line-height: 16px;
+}
+.site-footer-links li+li {
+  margin-left: 10px;
 }
 .entry .gist {
   background: #eee;

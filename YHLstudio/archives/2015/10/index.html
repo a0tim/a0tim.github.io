@@ -40,18 +40,23 @@
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><img src="/YHLstudio//img/favicon.ico"/><a href="/YHLstudio/">嶢海龍Studio</a></h1>
+  <h1><img src="/YHLstudio//img/favicon.ico" width=32px/><a href="/YHLstudio/">嶢海龍Studio</a></h1>
   <h2><a href="/YHLstudio/"></a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
     
-      <li><a href="/">Home</a></li>
+      <li><a href="/">首頁 | Home</a></li>
+    
+      <li><a href="/YHLstudio/About">簡介 | About</a></li>
+    
+      <li><a href="/YHLstudio/archives">Archives</a></li>
     
   </ul>
   <div class="clearfix"></div>
 </nav>
-<div class="clearfix"></div></header>
+<div class="clearfix"></div>
+<div id="gotop"><i class="icon-collapse-top"></i></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 <h2 class="archive-title">2015/10</h2>
@@ -63,9 +68,9 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2015-10-03T11:59:09.211Z"><a href="/YHLstudio/2015/10/03/hello-world/">2015-10-03</a></time>
+            <time datetime="2015-10-04T04:14:39.834Z"><a href="/YHLstudio/2015/10/04/hello-world/">2015-10-04</a></time>
             
-              <h1 class="title"><a href="/YHLstudio/2015/10/03/hello-world/">Hello World</a></h1>
+              <h1 class="title"><a href="/YHLstudio/2015/10/04/hello-world/">Hello World</a></h1>
             
           </header>
         </div>
@@ -93,30 +98,46 @@
   <ul class="entry">
     
       <li>
-        <a href="/YHLstudio/2015/10/03/hello-world/">Hello World</a>
+        <a href="/YHLstudio/2015/10/04/hello-world/">Hello World</a>
       </li>
     
   </ul>
 </div>
 
+
+  <div class="widget tag">
+<h3 class="title">連結</h3>
+<ul class="entry">
+<li><a href="http://fb.com/a0tim" title="Tim-Huang's facebook"><i class="icon-facebook-sign"></i> 黃騰嶢 Tim-Huang</a></li>
+</ul>
+</div>
 </aside>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  <div class="social-group">
+  <footer id="footer" class="inner"><div>
+  <div class="footer-text">
+    <div class="social-group">
+      
+        <a href="https://github.com/a0tim" target="_blank" title="github"><i class="icon-github"></i></a>
+      
+      
+        <a href="https://plus.google.com/u/0/+黃騰嶢" target="_blank" title="Google+"><i class="icon-google-plus-sign"></i></a>
+      
+      
+        <a href="https://www.facebook.com/a0tim" target="_blank" title="facebook"><i class="icon-facebook-sign"></i></a>
+      
+    </div>
     
-      <a href="https://github.com/a0tim" target="_blank" title="github"><i class="icon-github"></i></a>
-    
-    
-      <a href="https://plus.google.com/u/0/+黃騰嶢" target="_blank" title="Google+"><i class="icon-google-plus-sign"></i></a>
-    
-    
-      <a href="https://www.facebook.com/a0tim" target="_blank" title="facebook"><i class="icon-facebook-sign"></i></a>
+    <ul class="site-footer-links">
+  	  <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &copy; 2015 Tim-Huang</li>
+  	  <li><a href="mailto://a0tim82326@gmail.com">a0tim82326@gmail.com</a></li>
+	  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	  <li><span id="busuanzi_container_page_pv">本頁閱讀次數:<span id="busuanzi_value_page_pv"></span>次</span></li>
+	  <li><span id="busuanzi_container_site_pv">本站總瀏覽量:<span id="busuanzi_value_site_pv"></span>次</span></li>
+      <li><span id="busuanzi_container_site_uv">本站總訪客數:<span id="busuanzi_value_site_uv"></span>人次</span></li>
+	</ul>
     
   </div>
-  
-  Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &copy; 2015 Tim-Huang
-  
 </div>
 <div class="clearfix"></div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -124,6 +145,23 @@
 <script src="/YHLstudio/js/gallery.js"></script>
 
 
+
+<script type="text/javascript">
+$(function(){
+    $("#gotop").click(function(){
+        jQuery("html,body").animate({
+            scrollTop:0
+        },1000);
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 200){
+            $('#gotop').fadeIn("fast");
+        } else {
+            $('#gotop').stop().fadeOut("fast");
+        }
+    });
+});
+</script>
 
 
 <link rel="stylesheet" href="/YHLstudio/fancybox/jquery.fancybox.css" media="screen" type="text/css">
