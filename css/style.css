@@ -151,6 +151,10 @@ a:hover {
   color: #fff;
   cursor: pointer;
   text-shadow: none;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  -webkit-box-shadow: 5px 5px 5px rgba(255,255,255,0.5);
+  box-shadow: 5px 5px 5px rgba(255,255,255,0.5);
 }
 #fm2048 {
   position: fixed;
@@ -159,6 +163,11 @@ a:hover {
   padding: 10px 10px;
   font-size: 0.5em;
   background: rgba(255,255,255,0.2);
+}
+@media screen and (max-width: 1260px) {
+  #fm2048 {
+    display: none;
+  }
 }
 article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
