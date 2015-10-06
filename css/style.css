@@ -164,7 +164,16 @@ a:hover {
   font-size: 0.5em;
   background: rgba(255,255,255,0.2);
 }
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1400px) {
+  #fm2048 {
+    font-size: 0.25em;
+    width: 50px;
+  }
+  #fm2048 img {
+    width: 50px;
+  }
+}
+@media screen and (max-width: 1024px) {
   #fm2048 {
     display: none;
   }
@@ -173,6 +182,7 @@ article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   background: rgba(100,100,120,0.5);
+/*toc*/
 }
 article.page {
   padding-left: 20px;
@@ -191,7 +201,7 @@ article.link .icon:before {
 }
 article.link .title a:after {
   content: '\f08e';
-  color: #fff;
+  color: #ddd;
   font: 12px FontAwesome;
   padding-left: 10px;
   vertical-align: super;
@@ -292,7 +302,7 @@ article header .icon:before {
   text-align: center;
 }
 article header time {
-  color: #fff;
+  color: #ddd;
   font: 0.9em "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   margin-bottom: 5px;
   display: block;
@@ -327,24 +337,22 @@ article .entry .video-container {
   margin-top: 15px;
 }
 article .entry blockquote {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  font-style: italic;
+  margin-left: 30px;
+  border-left: 15px solid #ddd;
+  border-bottom: 2px solid #ddd;
   font-family: "Georgia", serif;
-  font-size: 1.2em;
-  padding: 0 30px 15px;
-  text-align: center;
+  font-size: 0.9em;
+  padding: 0 10px 10px;
+  text-align: left;
 }
 article .entry blockquote footer {
+  text-align: right;
   border-top: none;
-  font-size: 0.8em;
+  font-size: 1em;
   line-height: 1;
-  margin: 20px 0 0;
-  padding-top: 0;
 }
 article .entry blockquote footer cite:before {
   content: '—';
-  color: #ccc;
   padding: 0 0.5em;
 }
 article .entry code,
@@ -419,7 +427,7 @@ article .entry iframe {
 article .entry .caption {
   display: block;
   margin-top: 5px;
-  color: #fff;
+  color: #ddd;
   position: relative;
   font-size: 0.9em;
   padding-left: 25px;
@@ -462,14 +470,14 @@ article footer {
   margin-top: 15px;
   padding-top: 10px;
   border-top: 1px solid #ddd;
-  color: #fff;
+  color: #ddd;
   font-size: 0.9em;
   line-height: 16px;
   position: relative;
   min-height: 16px;
 }
 article footer a {
-  color: #fff;
+  color: #ddd;
 }
 article footer a:hover {
   color: #bedeea;
@@ -513,6 +521,39 @@ article footer .addthis {
 article footer .addthis iframe {
   margin-top: 0;
 }
+.toc-article {
+  background: #333;
+  border: 1px solid #bbb;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  margin: 0 0 0.3em 1em;
+  padding: 1.2em 1em 0 1em;
+  max-width: 25%;
+}
+@media screen and (max-width: 1260px) {
+  .toc-article {
+    display: none;
+  }
+}
+.toc-title {
+  font-size: 120%;
+}
+#toc {
+  line-height: 0.5em;
+  font-size: 0.8em;
+  float: right;
+}
+#toc .toc {
+  padding: 0;
+  margin: 0.5em;
+  line-height: 1.5em;
+}
+#toc .toc li {
+  list-style-type: none;
+}
+#toc .toc-child {
+  margin-left: 1em;
+}
 #comment {
   padding: 20px;
   background: rgba(255,255,255,0.2);
@@ -528,7 +569,7 @@ article footer .addthis iframe {
   display: block;
   padding: 5px 10px;
   background: #ddd;
-  color: #fff;
+  color: #ddd;
   font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
   margin-bottom: 50px;
@@ -550,7 +591,7 @@ article footer .addthis iframe {
   font-family: FontAwesome;
 }
 .archive-title {
-  color: #fff;
+  color: #ddd;
   font-weight: normal;
   margin-bottom: 30px;
   text-shadow: 0 0 1px #fff;
@@ -637,14 +678,14 @@ article footer .addthis iframe {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: #fff;
+  color: #ddd;
 }
 #sidebar .search input:focus {
   color: #fff;
 }
 #sidebar .tag small {
   margin-left: 15px;
-  color: #fff;
+  color: #ddd;
 }
 #sidebar .tag small:before {
   content: '(';
@@ -663,7 +704,7 @@ article footer .addthis iframe {
 #sidebar .twitter small {
   display: block;
   margin-top: 10px;
-  color: #fff;
+  color: #ddd;
   line-height: 1;
 }
 #sidebar .tagcloud .entry {
@@ -673,9 +714,12 @@ article footer .addthis iframe {
   margin-right: 10px;
   display: inline-block;
 }
+#sidebar .fb {
+  margin: 0 auto;
+}
 #footer {
   background-color: rgba(0,0,0,0.3);
-  color: #fff;
+  color: #ddd;
   width: 100%;
 }
 .footer-text {
@@ -731,7 +775,7 @@ article footer .addthis iframe {
 }
 .entry .gist .gist-file .gist-meta {
   background: none;
-  color: #fff;
+  color: #ddd;
   margin-top: 5px;
   padding: 0;
   text-shadow: 0 0 1px #fff;
@@ -757,7 +801,7 @@ figure.highlight {
   font-size: 0.9em;
 }
 figure.highlight figcaption {
-  color: #fff;
+  color: #ddd;
   margin-bottom: 5px;
   text-shadow: 0 0 1px #fff;
 }
@@ -775,7 +819,7 @@ figure.highlight table {
   border-spacing: 0;
 }
 figure.highlight .gutter {
-  color: #fff;
+  color: #ddd;
   padding-right: 15px;
   border-right: 1px solid #ddd;
   text-align: right;

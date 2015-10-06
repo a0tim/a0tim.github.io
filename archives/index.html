@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   
-  <title>彙整 | 嶢&#39;s Blog</title>
+  <title>Архив | 嶢&#39;s Blog</title>
   <meta name="author" content="Tim-Huang">
   
-  <meta name="description" content="關於程序生活的點滴">
+  <meta name="description" content="Life, is coding to build a dream">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -44,7 +44,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><img src="/./img/favicon.ico" width=32px/><a href="/">嶢&#39;s Blog</a></h1>
-  <h2><a href="/">嶢海龍Studio<I>&nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp關於程序生活的點滴</I></a></h2>
+  <h2><a href="/">嶢海龍Studio<I>&nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbspLife, is coding to build a dream</I></a></h2>
 </div>
 
 <nav id="main-nav" class="alignright">
@@ -63,18 +63,22 @@
   
 
   
+    <li><a class="main-nav-link" href="/categories"><i class=icon-bookmark-empty title='Categories'></i></a>
+  
+
+  
     <li><a class="main-nav-link" href="/tags"><i class=icon-tags title='Tags'></i></a>
   
 
 </ul>
 </nav>
 <div id="gotop"><i class="icon-collapse-top"></i></div>
-<div id="fm2048"><a href="./fm2048"><h1>>>服貿2048<<</h1><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_b.jpg" width="150" alt="服貿2048"></a></div>
+<div id="fm2048"><a href="./fm2048"><h1>>>服貿2048<<</h1><img id="fm2048_img" src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_b.jpg" width="150" alt="服貿2048"></a></div>
 
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">彙整</h2>
+<h2 class="archive-title">Архив</h2>
 
 
   <div class="archive">
@@ -83,9 +87,9 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2015-10-05T02:42:00.030Z"><a href="/2015/10/hello-world/">2015-10-05</a></time>
+            <time datetime="2015-10-06T06:25:56.000Z"><a href="/2015/10/服貿2048/">2015-10-06</a></time>
             
-              <h1 class="title"><a href="/2015/10/hello-world/">Hello World</a></h1>
+              <h1 class="title"><a href="/2015/10/服貿2048/">服貿2048小遊戲</a></h1>
             
           </header>
         </div>
@@ -96,16 +100,43 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="search" name="q" results="0" placeholder="Поиск">
     <input type="hidden" name="q" value="site:a0tim.github.io">
   </form>
 </div>
 
   
+<div class="widget tag">
+  <h3 class="title">Категории</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/creation/">創作</a><small>1</small></li>
+  
+  </ul>
+</div>
+
 
   
+<div class="widget tag">
+  <h3 class="title">Метки</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/2048/">2048</a><small>1</small></li>
+  
+    <li><a href="/tags/服貿/">服貿</a><small>1</small></li>
+  
+  </ul>
+</div>
+
 
   
+<div class="widget tagcloud">
+  <h3 class="title">Облако меток</h3>
+  <div class="entry">
+    <a href="/tags/2048/" style="font-size: 10px;">2048</a> <a href="/tags/服貿/" style="font-size: 10px;">服貿</a>
+  </div>
+</div>
+
 
   
 <div class="widget tag">
@@ -113,7 +144,7 @@
   <ul class="entry">
     
       <li>
-        <a href="/2015/10/hello-world/">Hello World</a>
+        <a href="/2015/10/服貿2048/">服貿2048小遊戲</a>
       </li>
     
   </ul>
@@ -125,6 +156,17 @@
 <ul class="entry">
 <li><a href="http://fb.com/a0tim" title="Tim-Huang's facebook"><i class="icon-facebook-sign"></i> 黃騰嶢 Tim-Huang</a></li>
 </ul>
+</div>
+
+  <div class="widget fb">
+  <h3 class="title">FB粉絲頁</h3>
+  <div class="entry">
+  <a href="https://fb.com/yaohailong" target="_blank">
+  <img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10615380_894583250565402_7110295618015129073_n.png?oh=fd203a97245b1be3f494f1da7d2538c3&oe=5692DC0A" width=100px />
+  FB：嶢海龍</a>
+  <hr>
+  <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fyaohailong&width=960&layout=standard&action=like&show_faces=true&share=true&height=80&appId=705644162835492" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:220px;" allowTransparency="true"></iframe>
+  </div>
 </div>
 </aside>
     <div class="clearfix"></div>
@@ -192,14 +234,15 @@ $(function(){
 
 <script type="text/javascript">
 	$(function(){
+	    var width = $("#fm2048_img").width();
 		$("#fm2048").hover(function(){
 			$("a img", this).stop().animate({
-					width: 300
+					width: width*2
 				}, 500);
 
 		}, function(){
 			$("a img", this).stop().animate({
-					width: 150
+					width: width
 				}, 200);
 		});
 	});
