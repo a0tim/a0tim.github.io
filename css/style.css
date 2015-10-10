@@ -131,6 +131,8 @@ a:hover {
   -webkit-box-shadow: 5px 5px 5px rgba(255,255,255,0.5);
   box-shadow: 5px 5px 5px rgba(255,255,255,0.5);
 }
+@media screen and (max-width: 900px) {
+}
 #fm2048 {
   position: fixed;
   left: 0px;
@@ -727,6 +729,7 @@ article footer .toc-child {
   margin: 0 auto;
 }
 #footer {
+  overflow-x: hidden;
   background-color: rgba(0,0,0,0.3);
   color: #ddd;
   width: 100%;
