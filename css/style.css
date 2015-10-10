@@ -566,7 +566,12 @@ article footer .toc-child {
   margin-left: 1em;
 }
 .adsbygoogle {
-  width: 100%;
+  background: #333;
+}
+@media screen and (max-width: 1260px) {
+  .adsbygoogle {
+    width: 100%;
+  }
 }
 #comment {
   padding: 20px;
