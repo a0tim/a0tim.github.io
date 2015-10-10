@@ -565,6 +565,9 @@ article footer #toc .toc li {
 article footer .toc-child {
   margin-left: 1em;
 }
+.adsbygoogle {
+  width: 100%;
+}
 #comment {
   padding: 20px;
   background: rgba(255,255,255,0.2);
