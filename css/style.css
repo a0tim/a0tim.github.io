@@ -10,7 +10,6 @@
   padding: 0;
 }
 body {
-  overflow-x: hidden;
   background-image: url("../img/background.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -500,7 +499,7 @@ article footer a:before {
   vertical-align: middle;
 }
 article footer a.more-link:before {
-  content: '\f054';
+  content: '\f054\f054';
 }
 article footer a.comment-link:before {
   content: '\f075';
@@ -532,7 +531,11 @@ article footer .addthis {
 article footer .addthis iframe {
   margin-top: 0;
 }
-article footer .toc-article {
+.more {
+  font-size: 1.5em;
+  color: #fd0;
+}
+.toc-article {
   background: #333;
   border: 1px solid #bbb;
   -webkit-border-radius: 15px;
@@ -542,27 +545,27 @@ article footer .toc-article {
   max-width: 25%;
 }
 @media screen and (max-width: 1260px) {
-  article footer .toc-article {
+  .toc-article {
     display: none;
   }
 }
-article footer .toc-title {
+.toc-title {
   font-size: 120%;
 }
-article footer #toc {
+#toc {
   line-height: 0.5em;
   font-size: 0.8em;
   float: right;
 }
-article footer #toc .toc {
+#toc .toc {
   padding: 0;
   margin: 0.5em;
   line-height: 1.5em;
 }
-article footer #toc .toc li {
+#toc .toc li {
   list-style-type: none;
 }
-article footer .toc-child {
+#toc .toc-child {
   margin-left: 1em;
 }
 @media screen and (max-width: 1260px) {
@@ -734,7 +737,6 @@ article footer .toc-child {
   margin: 0 auto;
 }
 #footer {
-  overflow-x: hidden;
   background-color: rgba(0,0,0,0.3);
   color: #ddd;
   width: 100%;
