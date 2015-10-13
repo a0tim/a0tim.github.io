@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://a0tim.github.io/2015/10/hexo-1/</loc>
+    <lastmod>2015-10-13T03:47:23.939Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://a0tim.github.io/about/index.html</loc>
+    <lastmod>2015-10-11T05:31:28.098Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://a0tim.github.io/2015/10/%E6%9C%8D%E8%B2%BF2048/</loc>
     <lastmod>2015-10-10T09:35:24.165Z</lastmod>
   </url>
@@ -19,11 +29,6 @@
   <url>
     <loc>http://a0tim.github.io/archives/index.html</loc>
     <lastmod>2015-10-05T15:04:58.374Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://a0tim.github.io/about/index.html</loc>
-    <lastmod>2015-10-05T15:04:35.811Z</lastmod>
   </url>
   
 </urlset>
