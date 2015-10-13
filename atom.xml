@@ -4,7 +4,7 @@
   <subtitle><![CDATA[嶢海龍Studio]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://a0tim.github.io/"/>
-  <updated>2015-10-13T07:48:47.491Z</updated>
+  <updated>2015-10-13T07:54:24.517Z</updated>
   <id>http://a0tim.github.io/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://a0tim.github.io/2015/10/sql-identify-reseed/"/>
     <id>http://a0tim.github.io/2015/10/sql-identify-reseed/</id>
     <published>2015-10-13T06:08:29.000Z</published>
-    <updated>2015-10-13T07:48:47.491Z</updated>
+    <updated>2015-10-13T07:54:24.517Z</updated>
     <content type="html"><![CDATA[<h1 id="前言">前言</h1><ul>
 <li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清除，並且重新從初始值開始編號。<img src="https://farm6.staticflickr.com/5831/22129111435_d05504841a.jpg" width="500" alt="sql-identify-reseed_1">
+<a id="more"></a>
 <img src="https://farm1.staticflickr.com/657/21508037553_73d193b436.jpg" width="500" alt="sql-identify-reseed_2">
 </li>
 </ul>
@@ -38,7 +39,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="前言">前言</h1><ul>
-<li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清]]>
+<li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清除，並且重新從初始值開始編號。<img src="https://farm6.staticflickr.com/5831/22129111435_d05504841a.jpg" width="500" alt="sql-identify-reseed_1">]]>
+    
     </summary>
     
       <category term="SQL" scheme="http://a0tim.github.io/tags/SQL/"/>

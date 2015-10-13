@@ -94,24 +94,14 @@
       
         <h1 id="前言">前言</h1><ul>
 <li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清除，並且重新從初始值開始編號。<img src="https://farm6.staticflickr.com/5831/22129111435_d05504841a.jpg" width="500" alt="sql-identify-reseed_1">
-<img src="https://farm1.staticflickr.com/657/21508037553_73d193b436.jpg" width="500" alt="sql-identify-reseed_2">
-</li>
-</ul>
-<h1 id="方法">方法</h1><ul>
-<li>只要執行下列語法即可將資料表內的自動編號值歸零 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DBCC CHECKIDENT(資料表名稱, RESEED, 0)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="結論">結論</h1><ul>
-<li>雖然語法使用上簡單又快速，但是必須特別小心，如果資料表內還有資料存在，使用語法過後會造成下一筆資料新增時發生<green>主鍵重複</green>的錯誤</li>
-</ul>
-<h1 id="參考資料">參考資料</h1><ul>
-<li><a href="https://technet.microsoft.com/zh-tw/library/ms176057.aspx" target="_blank" rel="external">DBCC CHECKIDENT (Transact-SQL)</a></li>
-</ul>
-
       
     </div>
     <footer>
       
+        
+          <div class="alignleft">
+            <a href="/2015/10/sql-identify-reseed/#more" class="more-link more">Read More</a>
+          </div>
         
         
       
