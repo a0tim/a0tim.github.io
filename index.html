@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>嶢&#39;s Blog</title>
+  <meta name="author" content="Tim-Huang">
+  
+  <meta name="description" content="Life, is coding to build a dream">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="嶢&#39;s Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="//img/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="嶢&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37662952-5']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=fire-animation">
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><img src="/./img/favicon.ico" width=32px/><a href="/">嶢&#39;s Blog</a></h1>
+  <h2><a href="/">嶢海龍Studio<I>&nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbspLife, is coding to build a dream</I></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+<ul>
+
+  
+    <li><a class="main-nav-link" href="/"><i class=icon-home title='Home'></i></a>
+  
+
+  
+    <li><a class="main-nav-link" href="/about"><i class=icon-user title='About'></i></a>
+  
+
+  
+    <li><a class="main-nav-link" href="/archives"><i class=icon-archive title='Archives'></i></a>
+  
+
+</ul>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-13T06:08:29.000Z"><a href="/2015/10/sql-identify-reseed/">2015-10-13</a></time>
+  
+  <div class="tags">
+    <a href="/tags/SQL/">SQL</a>
+  </div>
+
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/sql-identify-reseed/">SQL Server 自動編號欄位歸零</a></h1>
+  
+
+    </header>
+	 
+    <div class="entry">
+      <!-- Table of Contents -->
+      
+      
+        <h1 id="前言">前言</h1><ul>
+<li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清除，並且重新從初始值開始編號。<img src="https://farm6.staticflickr.com/5831/22129111435_d05504841a.jpg" width="500" alt="sql-identify-reseed_1">
+<img src="https://farm1.staticflickr.com/657/21508037553_73d193b436.jpg" width="500" alt="sql-identify-reseed_2">
+</li>
+</ul>
+<h1 id="方法">方法</h1><ul>
+<li>只要執行下列語法即可將資料表內的自動編號值歸零 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DBCC CHECKIDENT(資料表名稱, RESEED, 0)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="結論">結論</h1><ul>
+<li>雖然語法使用上簡單又快速，但是必須特別小心，如果資料表內還有資料存在，使用語法過後會造成下一筆資料新增時發生<green>主鍵重複</green>的錯誤</li>
+</ul>
+<h1 id="參考資料">參考資料</h1><ul>
+<li><a href="https://technet.microsoft.com/zh-tw/library/ms176057.aspx" target="_blank" rel="external">DBCC CHECKIDENT (Transact-SQL)</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-11T05:43:49.000Z"><a href="/2015/10/hexo-1/">2015-10-11</a></time>
+  
+  <div class="tags">
+    <a href="/tags/blog/">blog</a>, <a href="/tags/hexo/">hexo</a>
+  </div>
+
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/hexo-1/">使用HEXO(一)：簡單創造自己的部落格</a></h1>
+  
+
+    </header>
+	 
+    <div class="entry">
+      <!-- Table of Contents -->
+      
+      
+        <img src="https://farm6.staticflickr.com/5651/21465015793_44870057a9.jpg" width="500" alt="Hexo X GitHub">
+<p>有人說，喜歡<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">寫部落格的人會經歷三種階段</a></p>
+<blockquote>
+<p><strong>第一階段</strong>，剛接觸Blog，選擇了一個免費部落格服務來寫(例如:<a href="https://www.pixnet.net/blog">Pixnet</a>、<a href="http://blog.xuite.net/">Xuite</a>、<a href="http://blog.udn.com/">udn</a>等)<br><strong>第二階段</strong>，發現免費空間限制太多，乾脆自己購買域名及空間，建造自己的專屬部落格(例如:<a href="https://zh-tw.wordpress.com/">WordPress</a>、<a href="http://www.joomla.org.tw/">Joomla</a>等)<br><strong>第三階段</strong>，覺得要獨自經營網站太麻煩，最好在保留控制權的前提下，讓別人來管，自己只負責寫文章(例如:<a href="https://hexo.io/">Hexo</a>、<a href="http://jekyllrb.com">Jekyll</a>)</p>
+</blockquote>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/10/hexo-1/#more" class="more-link more">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-06T06:25:56.000Z"><a href="/2015/10/服貿2048/">2015-10-06</a></time>
+  
+  <div class="tags">
+    <a href="/tags/2048/">2048</a>, <a href="/tags/服貿/">服貿</a>
+  </div>
+
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/服貿2048/">服貿2048小遊戲</a></h1>
+  
+
+    </header>
+	 
+    <div class="entry">
+      <!-- Table of Contents -->
+      
+      
+        <h2 id="&gt;&gt;&gt;服貿2048_遊戲連結&lt;&lt;&lt;"><a href="http://a0tim.github.io/fm2048">&gt;&gt;&gt;服貿2048 遊戲連結&lt;&lt;&lt;</a></h2><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_n.jpg" width="320" class="photo" alt="服貿2048">
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/10/服貿2048/#more" class="more-link more">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:a0tim.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分類</h3>
+  <div class="entry">
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/creation/">創作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">程式</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/SQL/">SQL</a><span class="category-list-count">1</span></li></ul></li></ul>
+  </div>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">標籤雲</h3>
+  <div class="entry">
+    <a href="/tags/2048/" style="font-size: 13px; color: #7dc3de">2048</a> <a href="/tags/SQL/" style="font-size: 13px; color: #7dc3de">SQL</a> <a href="/tags/blog/" style="font-size: 13px; color: #7dc3de">blog</a> <a href="/tags/hexo/" style="font-size: 13px; color: #7dc3de">hexo</a> <a href="/tags/服貿/" style="font-size: 13px; color: #7dc3de">服貿</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <div class="font-effect-fire-animation">
+  <h3 class="title">最新文章</h3>
+  </div>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2015/10/sql-identify-reseed/">SQL Server 自動編號欄位歸零</a>
+      </li>
+    
+      <li>
+        <a href="/2015/10/hexo-1/">使用HEXO(一)：簡單創造自己的部落格</a>
+      </li>
+    
+      <li>
+        <a href="/2015/10/服貿2048/">服貿2048小遊戲</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">連結</h3>
+<ul class="entry">
+<li><a href="http://fb.com/a0tim" title="Tim-Huang's facebook"><i class="icon-facebook-sign"></i> 黃騰嶢 Tim-Huang</a></li>
+</ul>
+</div>
+
+  <div class="widget fb">
+  <h3 class="title">FB粉絲頁</h3>
+  <div class="entry">
+  <a href="https://fb.com/yaohailong" target="_blank">
+  <img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10615380_894583250565402_7110295618015129073_n.png?oh=fd203a97245b1be3f494f1da7d2538c3&oe=5692DC0A" width=100px />
+  FB：嶢海龍</a>
+  <hr>
+  <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fyaohailong&width=960&layout=standard&action=like&show_faces=true&share=true&height=80&appId=705644162835492" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:220px;" allowTransparency="true"></iframe>
+  </div>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div>
+  <div class="footer-text">
+    <div class="social-group">
+      
+        <a href="https://github.com/a0tim" target="_blank" title="github"><i class="icon-github"></i></a>
+      
+      
+        <a href="https://plus.google.com/u/0/+黃騰嶢" target="_blank" title="Google+"><i class="icon-google-plus-sign"></i></a>
+      
+      
+        <a href="https://www.facebook.com/a0tim" target="_blank" title="facebook"><i class="icon-facebook-sign"></i></a>
+      
+    </div>
+    
+    <ul class="site-footer-links">
+  	  <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &copy; 2015 Tim-Huang</li>
+  	  <li><a href="mailto://a0tim82326@gmail.com">a0tim82326@gmail.com</a></li>
+	</ul>
+	<ul class="site-footer-links">
+	  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	  <li><span id="busuanzi_container_page_pv">本頁閱讀次數: <span id="busuanzi_value_page_pv" style="color:#ddaa22;"></span> 次</span></li>
+	  <li><span id="busuanzi_container_site_pv">本站總瀏覽量: <span id="busuanzi_value_site_pv" style="color:#ddaa22;"></span> 次</span></li>
+      <li><span id="busuanzi_container_site_uv">本站總訪客數: <span id="busuanzi_value_site_uv" style="color:#ddaa22;"></span> 人次</span></li>
+	</ul>
+    
+  </div>
+</div>
+
+<div id="gotop"><i class="icon-collapse-top"></i></div>
+<div id="fm2048"><a href="./fm2048"><h1>>>服貿2048<<</h1><img id="fm2048_img" src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_b.jpg" width="150" alt="服貿2048"></a></div>
+<div id="">
+
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'yaos';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+<script type="text/javascript">
+$(function(){
+    $("#gotop").click(function(){
+        jQuery("html,body").animate({
+            scrollTop:0
+        },1000);
+    });
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 200){
+            $('#gotop').fadeIn("fast");
+        } else {
+            $('#gotop').stop().fadeOut("fast");
+        }
+    });
+});
+</script>
+
+<script type="text/javascript">
+	$(function(){
+	    var width = $("#fm2048_img").width();
+		$("#fm2048").hover(function(){
+			$("a img", this).stop().animate({
+					width: width*2
+				}, 500);
+
+		}, function(){
+			$("a img", this).stop().animate({
+					width: width
+				}, 200);
+		});
+	});
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

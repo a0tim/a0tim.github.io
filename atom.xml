@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[嶢's Blog]]></title>
+  <subtitle><![CDATA[嶢海龍Studio]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://a0tim.github.io/"/>
+  <updated>2015-10-13T07:48:47.491Z</updated>
+  <id>http://a0tim.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Tim-Huang]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[SQL Server 自動編號欄位歸零]]></title>
+    <link href="http://a0tim.github.io/2015/10/sql-identify-reseed/"/>
+    <id>http://a0tim.github.io/2015/10/sql-identify-reseed/</id>
+    <published>2015-10-13T06:08:29.000Z</published>
+    <updated>2015-10-13T07:48:47.491Z</updated>
+    <content type="html"><![CDATA[<h1 id="前言">前言</h1><ul>
+<li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清除，並且重新從初始值開始編號。<img src="https://farm6.staticflickr.com/5831/22129111435_d05504841a.jpg" width="500" alt="sql-identify-reseed_1">
+<img src="https://farm1.staticflickr.com/657/21508037553_73d193b436.jpg" width="500" alt="sql-identify-reseed_2">
+</li>
+</ul>
+<h1 id="方法">方法</h1><ul>
+<li>只要執行下列語法即可將資料表內的自動編號值歸零 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DBCC CHECKIDENT(資料表名稱, RESEED, 0)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="結論">結論</h1><ul>
+<li>雖然語法使用上簡單又快速，但是必須特別小心，如果資料表內還有資料存在，使用語法過後會造成下一筆資料新增時發生<green>主鍵重複</green>的錯誤</li>
+</ul>
+<h1 id="參考資料">參考資料</h1><ul>
+<li><a href="https://technet.microsoft.com/zh-tw/library/ms176057.aspx" target="_blank" rel="external">DBCC CHECKIDENT (Transact-SQL)</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="前言">前言</h1><ul>
+<li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清]]>
+    </summary>
+    
+      <category term="SQL" scheme="http://a0tim.github.io/tags/SQL/"/>
+    
+      <category term="程式" scheme="http://a0tim.github.io/categories/programming/"/>
+    
+      <category term="SQL" scheme="http://a0tim.github.io/categories/programming/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[使用HEXO(一)：簡單創造自己的部落格]]></title>
+    <link href="http://a0tim.github.io/2015/10/hexo-1/"/>
+    <id>http://a0tim.github.io/2015/10/hexo-1/</id>
+    <published>2015-10-11T05:43:49.000Z</published>
+    <updated>2015-10-13T03:47:23.939Z</updated>
+    <content type="html"><![CDATA[<img src="https://farm6.staticflickr.com/5651/21465015793_44870057a9.jpg" width="500" alt="Hexo X GitHub">
+<p>有人說，喜歡<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">寫部落格的人會經歷三種階段</a></p>
+<blockquote>
+<p><strong>第一階段</strong>，剛接觸Blog，選擇了一個免費部落格服務來寫(例如:<a href="https://www.pixnet.net/blog" target="_blank" rel="external">Pixnet</a>、<a href="http://blog.xuite.net/" target="_blank" rel="external">Xuite</a>、<a href="http://blog.udn.com/" target="_blank" rel="external">udn</a>等)<br><strong>第二階段</strong>，發現免費空間限制太多，乾脆自己購買域名及空間，建造自己的專屬部落格(例如:<a href="https://zh-tw.wordpress.com/" target="_blank" rel="external">WordPress</a>、<a href="http://www.joomla.org.tw/" target="_blank" rel="external">Joomla</a>等)<br><strong>第三階段</strong>，覺得要獨自經營網站太麻煩，最好在保留控制權的前提下，讓別人來管，自己只負責寫文章(例如:<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>、<a href="http://jekyllrb.com" target="_blank" rel="external">Jekyll</a>)</p>
+</blockquote>
+<a id="more"></a>
+<p>原本這一切似乎都停滯在第二階段，但自從<a href="https://github.com" target="_blank" rel="external">GitHub</a>開放了靜態網頁存取功能後，越來越多人利用這樣一個免費的功能架設自己的網站。<br>GitHub是一個使用Git做版本控制的共享虛擬主機服務，於2008年4月上線服務，迄今已有超過九百萬使用者與2110萬程式庫，已經成為了世界上最大的代碼存放網站。<br>不過，雖說這樣的方法是免費的，使用上還是限制在<strong>“靜態網頁”</strong>，但是這對純粹寫寫文章的部落客來說卻已相當足夠了！</p>
+<h1 id="註冊GitHub_取得Page空間">註冊GitHub 取得Page空間</h1><p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub官方教學</a></p>
+<h2 id="建立Repo">建立Repo</h2><ul>
+<li>到 <a href="https://github.com/new" target="_blank" rel="external">https://github.com/new</a> 以你的帳號建立一個新的repository，如果是使用免費帳號的話，只能建立公開(Public)的Repo，但對於我們現在要使用的功能來說，不論如何還是要選擇公開的才能讓訪客存取網頁。<br><img src="https://farm1.staticflickr.com/737/21465601513_3ae7c1bfae.jpg" width="500" alt="Create Repo">
+</li>
+</ul>
+<h2 id="啟動頁面自動解析(automatic_page_generator)">啟動頁面自動解析(automatic page generator)</h2><ul>
+<li>進入剛才創立的Repo</li>
+<li>進入設定(Setting)頁面</li>
+<li>找到 <block>GitHub Pages</block> 後按下 <block>Automatic page generator</block> ，接著大約要十分鐘後就可以訪問頁面了，網址是 <green>http ://<em>[帳號]</em>.github.io/<em>[Repo名]</em></green></li>
+</ul>
+<h1 id="安裝Hexo">安裝Hexo</h1><h2 id="安裝Git">安裝Git</h2><ul>
+<li>Windows: <a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a></li>
+<li>Mac    : <a href="https://git-scm.com/download/mac" target="_blank" rel="external">https://git-scm.com/download/mac</a></li>
+<li>Linux  : <code>sudo apt-get install git-core</code></li>
+</ul>
+<h2 id="安裝Node-js">安裝Node.js</h2><ul>
+<li>下載並安裝Node.js: <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a></li>
+<li>安裝Hexo: <code>npm install -g hexo</code></li>
+<li>安裝Hexo套件: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-ejs --save</span><br><span class="line">npm install hexo-renderer-marked@<span class="number">0.2</span> --save</span><br><span class="line">npm install hexo-renderer-stylus@<span class="number">0.2</span> --save</span><br><span class="line">npm install hexo-generator-feed@<span class="number">1</span> --save</span><br><span class="line">npm install hexo-generator-sitemap@<span class="number">1</span> --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="設定環境">設定環境</h1><ul>
+<li>建立一個用來放置Hexo相關文件的資料夾</li>
+<li>進入資料夾內後使用指令來初始化這個目錄成為Hexo資料夾 <code>hexo init</code></li>
+<li><p>設置SSH-KEY</p>
+<ol>
+<li>輸入使用者資訊<br><code>git config --global user.email &quot;EMAIL&quot;</code><br><code>git config --global user.name &quot;NAME&quot;</code></li>
+<li>製作Key <green>(Win用戶請開啟git bash)</green><br><code>ssh-keygen -t rsa -C &quot;EMAIL&quot;</code></li>
+<li><p>輸入密碼</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):<span class="variable">&lt;輸入密碼&gt;</span></span><br><span class="line">Enter same passphrase again:<span class="variable">&lt;再次輸入密碼&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>將SSH-KEY加到GitHub</p>
+<ul>
+<li>打開剛才建立的金鑰檔案 <block>id_rsa.pub</block> ，複製所有內容至剪貼簿</li>
+<li>進入GitHub網頁並登入，點選 <block>Account Setting</block> 到帳號設定頁面，點 <block>SSH Public Keys</block> &gt;&gt; <block>add another public keys</block></li>
+<li>貼上剪貼簿裡剛才複製的金鑰內容後，點擊 <block>add key</block> 就完成設定了</li>
+</ul>
+</li>
+<li>接著再輸入指令測試Key是否新增成功 <code>ssh -T git@github.com</code><br>如果有出現類似以下的歡迎訊息則代表成功<br><block>Hi XXX! You have successfully authenticated, but GitHub does not provide shell access.</block></li>
+</ol>
+</li>
+<li>設定Hexo參數<br>打開放置Hexo相關文件的資料夾，開啟<block>_config.yml</block>修改以下內容<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attribute">title</span>: <span class="regexp">/標題(會顯示在網頁標題與頁首)/</span></span><br><span class="line"><span class="attribute">subtitle</span>: <span class="regexp">/子標題(顯示在頁首)/</span></span><br><span class="line"><span class="attribute">description</span>: <span class="regexp">/內容描述(給搜尋引擎看的)/</span></span><br><span class="line"><span class="attribute">author</span>: <span class="regexp">/作者(顯示在頁尾)/</span></span><br><span class="line"><span class="attribute">language</span>: <span class="regexp">/網站預設語言(台灣:zh-tw)/</span></span><br><span class="line"><span class="attribute">timezone</span>: <span class="regexp">/時區(預設使用你電腦的時區)/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attribute">url</span>: <span class="regexp">/網站的網域位址/</span></span><br><span class="line"><span class="attribute">root</span>: <span class="regexp">/網站根目錄/</span></span><br><span class="line"><span class="attribute">permalink</span>: <span class="regexp">/文章目錄(預設使用 YYYY\MM\DD\文章名稱)/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attribute">theme</span>: <span class="regexp">/網站的佈景主題/</span></span><br><span class="line">       (可以到<span class="string">"https://hexo.io/themes/"</span>下載喜歡的佈景放置到 theme 目錄裡)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: <span class="regexp">/發佈型態/</span> 例如(git、heroku、rsync、openshift、ftpsync)</span><br><span class="line">    <span class="attribute">repository</span>: <span class="regexp">/部署位置/</span> 例如(git<span class="property">@github</span>.<span class="attribute">com</span>:帳號/REPO名.git)</span><br><span class="line">    <span class="attribute">branch</span>: <span class="regexp">/分支/</span> 例如(master、gh-pages)</span><br><span class="line">    <span class="attribute">message</span>: <span class="regexp">/部署訊息/</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="常用命令與部署">常用命令與部署</h1><ul>
+<li>上述動作都做完後可以嘗試開始撰寫第一篇文章<br> <code>hexo new 文章型態 文章名稱</code>新增一篇文章<br> 文章型態預設有 page(頁面)、post(文章)、draft(草稿)，如果省略型態不輸入則預設為post<br> <blue>page</blue>不會出現在首頁裡，可以拿來撰寫如”About”之類的頁面<br> <blue>post</blue>則是一般的文章，新增之後會在<block>/source/_posts</block>資料夾內建立<block>文章名稱.md</block>檔案，Hexo的頁面皆是以這種Markdown格式來撰寫<br> <blue>draft</blue>是草稿，如果你的文章太長一次編輯不完，又不想讓訪客看到未編輯完的文章，可以選擇新增draft來撰寫，草稿會被儲存在<block>/source/_drafts</block>資料夾內，文章編輯完畢要公開時透過指令來完成<code>hexo publish draft 文章名稱</code></li>
+<li><code>hexo generate</code>生成靜態網頁文件存放於<block>public</block>目錄裡，簡寫成<code>hexo g</code></li>
+<li><code>hexo server</code>發佈前可以使用hexo的server功能來預覽網站，簡寫成<code>hexo s</code></li>
+<li><code>hexo deploy</code>最後是將靜態檔案部署到指定的位置，簡寫成<code>hexo d</code></li>
+</ul>
+<h1 id="Hexo目錄結構">Hexo目錄結構</h1><pre><code>├── <span class="class">.deploy</span>         <span class="comment">//部署時產生的暫存資料夾</span>
+├── public          <span class="comment">//生成的靜態網頁文件存放路徑</span>
+├── source
+│    ├── _drafts       --草稿的Markdown文件
+│    └── _posts        --文章的Markdown文件
+├── themes          <span class="comment">//佈景主題文件</span>
+│    ├── languages     --語言字串
+│    ├── layout        --網頁架構
+│    ├── source
+│    │    ├── css
+│    │    ├── fancybox
+│    │    └── js
+│    └── _config<span class="class">.yml</span>   --佈景主題設定參數
+└── _config<span class="class">.yml</span>     <span class="comment">//Hexo設定參數</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<img src="https://farm6.staticflickr.com/5651/21465015793_44870057a9.jpg" width="500" alt="Hexo X GitHub">
+<p>有人說，喜歡<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">寫部落格的人會經歷三種階段</a></p>
+<blockquote>
+<p><strong>第一階段</strong>，剛接觸Blog，選擇了一個免費部落格服務來寫(例如:<a href="https://www.pixnet.net/blog">Pixnet</a>、<a href="http://blog.xuite.net/">Xuite</a>、<a href="http://blog.udn.com/">udn</a>等)<br><strong>第二階段</strong>，發現免費空間限制太多，乾脆自己購買域名及空間，建造自己的專屬部落格(例如:<a href="https://zh-tw.wordpress.com/">WordPress</a>、<a href="http://www.joomla.org.tw/">Joomla</a>等)<br><strong>第三階段</strong>，覺得要獨自經營網站太麻煩，最好在保留控制權的前提下，讓別人來管，自己只負責寫文章(例如:<a href="https://hexo.io/">Hexo</a>、<a href="http://jekyllrb.com">Jekyll</a>)</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="blog" scheme="http://a0tim.github.io/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://a0tim.github.io/tags/hexo/"/>
+    
+      <category term="HEXO" scheme="http://a0tim.github.io/categories/HEXO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[服貿2048小遊戲]]></title>
+    <link href="http://a0tim.github.io/2015/10/%E6%9C%8D%E8%B2%BF2048/"/>
+    <id>http://a0tim.github.io/2015/10/服貿2048/</id>
+    <published>2015-10-06T06:25:56.000Z</published>
+    <updated>2015-10-10T09:35:24.165Z</updated>
+    <content type="html"><![CDATA[<h2 id="&gt;&gt;&gt;服貿2048_遊戲連結&lt;&lt;&lt;"><a href="http://a0tim.github.io/fm2048">&gt;&gt;&gt;服貿2048 遊戲連結&lt;&lt;&lt;</a></h2><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_n.jpg" width="320" class="photo" alt="服貿2048">
+<a id="more"></a>
+<pre><code><span class="number">2014</span>年<span class="number">3</span>月，當時<span class="number">2048</span>遊戲正夯，是一套消磨時間與智力的益智遊戲
+透過簡單的操作方式將方塊融合升級
+看似容易卻又相當困難
+我當時也迷上了這款遊戲
+至於為什麼會把這個遊戲改寫成<span class="string">"服貿版"</span>
+純粹只是因為太陽花學運事件的熱門程度
+台灣的媒體嘛
+一件事情可以連續播報一整個月也不足為奇
+某天玩<span class="number">2048</span>時又看到了相關新聞
+因此就動了改寫的念頭XD
+</code></pre><h2 id="故事背景">故事背景</h2><blockquote><p>3月17日下午內政委員會中<br>中國國民黨立法委員張慶忠以30秒時間宣布完成《海峽兩岸服務貿易協議》的委員會審查<br>2014年3月18日至4月10日間<br>臺灣的大學生與公民團體共同發起佔領立法院的社會運動抗議草率的審查程序<br>之後有400多名學生趁著警員不備，而進入立法院內靜坐抗議</p>
+<footer><strong>維基百科</strong><cite>太陽花學運</cite></footer></blockquote>
+<ul>
+<li><i class="icon-book"></i><a href="https://zh.wikipedia.org/wiki/海峽兩岸服務貿易協議" target="_blank" rel="external"> wiki-海峽兩岸服務貿易協議</a></li>
+<li><i class="icon-book"></i><a href="https://zh.wikipedia.org/wiki/太陽花學運" target="_blank" rel="external"> wiki-太陽花學運</a></li>
+</ul>
+<p>2014年3月18日晚間開始，抗議服貿協議黑箱運作的台灣學生佔領立法院議事廳，之後引發一連串大規模衝突，是為<strong>太陽花學運</strong>，又稱<strong>318學運</strong>、<strong>佔領國會事件</strong>等<br>其中發生了種種事件，例如:</p>
+<ol>
+<li><img src="https://farm6.staticflickr.com/5809/21810313499_e036fe1ae4_n.jpg" width="320" alt="323佔領行政院事件鎮暴警力濫權"></li>
+<li><img src="https://farm6.staticflickr.com/5784/21810326859_a30d24d238_n.jpg" width="320" alt="行政院副秘書長蕭家淇控訴其太陽餅及蛋糕遭竊"></li>
+<li><img src="https://farm1.staticflickr.com/657/21809098290_7f43d71026_n.jpg" width="320" alt="前立委邱毅誤認向日葵為香蕉">
+</li>
+</ol>
+<h2 id="遊戲來源">遊戲來源</h2><p><a href="https://github.com/gabrielecirulli/2048" target="_blank" rel="external">2048 by Gabriele Cirulli</a><br><img src="https://cloud.githubusercontent.com/assets/1175750/8614312/280e5dc2-26f1-11e5-9f1f-5891c3ca8b26.png" width="250"><br>具維基百科上記載<br><blockquote><p>《2048》是一款單人線上和移動端遊戲，由19歲的義大利人Gabriele Cirulli於2014年3月開發。<br>作者在自己的github上宣稱遊戲設計源自一個類似的遊戲《1024》和Saming開發的《2048》<br>而1024的靈感來自於移動端遊戲Threes!。</p>
+<footer><strong>維基百科</strong><cite>2048</cite></footer></blockquote></p>
+<h2 id="相關推薦">相關推薦</h2><p><a href="https://briian.com/18960/ecfa2048.html" target="_blank" rel="external">重灌狂人briian</a><br><img src="https://farm1.staticflickr.com/663/21881146949_0229ba5ba9.jpg" width="500" alt="服貿2048_重灌狂人"></p>
+<p><a href="http://www.appledaily.com.tw/realtimenews/article/new/20140424/384852/" target="_blank" rel="external">蘋果日報</a><br><img src="https://farm1.staticflickr.com/741/21445197964_03223fbd43.jpg" width="500" alt="服貿2048_蘋果日報"></p>
+<p><a href="http://www.setn.com/News.aspx?NewsID=18784" target="_blank" rel="external">三立新聞</a><br><img src="https://farm1.staticflickr.com/734/21446897033_76139cb004.jpg" width="500" alt="服貿2048_三立新聞網"></p>
+<p><a href="https://tw.news.yahoo.com/服貿版2048-更能挑戰你的功力-110755196.html" target="_blank" rel="external">Yahoo!奇摩新聞</a><br><img src="https://farm1.staticflickr.com/734/21879858400_08407cd087.jpg" width="500" alt="服貿2048_Yahoo奇摩新聞"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="&gt;&gt;&gt;服貿2048_遊戲連結&lt;&lt;&lt;"><a href="http://a0tim.github.io/fm2048">&gt;&gt;&gt;服貿2048 遊戲連結&lt;&lt;&lt;</a></h2><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_n.jpg" width="320" class="photo" alt="服貿2048">]]>
+    
+    </summary>
+    
+      <category term="2048" scheme="http://a0tim.github.io/tags/2048/"/>
+    
+      <category term="服貿" scheme="http://a0tim.github.io/tags/%E6%9C%8D%E8%B2%BF/"/>
+    
+      <category term="創作" scheme="http://a0tim.github.io/categories/creation/"/>
+    
+  </entry>
+  
+</feed>
