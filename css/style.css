@@ -146,6 +146,17 @@ green {
     margin-right: 0;
   }
 }
+#blogad {
+  max-height: 100%;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+}
+@media screen and (max-width: 1550px) {
+  #blogad {
+    display: none;
+  }
+}
 #gotop {
   display: none;
   position: fixed;
@@ -167,7 +178,7 @@ green {
 #fm2048 {
   position: fixed;
   left: 0px;
-  top: 15%;
+  top: 10%;
   padding: 10px 10px;
   font-size: 0.6em;
   background: rgba(255,255,255,0.2);
@@ -853,9 +864,6 @@ article footer .addthis iframe {
 #sidebar .tagcloud a {
   margin-right: 10px;
   display: inline-block;
-}
-#sidebar .fb {
-  margin: 0 auto;
 }
 #sidebar .fb a {
   font-size: 1.5em;
