@@ -275,7 +275,7 @@
 <input type="image" src="https://www.paypalobjects.com/zh_TW/TW/i/btn/btn_buynowCC_LG_wCUP.gif" border="0" name="submit" alt="PayPal － 更安全、更簡單的線上付款方式！">
 <img alt="" border="0" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1" height="1">
 </form>
-
+<a href="http://author.bloggerads.net/01_join_read.aspx?refid=20411&amp;id=20151014000005" target="_blank"><img src="http://author.bloggerads.net/referrals/ian19920803_120x60_ps.gif" border="0" width="220px"/></a>
   </ul>
 </div>
 
@@ -312,7 +312,7 @@
 
 <div id="gotop"><i class="icon-collapse-top"></i></div>
 <div id="fm2048"><a href="./fm2048"><h1>>>服貿2048<<</h1><img id="fm2048_img" src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_b.jpg" width="150" alt="服貿2048"></a></div>
-<div id="blogad"><script type="text/javascript" src="http://js1.bloggerads.net/showads.aspx?blogid=20151014000007&amp;charset=utf-8"></script></div>
+<div id="blogad"><div id="blogadcontent"><script type="text/javascript" src="http://js1.bloggerads.net/showads.aspx?blogid=20151014000007&amp;charset=utf-8"></script></div><div id="colsead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div></div>
 
 <div class="clearfix"></div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -339,20 +339,20 @@ var disqus_shortname = 'yaos';
 
 
 <script type="text/javascript">
-$(function(){
-    $("#gotop").click(function(){
-        jQuery("html,body").animate({
-            scrollTop:0
-        },1000);
-    });
-    $(window).scroll(function() {
-        if ( $(this).scrollTop() > 200){
-            $('#gotop').fadeIn("fast");
-        } else {
-            $('#gotop').stop().fadeOut("fast");
-        }
-    });
-});
+	$(function(){
+		$("#gotop").click(function(){
+			jQuery("html,body").animate({
+				scrollTop:0
+			},1000);
+		});
+		$(window).scroll(function() {
+			if ( $(this).scrollTop() > 200){
+				$('#gotop').fadeIn("fast");
+			} else {
+				$('#gotop').stop().fadeOut("fast");
+			}
+		});
+	});
 </script>
 
 <script type="text/javascript">
@@ -367,6 +367,25 @@ $(function(){
 			$("a img", this).stop().animate({
 					width: width
 				}, 200);
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		var isHide = false;
+		$("#colsead").click(function(){
+			if(isHide){
+				$("#blogad").animate({
+					top : '-650px'
+				}, 600, 'swing');
+				isHide = false;
+			}else{
+				$("#blogad").animate({
+					top : '0px'
+				}, 600, 'swing');
+				isHide = true;
+			}
 		});
 	});
 </script>

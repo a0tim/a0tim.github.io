@@ -152,6 +152,11 @@ green {
   right: 0px;
   top: 0px;
 }
+#blogad #colsead {
+  cursor: pointer;
+  background-color: rgba(50,50,50,0.5);
+  text-align: center;
+}
 @media screen and (max-width: 1550px) {
   #blogad {
     display: none;
