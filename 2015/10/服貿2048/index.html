@@ -169,14 +169,15 @@
 
 <div id="ads">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- 大橫幅 -->
-  <ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
+<!-- ad1 -->
+<ins class="adsbygoogle"
+     style="display:block"
      data-ad-client="ca-pub-5127175046202916"
-     data-ad-slot="2944377183"></ins>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+     data-ad-slot="6865899180"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 <section id="comment">
   <h1 class="title">留言</h1>
@@ -200,11 +201,11 @@
 
 </div></div>
     <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜尋">
-    <input type="hidden" name="q" value="site:a0tim.github.io">
-  </form>
+  <div class="search" id="site_search">
+	<div class="form-group">
+		<input type="search" id="local-search-input" name="q" results="0" placeholder="搜尋" class="st-search-input st-default-search-input form-control"/>
+    </div>  
+    <div id="local-search-result"></div>
 </div>
 
   
@@ -220,28 +221,28 @@
 <div class="widget tagcloud">
   <h3 class="title">標籤雲</h3>
   <div class="entry">
-    <a href="/tags/2048/" style="font-size: 13px; color: #7dc3de">2048</a> <a href="/tags/SQL/" style="font-size: 13px; color: #7dc3de">SQL</a> <a href="/tags/blog/" style="font-size: 13px; color: #7dc3de">blog</a> <a href="/tags/hexo/" style="font-size: 13px; color: #7dc3de">hexo</a> <a href="/tags/服貿/" style="font-size: 13px; color: #7dc3de">服貿</a>
+    <a href="/tags/2048/" style="font-size: 13px; color: #9be32d">2048</a> <a href="/tags/SQL/" style="font-size: 13px; color: #9be32d">SQL</a> <a href="/tags/blog/" style="font-size: 13px; color: #9be32d">blog</a> <a href="/tags/hexo/" style="font-size: 13px; color: #9be32d">hexo</a> <a href="/tags/服貿/" style="font-size: 13px; color: #9be32d">服貿</a>
   </div>
 </div>
 
 
   
-<div class="widget tag">
+<div class="widget posts">
   <div class="font-effect-fire-animation">
   <h3 class="title">最新文章</h3>
   </div>
   <ul class="entry">
     
       <li>
-        <a href="/2015/10/sql-identify-reseed/">SQL Server 自動編號欄位歸零</a>
+        <i class="icon-paper-clip"></i>  <a href="/2015/10/sql-identify-reseed/">SQL Server 自動編號欄位歸零</a>
       </li>
     
       <li>
-        <a href="/2015/10/hexo-1/">使用HEXO(一)：簡單創造自己的部落格</a>
+        <i class="icon-paper-clip"></i>  <a href="/2015/10/hexo-1/">使用HEXO(一)：簡單創造自己的部落格</a>
       </li>
     
       <li>
-        <a href="/2015/10/服貿2048/">服貿2048小遊戲</a>
+        <i class="icon-paper-clip"></i>  <a href="/2015/10/服貿2048/">服貿2048小遊戲</a>
       </li>
     
   </ul>
@@ -258,11 +259,10 @@
   <div class="widget fb">
   <h3 class="title">FB粉絲頁</h3>
   <div class="entry">
-  <a href="https://fb.com/yaohailong" target="_blank">
-  <img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10615380_894583250565402_7110295618015129073_n.png?oh=fd203a97245b1be3f494f1da7d2538c3&oe=5692DC0A" width=100px />
-  FB：嶢海龍</a>
+  <img src="/img/lute.png" width=150px />
+  <a href="https://fb.com/yaohailong" target="_blank">Facebook：嶢海龍</a>
   <hr>
-  <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fyaohailong&width=960&layout=standard&action=like&show_faces=true&share=true&height=80&appId=705644162835492" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:220px;" allowTransparency="true"></iframe>
+  <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fyaohailong&width=960&layout=standard&action=like&show_faces=true&share=true&height=80&appId=705644162835492" frameborder="0" style="border:none; overflow:auto; width:100%; height:200px;" allowTransparency="true"></iframe>
   </div>
 </div>
 </aside>
@@ -304,6 +304,11 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">      
+  var path = "/search.xml";
+  searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
 
 
 <script type="text/javascript">

@@ -361,7 +361,7 @@ article header .title {
   font-weight: normal;
 }
 article header .title a {
-  color: #fff;
+  color: #4cf;
 }
 article header .title a:hover {
   color: #bedeea;
@@ -410,6 +410,9 @@ article .entry h5,
 article .entry h6,
 article .entry .video-container {
   margin-top: 15px;
+}
+article .entry a {
+  color: #bedeea;
 }
 article .entry blockquote {
   margin-left: 30px;
@@ -641,6 +644,10 @@ article footer .addthis iframe {
 #toc .toc-child {
   margin-left: 1em;
 }
+#toc .toc-child li {
+  white-space: nowrap;
+  overflow: hidden;
+}
 @media screen and (max-width: 1260px) {
   .ads {
     display: none;
@@ -714,7 +721,7 @@ article footer .addthis iframe {
 }
 #sidebar {
   width: 270px;
-  line-height: 1.8em;
+  line-height: 1.5em;
 }
 @media screen and (max-width: 900px) {
   #sidebar {
@@ -786,6 +793,27 @@ article footer .addthis iframe {
 #sidebar .search input:focus {
   color: #fff;
 }
+#sidebar .search #local-search-result {
+  background: rgba(50,50,50,0.6);
+  line-height: 1.2em;
+  max-height: 400px;
+  overflow: auto;
+}
+#sidebar .search #local-search-result a {
+  color: #4e4;
+}
+#sidebar .search #local-search-result li {
+  margin-bottom: 20px;
+  max-height: 100px;
+  overflow: hidden;
+}
+#sidebar .search #local-search-result li em {
+  background-color: #f00;
+}
+#sidebar .search #local-search-result p {
+  font-size: 0.6em;
+  line-height: 1.1em;
+}
 #sidebar .tag small {
   margin-left: 15px;
   color: #ccc;
@@ -820,6 +848,14 @@ article footer .addthis iframe {
 #sidebar .fb {
   margin: 0 auto;
 }
+#sidebar .fb a {
+  font-size: 1.5em;
+  background-color: #3b5998;
+}
+#sidebar .fb img {
+  display: table;
+  margin: 0 auto;
+}
 #sidebar .category-list .category-list-count {
   margin-left: 8px;
   font-size: 0.8em;
@@ -830,6 +866,10 @@ article footer .addthis iframe {
 }
 #sidebar .category-list .category-list-count:after {
   content: ')';
+}
+#sidebar .posts li {
+  line-height: 1em;
+  padding-top: 10px;
 }
 #footer {
   background-color: rgba(0,0,0,0.3);

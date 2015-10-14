@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[嶢's Blog]]></title>
-  <subtitle><![CDATA[嶢海龍Studio]]></subtitle>
-  <link href="/atom.xml" rel="self"/>
-  <link href="http://a0tim.github.io/"/>
-  <updated>2015-10-14T01:49:16.067Z</updated>
-  <id>http://a0tim.github.io/</id>
+<search>
   
-  <author>
-    <name><![CDATA[Tim-Huang]]></name>
+  
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[SQL Server 自動編號欄位歸零]]></title>
-    <link href="http://a0tim.github.io/2015/10/sql-identify-reseed/"/>
-    <id>http://a0tim.github.io/2015/10/sql-identify-reseed/</id>
-    <published>2015-10-13T06:08:29.000Z</published>
-    <updated>2015-10-14T01:49:16.067Z</updated>
-    <content type="html"><![CDATA[<h1 id="前言">前言</h1><ul>
+    <entry>
+      <title><![CDATA[SQL Server 自動編號欄位歸零]]></title>
+      <url>http://a0tim.github.io/2015/10/sql-identify-reseed/</url>
+      <content type="html"><![CDATA[<h1 id="前言">前言</h1><ul>
 <li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清除，並且重新從初始值開始編號。<img src="https://farm6.staticflickr.com/5831/22129111435_d05504841a.jpg" width="500" alt="sql-identify-reseed_1">
 <a id="more"></a>
 <img src="https://farm1.staticflickr.com/657/21508037553_73d193b436.jpg" width="500" alt="sql-identify-reseed_2">
@@ -37,27 +23,12 @@
 <li><a href="https://technet.microsoft.com/zh-tw/library/ms176057.aspx" target="_blank" rel="external">DBCC CHECKIDENT (Transact-SQL)</a></li>
 </ul>
 ]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="前言">前言</h1><ul>
-<li>在設計資料表的時候常常為了方便會把主鍵(Primary Key)型態指定為int，並且將<block>識別規格</block>開啟，用來自動替主鍵編上不重複且遞增的號碼。<br>但當測試完畢準備上線後，就會希望能將這些資料清除，並且重新從初始值開始編號。<img src="https://farm6.staticflickr.com/5831/22129111435_d05504841a.jpg" width="500" alt="sql-identify-reseed_1">]]>
+    </entry>
     
-    </summary>
-    
-      <category term="SQL" scheme="http://a0tim.github.io/tags/SQL/"/>
-    
-      <category term="程式" scheme="http://a0tim.github.io/categories/programming/"/>
-    
-      <category term="SQL" scheme="http://a0tim.github.io/categories/programming/SQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[使用HEXO(一)：簡單創造自己的部落格]]></title>
-    <link href="http://a0tim.github.io/2015/10/hexo-1/"/>
-    <id>http://a0tim.github.io/2015/10/hexo-1/</id>
-    <published>2015-10-11T05:43:49.000Z</published>
-    <updated>2015-10-13T03:47:23.939Z</updated>
-    <content type="html"><![CDATA[<img src="https://farm6.staticflickr.com/5651/21465015793_44870057a9.jpg" width="500" alt="Hexo X GitHub">
+    <entry>
+      <title><![CDATA[使用HEXO(一)：簡單創造自己的部落格]]></title>
+      <url>http://a0tim.github.io/2015/10/hexo-1/</url>
+      <content type="html"><![CDATA[<img src="https://farm6.staticflickr.com/5651/21465015793_44870057a9.jpg" width="500" alt="Hexo X GitHub">
 <p>有人說，喜歡<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">寫部落格的人會經歷三種階段</a></p>
 <blockquote>
 <p><strong>第一階段</strong>，剛接觸Blog，選擇了一個免費部落格服務來寫(例如:<a href="https://www.pixnet.net/blog" target="_blank" rel="external">Pixnet</a>、<a href="http://blog.xuite.net/" target="_blank" rel="external">Xuite</a>、<a href="http://blog.udn.com/" target="_blank" rel="external">udn</a>等)<br><strong>第二階段</strong>，發現免費空間限制太多，乾脆自己購買域名及空間，建造自己的專屬部落格(例如:<a href="https://zh-tw.wordpress.com/" target="_blank" rel="external">WordPress</a>、<a href="http://www.joomla.org.tw/" target="_blank" rel="external">Joomla</a>等)<br><strong>第三階段</strong>，覺得要獨自經營網站太麻煩，最好在保留控制權的前提下，讓別人來管，自己只負責寫文章(例如:<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>、<a href="http://jekyllrb.com" target="_blank" rel="external">Jekyll</a>)</p>
@@ -129,30 +100,12 @@
 │    └── _config<span class="class">.yml</span>   --佈景主題設定參數
 └── _config<span class="class">.yml</span>     <span class="comment">//Hexo設定參數</span>
 </code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<img src="https://farm6.staticflickr.com/5651/21465015793_44870057a9.jpg" width="500" alt="Hexo X GitHub">
-<p>有人說，喜歡<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">寫部落格的人會經歷三種階段</a></p>
-<blockquote>
-<p><strong>第一階段</strong>，剛接觸Blog，選擇了一個免費部落格服務來寫(例如:<a href="https://www.pixnet.net/blog">Pixnet</a>、<a href="http://blog.xuite.net/">Xuite</a>、<a href="http://blog.udn.com/">udn</a>等)<br><strong>第二階段</strong>，發現免費空間限制太多，乾脆自己購買域名及空間，建造自己的專屬部落格(例如:<a href="https://zh-tw.wordpress.com/">WordPress</a>、<a href="http://www.joomla.org.tw/">Joomla</a>等)<br><strong>第三階段</strong>，覺得要獨自經營網站太麻煩，最好在保留控制權的前提下，讓別人來管，自己只負責寫文章(例如:<a href="https://hexo.io/">Hexo</a>、<a href="http://jekyllrb.com">Jekyll</a>)</p>
-</blockquote>]]>
+    </entry>
     
-    </summary>
-    
-      <category term="blog" scheme="http://a0tim.github.io/tags/blog/"/>
-    
-      <category term="hexo" scheme="http://a0tim.github.io/tags/hexo/"/>
-    
-      <category term="HEXO" scheme="http://a0tim.github.io/categories/HEXO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[服貿2048小遊戲]]></title>
-    <link href="http://a0tim.github.io/2015/10/%E6%9C%8D%E8%B2%BF2048/"/>
-    <id>http://a0tim.github.io/2015/10/服貿2048/</id>
-    <published>2015-10-06T06:25:56.000Z</published>
-    <updated>2015-10-10T09:35:24.165Z</updated>
-    <content type="html"><![CDATA[<h2 id="&gt;&gt;&gt;服貿2048_遊戲連結&lt;&lt;&lt;"><a href="http://a0tim.github.io/fm2048">&gt;&gt;&gt;服貿2048 遊戲連結&lt;&lt;&lt;</a></h2><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_n.jpg" width="320" class="photo" alt="服貿2048">
+    <entry>
+      <title><![CDATA[服貿2048小遊戲]]></title>
+      <url>http://a0tim.github.io/2015/10/%E6%9C%8D%E8%B2%BF2048/</url>
+      <content type="html"><![CDATA[<h2 id="&gt;&gt;&gt;服貿2048_遊戲連結&lt;&lt;&lt;"><a href="http://a0tim.github.io/fm2048">&gt;&gt;&gt;服貿2048 遊戲連結&lt;&lt;&lt;</a></h2><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_n.jpg" width="320" class="photo" alt="服貿2048">
 <a id="more"></a>
 <pre><code><span class="number">2014</span>年<span class="number">3</span>月，當時<span class="number">2048</span>遊戲正夯，是一套消磨時間與智力的益智遊戲
 透過簡單的操作方式將方塊融合升級
@@ -184,17 +137,8 @@
 <p><a href="http://www.setn.com/News.aspx?NewsID=18784" target="_blank" rel="external">三立新聞</a><br><img src="https://farm1.staticflickr.com/734/21446897033_76139cb004.jpg" width="500" alt="服貿2048_三立新聞網"></p>
 <p><a href="https://tw.news.yahoo.com/服貿版2048-更能挑戰你的功力-110755196.html" target="_blank" rel="external">Yahoo!奇摩新聞</a><br><img src="https://farm1.staticflickr.com/734/21879858400_08407cd087.jpg" width="500" alt="服貿2048_Yahoo奇摩新聞"></p>
 ]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="&gt;&gt;&gt;服貿2048_遊戲連結&lt;&lt;&lt;"><a href="http://a0tim.github.io/fm2048">&gt;&gt;&gt;服貿2048 遊戲連結&lt;&lt;&lt;</a></h2><img src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_n.jpg" width="320" class="photo" alt="服貿2048">]]>
+    </entry>
     
-    </summary>
-    
-      <category term="2048" scheme="http://a0tim.github.io/tags/2048/"/>
-    
-      <category term="服貿" scheme="http://a0tim.github.io/tags/%E6%9C%8D%E8%B2%BF/"/>
-    
-      <category term="創作" scheme="http://a0tim.github.io/categories/creation/"/>
-    
-  </entry>
   
-</feed>
+  
+</search>
