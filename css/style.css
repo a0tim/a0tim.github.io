@@ -147,20 +147,15 @@ green {
   }
 }
 #blogad {
-  max-height: 100%;
   position: fixed;
   right: 0px;
   top: 0px;
 }
-#blogad #colsead {
+#blogad .closead {
+  padding: 5px 0;
   cursor: pointer;
   background-color: rgba(50,50,50,0.5);
   text-align: center;
-}
-@media screen and (max-width: 900px) {
-  #blogad {
-    display: none;
-  }
 }
 #gotop {
   display: none;
@@ -536,10 +531,10 @@ article .entry .caption {
   color: #ccc;
   position: relative;
   font-size: 0.9em;
-  padding-left: 25px;
+  padding-left: 30px;
 }
 article .entry .caption:before {
-  content: '\f040';
+  content: '\f03e';
   position: absolute;
   font: 1.3em FontAwesome;
   position: absolute;
@@ -785,7 +780,7 @@ article footer .addthis iframe {
 #sidebar .widget ul dl,
 #sidebar .widget ol dl,
 #sidebar .widget dl dl {
-  line-height: 0.8em;
+  line-height: 1em;
   margin-left: 20px;
 }
 #sidebar .widget ul ul li:before,
@@ -797,7 +792,8 @@ article footer .addthis iframe {
 #sidebar .widget ul dl li:before,
 #sidebar .widget ol dl li:before,
 #sidebar .widget dl dl li:before {
-  content: '> ';
+  color: #ccc;
+  content: '\f068  ';
 }
 #sidebar .search {
   margin-bottom: 30px;
@@ -889,9 +885,52 @@ article footer .addthis iframe {
 #sidebar .category-list .category-list-count:after {
   content: ')';
 }
+#sidebar .posts {
+  font-family: FontAwesome;
+}
 #sidebar .posts li {
   line-height: 1em;
   padding-top: 10px;
+}
+#sidebar .posts li:before {
+  color: #ccc;
+  content: '\f0a1  ';
+}
+#sidebar .categories ul,
+#sidebar .categories ol,
+#sidebar .categories dl {
+  font-family: FontAwesome;
+  list-style: none;
+}
+#sidebar .categories ul li:before,
+#sidebar .categories ol li:before,
+#sidebar .categories dl li:before {
+  color: #ccc;
+  content: '\f02e  ';
+}
+#sidebar .categories ul ul,
+#sidebar .categories ol ul,
+#sidebar .categories dl ul,
+#sidebar .categories ul ol,
+#sidebar .categories ol ol,
+#sidebar .categories dl ol,
+#sidebar .categories ul dl,
+#sidebar .categories ol dl,
+#sidebar .categories dl dl {
+  line-height: 1em;
+  margin-left: 20px;
+}
+#sidebar .categories ul ul li:before,
+#sidebar .categories ol ul li:before,
+#sidebar .categories dl ul li:before,
+#sidebar .categories ul ol li:before,
+#sidebar .categories ol ol li:before,
+#sidebar .categories dl ol li:before,
+#sidebar .categories ul dl li:before,
+#sidebar .categories ol dl li:before,
+#sidebar .categories dl dl li:before {
+  color: #ccc;
+  content: '\f068  ';
 }
 /*FOOTER 頁尾*/
 #footer {
