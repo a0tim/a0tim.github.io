@@ -157,7 +157,7 @@ green {
   background-color: rgba(50,50,50,0.5);
   text-align: center;
 }
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 900px) {
   #blogad {
     display: none;
   }

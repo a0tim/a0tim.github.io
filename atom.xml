@@ -4,7 +4,7 @@
   <subtitle><![CDATA[嶢海龍Studio]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://a0tim.github.io/"/>
-  <updated>2015-10-14T01:49:16.067Z</updated>
+  <updated>2015-10-19T10:09:34.533Z</updated>
   <id>http://a0tim.github.io/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Java SE 開發環境設置教學]]></title>
+    <link href="http://a0tim.github.io/2015/10/java-environment-set/"/>
+    <id>http://a0tim.github.io/2015/10/java-environment-set/</id>
+    <published>2015-10-15T03:46:28.000Z</published>
+    <updated>2015-10-19T10:09:34.533Z</updated>
+    <content type="html"><![CDATA[<img src="/2015/10/java-environment-set/banner.jpg" alt="Java" title="Java">
+<h1 id="前言">前言</h1><ul>
+<li>Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公司所開發釋出，主體上繼承了C++的物件導向核心，捨棄了C++中容易導致錯誤的指標改以參照取代<strong>(雖然實際撰寫上並無指標可使用，但在JVM執行中還是有使用到指標)</strong>，</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<img src="/2015/10/java-environment-set/banner.jpg" alt="Java" title="Java">
+<h1 id="前言">前言</h1><ul>
+<li>Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)]]>
+    </summary>
+    
+      <category term="JDK" scheme="http://a0tim.github.io/tags/JDK/"/>
+    
+      <category term="JRE" scheme="http://a0tim.github.io/tags/JRE/"/>
+    
+      <category term="Java" scheme="http://a0tim.github.io/tags/Java/"/>
+    
+      <category term="環境變數" scheme="http://a0tim.github.io/tags/%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8/"/>
+    
+      <category term="程式" scheme="http://a0tim.github.io/categories/programming/"/>
+    
+      <category term="Java" scheme="http://a0tim.github.io/categories/programming/Java/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[SQL Server 自動編號欄位歸零]]></title>

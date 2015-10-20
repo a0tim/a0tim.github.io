@@ -4,6 +4,16 @@
   
     
     <entry>
+      <title><![CDATA[Java SE 開發環境設置教學]]></title>
+      <url>http://a0tim.github.io/2015/10/java-environment-set/</url>
+      <content type="html"><![CDATA[<img src="/2015/10/java-environment-set/banner.jpg" alt="Java" title="Java">
+<h1 id="前言">前言</h1><ul>
+<li>Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公司所開發釋出，主體上繼承了C++的物件導向核心，捨棄了C++中容易導致錯誤的指標改以參照取代<strong>(雖然實際撰寫上並無指標可使用，但在JVM執行中還是有使用到指標)</strong>，</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[SQL Server 自動編號欄位歸零]]></title>
       <url>http://a0tim.github.io/2015/10/sql-identify-reseed/</url>
       <content type="html"><![CDATA[<h1 id="前言">前言</h1><ul>

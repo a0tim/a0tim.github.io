@@ -30,16 +30,15 @@
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37662952-5']);
-  
-  _gaq.push(['_trackPageview']);
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+  ga('create', 'UA-37662952-5', 'auto');
+  ga('require', 'linkid');
+  ga('send', 'pageview');
+
 </script>
 
   
@@ -82,6 +81,18 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
+            <time datetime="2015-10-15T03:46:28.000Z"><a href="/2015/10/java-environment-set/">2015-10-15</a></time>
+            
+              <h1 class="title"><a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
             <time datetime="2015-10-13T06:08:29.000Z"><a href="/2015/10/sql-identify-reseed/">2015-10-13</a></time>
             
               <h1 class="title"><a href="/2015/10/sql-identify-reseed/">SQL Server 自動編號欄位歸零</a></h1>
@@ -101,40 +112,44 @@
 </div>
 
   
-<div class="widget tag">
-  <h3 class="title">分類</h3>
+<div class="widget categories">
+  <h3 class="title"><i class="icon-folder-open"></i>  分類</h3>
   <div class="entry">
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/creation/">創作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">程式</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/SQL/">SQL</a><span class="category-list-count">1</span></li></ul></li></ul>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/creation/">創作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">程式</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/SQL/">SQL</a><span class="category-list-count">1</span></li></ul></li></ul>
   </div>
 </div>
 
 
   
 <div class="widget tagcloud">
-  <h3 class="title">標籤雲</h3>
+  <h3 class="title"><i class="icon-tags"></i>  標籤雲</h3>
   <div class="entry">
-    <a href="/tags/2048/" style="font-size: 13px; color: #9be32d">2048</a> <a href="/tags/SQL/" style="font-size: 13px; color: #9be32d">SQL</a> <a href="/tags/blog/" style="font-size: 13px; color: #9be32d">blog</a> <a href="/tags/hexo/" style="font-size: 13px; color: #9be32d">hexo</a> <a href="/tags/服貿/" style="font-size: 13px; color: #9be32d">服貿</a>
+    <a href="/tags/2048/" style="font-size: 13px; color: #9be32d">2048</a> <a href="/tags/JDK/" style="font-size: 13px; color: #9be32d">JDK</a> <a href="/tags/JRE/" style="font-size: 13px; color: #9be32d">JRE</a> <a href="/tags/Java/" style="font-size: 13px; color: #9be32d">Java</a> <a href="/tags/SQL/" style="font-size: 13px; color: #9be32d">SQL</a> <a href="/tags/blog/" style="font-size: 13px; color: #9be32d">blog</a> <a href="/tags/hexo/" style="font-size: 13px; color: #9be32d">hexo</a> <a href="/tags/服貿/" style="font-size: 13px; color: #9be32d">服貿</a> <a href="/tags/環境變數/" style="font-size: 13px; color: #9be32d">環境變數</a>
   </div>
 </div>
 
 
   
 <div class="widget posts">
-  <div class="font-effect-fire-animation">
-  <h3 class="title">最新文章</h3>
+  <div class="font-effect-fire-animation" style="color:#cc0000;">
+  <h3 class="title"><i class="icon-edit"></i>  最新文章</h3>
   </div>
   <ul class="entry">
     
       <li>
-        <i class="icon-paper-clip"></i>  <a href="/2015/10/sql-identify-reseed/">SQL Server 自動編號欄位歸零</a>
+        <a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學</a>
       </li>
     
       <li>
-        <i class="icon-paper-clip"></i>  <a href="/2015/10/hexo-1/">使用HEXO(一)：簡單創造自己的部落格</a>
+        <a href="/2015/10/sql-identify-reseed/">SQL Server 自動編號欄位歸零</a>
       </li>
     
       <li>
-        <i class="icon-paper-clip"></i>  <a href="/2015/10/服貿2048/">服貿2048小遊戲</a>
+        <a href="/2015/10/hexo-1/">使用HEXO(一)：簡單創造自己的部落格</a>
+      </li>
+    
+      <li>
+        <a href="/2015/10/服貿2048/">服貿2048小遊戲</a>
       </li>
     
   </ul>
@@ -142,17 +157,18 @@
 
 
   <div class="widget tag">
-<h3 class="title">連結</h3>
+<h3 class="title"><i class="icon-link"></i>  連結</h3>
 <ul class="entry">
 <li><a href="http://fb.com/a0tim" title="Tim-Huang's facebook"><i class="icon-facebook-sign"></i> 黃騰嶢 Tim-Huang</a></li>
 </ul>
 </div>
 
   <div class="widget fb">
-  <h3 class="title">FB粉絲頁</h3>
+  <h3 class="title"><i class="icon-facebook-sign"></i>  FB粉絲頁</h3>
   <div class="entry">
-  <img src="/img/lute.png" width=150px />
-  <a href="https://fb.com/yaohailong" target="_blank">Facebook：嶢海龍</a>
+  <a href="https://fb.com/yaohailong" target="_blank">
+  <img class="nofancybox" src="/img/lute.png" width=150px />
+  Facebook：嶢海龍</a>
   <hr>
   <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fyaohailong&width=960&layout=standard&action=like&show_faces=true&share=true&height=80&appId=705644162835492" frameborder="0" style="border:none; overflow:auto; width:100%; height:200px;" allowTransparency="true"></iframe>
   </div>
@@ -160,7 +176,7 @@
 
   
 <div class="widget donate">
-  <h3 class="title">小額贊助</h3>
+  <h3 class="title"><i class="icon-money"></i>  小額贊助</h3>
   <ul class="entry">
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -176,7 +192,7 @@
 <input type="image" src="https://www.paypalobjects.com/zh_TW/TW/i/btn/btn_buynowCC_LG_wCUP.gif" border="0" name="submit" alt="PayPal － 更安全、更簡單的線上付款方式！">
 <img alt="" border="0" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1" height="1">
 </form>
-<a href="http://author.bloggerads.net/01_join_read.aspx?refid=20411&amp;id=20151014000005" target="_blank"><img src="http://author.bloggerads.net/referrals/ian19920803_120x60_ps.gif" border="0" width="220px"/></a>
+<a href="http://author.bloggerads.net/01_join_read.aspx?refid=20411&amp;id=20151014000005" target="_blank"><img class="nofancybox" src="http://author.bloggerads.net/referrals/ian19920803_120x60_ps.gif" border="0" width="220px"/></a>
   </ul>
 </div>
 
@@ -213,11 +229,16 @@
 
 <div id="gotop"><i class="icon-collapse-top"></i></div>
 <div id="fm2048"><a href="./fm2048"><h1>>>服貿2048<<</h1><img id="fm2048_img" src="https://farm1.staticflickr.com/580/21928489662_9528bedbde_b.jpg" width="150" alt="服貿2048"></a></div>
-<div id="blogad"><div id="blogadcontent"><script type="text/javascript" src="http://js1.bloggerads.net/showads.aspx?blogid=20151014000007&amp;charset=utf-8"></script></div><div id="colsead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div></div>
+<div id="blogad">
+	<div id="colseAdTop" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
+	<div id="blogadcontent"><script type="text/javascript" src="http://js1.bloggerads.net/showads.aspx?blogid=20151014000007&amp;charset=utf-8"></script></div>
+	<div id="colseAdBottom" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
+</div>
 
 <div class="clearfix"></div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
 <script src="/js/gallery.js"></script>
 <script src="/js/search.js"></script>
 <script type="text/javascript">      
@@ -275,7 +296,7 @@ var disqus_shortname = 'yaos';
 <script type="text/javascript">
 	$(function(){
 		var isHide = false;
-		$("#colsead").click(function(){
+		$("#colseAdTop").click(function(){
 			if(isHide){
 				$("#blogad").animate({
 					top : '0px'
@@ -283,7 +304,20 @@ var disqus_shortname = 'yaos';
 				isHide = false;
 			}else{
 				$("#blogad").animate({
-					top : '-650px'
+					top : '-695px'
+				}, 600, 'swing');
+				isHide = true;
+			}
+		});
+		$("#colseAdBottom").click(function(){
+			if(isHide){
+				$("#blogad").animate({
+					top : '0px'
+				}, 600, 'swing');
+				isHide = false;
+			}else{
+				$("#blogad").animate({
+					top : '-695px'
 				}, 600, 'swing');
 				isHide = true;
 			}
