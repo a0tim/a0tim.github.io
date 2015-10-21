@@ -87,7 +87,7 @@
       
       
   
-    <h1 class="title"><a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學</a></h1>
+    <h1 class="title"><a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學(for Windows)</a></h1>
   
 
     </header>
@@ -98,13 +98,15 @@
       
         <img src="/2015/10/java-environment-set/banner.jpg" alt="Java" title="Java">
 <h1 id="前言">前言</h1><ul>
-<li>Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公司所開發釋出，主體上繼承了C++的物件導向核心，捨棄了C++中容易導致錯誤的指標改以參照取代<strong>(雖然實際撰寫上並無指標可使用，但在JVM執行中還是有使用到指標)</strong>，</li>
-</ul>
-
+<li>Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公司所開發釋出，主體上繼承了C++的物件導向核心，捨棄了C++中容易導致錯誤的指標改以參照取代<strong>(雖然實際撰寫上並無指標可使用，但在JVM執行中還是有使用到指標的概念)</strong>。
       
     </div>
     <footer>
       
+        
+          <div class="alignleft">
+            <a href="/2015/10/java-environment-set/#more" class="more-link more">Read More</a>
+          </div>
         
         
       
@@ -293,7 +295,7 @@
   <ul class="entry">
     
       <li>
-        <a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學</a>
+        <a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學(for Windows)</a>
       </li>
     
       <li>
@@ -388,7 +390,6 @@
 <div id="blogad">
 	<div id="colseAdTop" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
 	<div id="blogadcontent"><script type="text/javascript" src="http://js1.bloggerads.net/showads.aspx?blogid=20151014000007&amp;charset=utf-8"></script></div>
-	<div id="colseAdBottom" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
 </div>
 
 <div class="clearfix"></div></footer>
@@ -451,32 +452,9 @@ var disqus_shortname = 'yaos';
 
 <script type="text/javascript">
 	$(function(){
-		var isHide = false;
 		$("#colseAdTop").click(function(){
-			if(isHide){
-				$("#blogad").animate({
-					top : '0px'
-				}, 600, 'swing');
-				isHide = false;
-			}else{
-				$("#blogad").animate({
-					top : '-695px'
-				}, 600, 'swing');
-				isHide = true;
-			}
-		});
-		$("#colseAdBottom").click(function(){
-			if(isHide){
-				$("#blogad").animate({
-					top : '0px'
-				}, 600, 'swing');
-				isHide = false;
-			}else{
-				$("#blogad").animate({
-					top : '-695px'
-				}, 600, 'swing');
-				isHide = true;
-			}
+			$("#colseAdTop").css("width",$("#blogadcontent").css("width"))
+			$("#blogadcontent").slideToggle();
 		});
 	});
 </script>

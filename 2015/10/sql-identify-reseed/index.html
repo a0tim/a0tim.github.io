@@ -224,7 +224,7 @@
   <ul class="entry">
     
       <li>
-        <a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學</a>
+        <a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學(for Windows)</a>
       </li>
     
       <li>
@@ -319,7 +319,6 @@
 <div id="blogad">
 	<div id="colseAdTop" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
 	<div id="blogadcontent"><script type="text/javascript" src="http://js1.bloggerads.net/showads.aspx?blogid=20151014000007&amp;charset=utf-8"></script></div>
-	<div id="colseAdBottom" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
 </div>
 
 <div class="clearfix"></div></footer>
@@ -382,32 +381,9 @@ var disqus_shortname = 'yaos';
 
 <script type="text/javascript">
 	$(function(){
-		var isHide = false;
 		$("#colseAdTop").click(function(){
-			if(isHide){
-				$("#blogad").animate({
-					top : '0px'
-				}, 600, 'swing');
-				isHide = false;
-			}else{
-				$("#blogad").animate({
-					top : '-695px'
-				}, 600, 'swing');
-				isHide = true;
-			}
-		});
-		$("#colseAdBottom").click(function(){
-			if(isHide){
-				$("#blogad").animate({
-					top : '0px'
-				}, 600, 'swing');
-				isHide = false;
-			}else{
-				$("#blogad").animate({
-					top : '-695px'
-				}, 600, 'swing');
-				isHide = true;
-			}
+			$("#colseAdTop").css("width",$("#blogadcontent").css("width"))
+			$("#blogadcontent").slideToggle();
 		});
 	});
 </script>

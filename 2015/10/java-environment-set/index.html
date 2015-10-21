@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Java SE 開發環境設置教學 | 嶢&#39;s Blog</title>
+  <title>Java SE 開發環境設置教學(for Windows) | 嶢&#39;s Blog</title>
   <meta name="author" content="Tim-Huang">
   
   <meta name="description" content="前言
-Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公司所開發釋出，主體上繼承了C++的物件導向核心，捨棄了C++中容易導致錯誤的指標改以參照取代(雖然實際撰寫上並無指標可使用，但在JVM執行中還是有使用到指標)，">
+Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公司所開發釋出，主體上繼承了C++的物件導向核心，捨棄了C++中容易導致錯誤的指標改以參照取代(雖然實際撰寫上並無指標可使用，但在JVM執行中還是有使用到指標的概念)。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:title" content="Java SE 開發環境設置教學"/>
+  <meta property="og:title" content="Java SE 開發環境設置教學(for Windows)"/>
   <meta property="og:site_name" content="嶢&#39;s Blog"/>
   
   <meta property="og:image" content="http://a0tim.github.io/img/lute.png"/>
   
   
-  <meta property="og:title" content="Java SE 開發環境設置教學 | 嶢&#39;s Blog"/>
+  <meta property="og:title" content="Java SE 開發環境設置教學(for Windows) | 嶢&#39;s Blog"/>
   <meta property="og:type" content="website"/>
   <meta property="fb:app_id" content="180251518976560"/>
   <meta property="fb:admins" content="a0tim"/>
@@ -87,14 +87,14 @@ Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公
       
       
   
-    <h1 class="title">Java SE 開發環境設置教學</h1>
+    <h1 class="title">Java SE 開發環境設置教學(for Windows)</h1>
   
 
     </header>
 	 
       <div id="toc" class="toc-article">
       <strong class="toc-title">文章目錄</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下載"><span class="toc-number">2.</span> <span class="toc-text">下載</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JRE(Java_Runtime_Environment)"><span class="toc-number">2.1.</span> <span class="toc-text">JRE(Java Runtime Environment)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK(Java_Development_Kit)"><span class="toc-number">2.2.</span> <span class="toc-text">JDK(Java Development Kit)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安裝"><span class="toc-number">3.</span> <span class="toc-text">安裝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#設置環境變數"><span class="toc-number">4.</span> <span class="toc-text">設置環境變數</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#驗證環境變數"><span class="toc-number">5.</span> <span class="toc-text">驗證環境變數</span></a></li></ol>
       </div>
      
     <div class="entry">
@@ -103,7 +103,56 @@ Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公
       
         <img src="/2015/10/java-environment-set/banner.jpg" alt="Java" title="Java">
 <h1 id="前言">前言</h1><ul>
-<li>Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公司所開發釋出，主體上繼承了C++的物件導向核心，捨棄了C++中容易導致錯誤的指標改以參照取代<strong>(雖然實際撰寫上並無指標可使用，但在JVM執行中還是有使用到指標)</strong>，</li>
+<li>Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公司所開發釋出，主體上繼承了C++的物件導向核心，捨棄了C++中容易導致錯誤的指標改以參照取代<strong>(雖然實際撰寫上並無指標可使用，但在JVM執行中還是有使用到指標的概念)</strong>。<a id="more"></a></li>
+<li><p>基本上，Java依照市場需求主要區分為三個不同種類，分別是: <green>Java SE</green> 、 <green>Java ME</green> 、 <green>Java EE</green></p>
+<ul>
+<li>Java SE<br>全名為: Java™ Standard Edition 標準版，對於剛入門學習Java的使用者而言，必須由SE開始接觸撰寫Java程式。</li>
+<li>Java ME<br>全名為: Java™ Micro Edition 微型版，針對資源相對受限的小型移動式電子產品開發使用。</li>
+<li>Java EE<br>全名為: Java™ Enterprise Edition 企業版，與SE相比，在架構與開發規模上龐大許多，應用層面有JSF、Servlet、EJB、JAP等等的技術。</li>
+</ul>
+</li>
+<li><p>本篇主要以Java SE的開發環境建置作教學。</p>
+</li>
+</ul>
+<h1 id="下載">下載</h1><h2 id="JRE(Java_Runtime_Environment)">JRE(Java Runtime Environment)</h2><ul>
+<li>從字面上來看，JRE就是在執行Java程式時所必須的執行環境，為了達到高相容性，每一個Java程式在編譯時會產生一個形如「半成品」的<green>.class</green>檔案，執行的當下才透過JRE裡的JVM(Java Virtual Machine)轉換成符合當前硬體環境的可執行碼來執行。</li>
+<li>請至 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">Oracle官網</a> 下載頁面</li>
+<li><img src="/2015/10/java-environment-set/JRE-1.png" alt="JRE下載網頁畫面" title="JRE下載網頁畫面"></li>
+<li><img src="/2015/10/java-environment-set/JRE-2.png" alt="JRE下載前必須勾選接受許可協定" title="JRE下載前必須勾選接受許可協定"></li>
+<li><green>下載時請選擇相對應的作業系統版本</green>
+
+</li>
+</ul>
+<h2 id="JDK(Java_Development_Kit)">JDK(Java Development Kit)</h2><ul>
+<li>JDK是開發Java程式必備的開發工具組，包含了執行階段環境、編譯器、API等。</li>
+<li>請至 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">Oracle官網</a> 下載頁面</li>
+<li><img src="/2015/10/java-environment-set/JDK-1.png" alt="JDK下載網頁畫面" title="JDK下載網頁畫面"></li>
+<li><img src="/2015/10/java-environment-set/JDK-2.png" alt="JDK下載前必須勾選接受許可協定" title="JDK下載前必須勾選接受許可協定">
+</li>
+</ul>
+<h1 id="安裝">安裝</h1><ul>
+<li><img src="/2015/10/java-environment-set/JRE-3.png" alt="JRE安裝畫面" title="JRE安裝畫面"></li>
+<li>JRE與JDK安裝完畢後，除非在安裝時有更改目的地資料夾，否則安裝路徑應該位於<block>“C:\Program Files\Java\jreX.X.X_XX”</block>以及<block>“C:\Program Files\Java\jdkX.X.X_XX”</block></li>
+</ul>
+<h1 id="設置環境變數">設置環境變數</h1><ul>
+<li>環境變數指的是作業系統在執行時所需要的路徑對照表，必須明確地告訴作業系統Java編譯器的安裝位置，往後程式撰寫完畢才能夠方便快速的編譯。</li>
+<li>JRE在安裝時會自動將路徑登錄進作業系統，所以我們接下來的動作只要針對JDK處理即可。</li>
+<li>開啟檔案總管確認JDK路徑，並且複製JDK裡的<green>bin</green>目錄路徑，如:<block>C:\Program Files\Java\jdk1.7.0_67\bin</block></li>
+<li>接下來進入 <block>電腦</block>&gt;<block>內容</block>&gt;<block>進階系統設定</block>&gt;<block>環境變數</block></li>
+<li><img src="/2015/10/java-environment-set/path-1.png" alt="電腦>內容>進階系統設定>環境變數" title="電腦>內容>進階系統設定>環境變數">
+</li>
+<li><p>在<green>系統變數</green>裡面找到<green>Path</green>這個變數並編輯，於變數值後方加上分號<block> ; </block>後再接上剛才複製的bin路徑</p>
+</li>
+<li><img src="/2015/10/java-environment-set/path-2.png" alt="編輯系統變數Path" title="編輯系統變數Path">
+</li>
+<li><p>接著在上方的使用者變數新增一個叫做<green>CLASSPATH</green>的變數，變數值給一個點就好</p>
+</li>
+<li><img src="/2015/10/java-environment-set/path-3.png" alt="新增使用者變數CLASSPATH" title="新增使用者變數CLASSPATH">
+</li>
+</ul>
+<h1 id="驗證環境變數">驗證環境變數</h1><ul>
+<li>到這邊為止已經建置好開發Java程式所必備的環境，開啟<green>命令提示字元</green>或是在<block>開始</block>&gt;<block>執行</block>輸入<green>cmd</green>，然後分別打入<green>java</green>和<green>javac</green>，如果出現如下圖的程式參數提示則代表環境變數設定成功。</li>
+<li><img src="/2015/10/java-environment-set/path-4.png" alt="驗證環境變數" title="驗證環境變數"></li>
 </ul>
 
       
@@ -212,7 +261,7 @@ Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公
   <ul class="entry">
     
       <li>
-        <a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學</a>
+        <a href="/2015/10/java-environment-set/">Java SE 開發環境設置教學(for Windows)</a>
       </li>
     
       <li>
@@ -307,7 +356,6 @@ Java是一個物件導向的程式語言，最初於1995年5月由昇陽(Sun)公
 <div id="blogad">
 	<div id="colseAdTop" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
 	<div id="blogadcontent"><script type="text/javascript" src="http://js1.bloggerads.net/showads.aspx?blogid=20151014000007&amp;charset=utf-8"></script></div>
-	<div id="colseAdBottom" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
 </div>
 
 <div class="clearfix"></div></footer>
@@ -370,32 +418,9 @@ var disqus_shortname = 'yaos';
 
 <script type="text/javascript">
 	$(function(){
-		var isHide = false;
 		$("#colseAdTop").click(function(){
-			if(isHide){
-				$("#blogad").animate({
-					top : '0px'
-				}, 600, 'swing');
-				isHide = false;
-			}else{
-				$("#blogad").animate({
-					top : '-695px'
-				}, 600, 'swing');
-				isHide = true;
-			}
-		});
-		$("#colseAdBottom").click(function(){
-			if(isHide){
-				$("#blogad").animate({
-					top : '0px'
-				}, 600, 'swing');
-				isHide = false;
-			}else{
-				$("#blogad").animate({
-					top : '-695px'
-				}, 600, 'swing');
-				isHide = true;
-			}
+			$("#colseAdTop").css("width",$("#blogadcontent").css("width"))
+			$("#blogadcontent").slideToggle();
 		});
 	});
 </script>
