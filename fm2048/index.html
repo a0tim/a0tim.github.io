@@ -37,13 +37,35 @@
 	overflow: hidden;
 	background: url(img/adBody.gif) no-repeat right top;
 }
-
+#blogad {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+#blogad .closead {
+  padding: 5px 0;
+  cursor: pointer;
+  background-color: rgba(250,220,100,0.5);
+  color: #444;
+  text-align: center;
+}
 }
 @media screen and (max-width: 599px){
 * {
 	margin: 0;
 	padding: 0;
 	border: 0;
+}
+#blogad {
+    right: auto;
+    left: 0px;
+  }
+  #blogad .closead {
+  padding: 5px 0;
+  cursor: pointer;
+  background-color: rgba(250,220,100,0.5);
+  color: #444;
+  text-align: center;
 }
 #ad {
 	position: relative;
@@ -60,24 +82,6 @@
 }
 #ad .adBody {
 	overflow: hidden;
-}
-#blogad {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-}
-@media screen and (max-width: 900px) {
-  #blogad {
-    right: auto;
-    left: 0px;
-  }
-}
-#blogad .closead {
-  padding: 5px 0;
-  cursor: pointer;
-  background-color: rgba(250,220,100,0.5);
-  color: #444;
-  text-align: center;
 }
 }
 </style>
