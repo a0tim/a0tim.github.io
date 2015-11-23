@@ -61,7 +61,24 @@
 #ad .adBody {
 	overflow: hidden;
 }
-
+#blogad {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+}
+@media screen and (max-width: 900px) {
+  #blogad {
+    right: auto;
+    left: 0px;
+  }
+}
+#blogad .closead {
+  padding: 5px 0;
+  cursor: pointer;
+  background-color: rgba(250,220,100,0.5);
+  color: #444;
+  text-align: center;
+}
 }
 </style>
   <script type="text/javascript">
@@ -258,5 +275,18 @@ document.write('<div class="fb-comments" data-href="'+document.location+'" data-
 <!-- float facebook like box start -->
 <script id="float_fb" src="//pic.sopili.net/pub/float_fb/widget.js" data-href="https://www.facebook.com/yaohailong" async></script>
 <!-- float facebook like box end -->
+
+<div id="blogad">
+	<div id="colseAdTop" class="closead"><i class="icon-chevron-up"></i>ads<i class="icon-chevron-down"></i></div>
+	<div id="blogadcontent"><script type="text/javascript" src="http://js1.bloggerads.net/showads.aspx?blogid=20151014000007&amp;charset=utf-8"></script></div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#colseAdTop").click(function(){
+			$("#colseAdTop").css("width",$("#blogadcontent").css("width"))
+			$("#blogadcontent").slideToggle();
+		});
+	});
+</script>
 </body>
 </html>
