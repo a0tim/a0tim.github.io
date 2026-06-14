@@ -1,0 +1,170 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html  xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta name="robots" content="noindex, nofollow"/>
+<meta http-equiv="Content-Language" content="en"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>My Ancestors and Relatives</title>
+<meta name="description" content="Summary report of My Ancestors and Relatives containing 295 individuals and 103 families. This report describes the genealogy and ancestry of families&nbsp;黃, 吳, 蔡, 李, 陳, 許, 呂, O, 林, 江." />
+<meta name="keywords" content="Family Report, Genealogy Report, Family Tree, Family Search" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="shortcut icon" href="favicon.ico?" />
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type='text/javascript' src="scripts/jquery.min.js"></script>
+<script type='text/javascript' src="scripts/script.js"></script>
+<script type="text/javascript">
+
+var basepath, setRhs = "*,65%", minRhs="0,*", setLower="30%,*", saveLower, minLower="0,*", setPopup, popupToggleState, 
+	frameLower, frameRhs, maxPopups=false;
+
+
+basepath = window.location.pathname;
+alert('The Google Maps in this report will not display correctly as a Google Maps API key is now required. See http://support.genopro.com/Topic38774.aspx');
+
+// if (window.location.protocol == 'file:') alert('Reports viewed locally via the \'file\' protocol may not work correctly in some browsers due to frameset issues. Consider using a local web server instead.\n e.g. Web Server for Chrome');
+
+if (!maxPopups) {
+	if (window.location.search.indexOf('max=true') >= 0) {
+		maxPopups = true;
+	} else if (SmartPhone.isAny() || smallScreen()) {
+		maxPopups = confirm('Optimize presentation for smaller screen?');
+	}
+}	
+if (maxPopups ) {
+	setPopup = '100%';
+	saveLower=saveLower2="100%,0";
+} else {
+	setPopup ='65%';
+	saveLower=saveLower2="30%,*";
+}
+	var frameBorders = true;
+	var iconMenu = true;
+
+var actions = {
+	title : 		function(msg) {
+						window.document.title = msg;
+					},
+	hidePopup : 	function(msg) {
+						document.getElementById('rhs').rows="*,0";
+						$.postMessage('page='+(msg ? msg :'popup.htm'),window.location.protocol == 'file:' ? '*' : window.location.href,window.frames["popup"]);
+					},
+	maxPopup : 		function() {
+						if (frameLower.cols != "0,*") saveLower = frameLower.cols;
+						frameLower.cols = "0,*";
+						frameRhs.rows = "0,*";
+						popupToggleState = 'max';
+					},
+	restorePopup : 	function() {
+						frameRhs.rows = setRhs;
+						popupToggleState = 'restored';
+					},
+	openPopup : 	function(popup) {
+						$.postMessage('page=popup.htm',window.location.protocol == 'file:' ? '*' : window.location.href,window.frames["popup"]);
+						actions.showPopup();
+						$.postMessage('page='+popup,window.location.protocol == 'file:' ? '*' : window.location.href,window.frames["popup"]);
+					},
+	showHome :		function() {
+						window.location = 'default.htm' + (maxPopups ? '?max=true' : '');
+					},
+	showPopup : 	function(msg) {
+						if (popupToggleState == "max") {  // if popup previously maximised, reset it to normal size.
+							document.getElementById('rhs').rows = setRhs;
+						}
+						var pc=(msg ? msg : setPopup);
+						if(maxPopups || document.getElementById('rhs').rows=="*,0" || pc != "")      // don't change if already changed by user
+						{	
+							document.getElementById('rhs').rows="*,"+pc;
+							popupToggleState = (pc == '100%' ?  "max" : "restored");
+						}
+					},
+	hideMap	  : 	function() {
+						actions.hidePopup('popup.htm');
+					},
+	hideTOC :		function(popup) {
+						if (frameLower.cols && frameLower.cols != minLower) saveLower = frameLower.cols;
+						frameLower.cols = minLower;
+						if (popup) actions.openPopup(popup);
+					},
+	showTOC :		function(toc) {
+						$.postMessage('page='+toc+(toc.indexOf('?')>0 ? ',' : '?' ) + 'close='+ (maxPopups ? 'Y' : 'N' ), window.location.protocol == 'file:' ? '*' : window.location.href, window.frames["toc"]);
+						document.getElementById('lower').cols = saveLower;
+					}
+	}
+
+$.receiveMessage(function(e){
+	// console.log('receiveMessage', e.data); //debug
+
+	var parts =typeof e.data == 'string' ? e.data.split('=') : '';
+	var msg = (parts.length > 1 ? e.data.substr(parts[0].length+1) : null);
+	if ((e.origin == "null" || e.origin == location.origin) && parts[0] in actions) {
+		actions[parts[0]](msg);
+	} else {
+		console.log('default.htm@$.receiveMessage: no action taken for message \''+e.data + '\' from '+e.origin);
+	}
+});
+
+// Open an individual page if specified in the querystring or referrer
+function HomePageInit() {
+  //	HISTORY
+  //	12-Oct-2006	GenoPro			Creation
+
+	// check if a url is specify in the querystring
+	var indexPageToLoad = location.search.indexOf("page=");
+	if (indexPageToLoad != -1) {
+		var pageToLoad = location.search.substring(indexPageToLoad + 5); // page= is 5 characters width
+		self.frames['detail'].location = pageToLoad;
+	}
+}
+function fixFrameSet(framesetObj, topFrame) {
+         var rows = framesetObj.getAttribute("rows"), cols = framesetObj.getAttribute("cols"); 
+         if (frameBorders) {
+            framesetObj.setAttribute("border","2");
+            framesetObj.setAttribute("framespacing","1");
+         }else{
+            framesetObj.setAttribute("framespacing","0");
+            framesetObj.setAttribute("border","0");
+         };
+         if (rows) framesetObj.setAttribute("rows", rows);
+         if (cols) framesetObj.setAttribute("cols", cols);
+         if (topFrame) {
+            fixFrameSet(document.getElementById("lower"), false);
+            fixFrameSet(document.getElementById("rhs"), false);
+         }
+}
+$(function () {
+		fixFrameSet(document.body, true);
+		document.getElementById("rhs").rows="*,1";
+		document.getElementById("rhs").rows="*,0";
+		frameLower = document.getElementById('lower');
+		frameRhs = document.getElementById('rhs');
+}
+);
+</script>
+</head>
+<frameset id="outer" rows="80,*" onload="javascript:HomePageInit();">
+    <frame name="heading" src="heading.htm" scrolling="no" style="margin-width:2px;border-color:silver;"/>
+    <frameset id="lower" cols="0,*">
+        <frame style="margin-width:2px;border-color:silver;" name="toc" src="toc_individuals.htm" marginwidth='10' marginheight='15'/>
+    		<frameset id="rhs" rows="*,0">
+    			<frame style="margin-width:2px;border-color:silver;" name="detail" id="detail" src="home.htm" scrolling="auto" marginwidth='5' marginheight='15'/> 
+    			<frame style="margin-width:2px;border-color:silver;" name="popup" id="popup" src="popup.htm" scrolling="auto" marginwidth='5' marginheight='5'/>
+    		</frameset>
+	  </frameset>
+    <noframes>
+      <body>    
+         <p id="noframes">
+This <b>genealogy report</b> is about <i>My Ancestors and Relatives</i>.It contains 295 individuals and 103 families from the family tree. <br /></p><ul>
+<li><a href='toc_individuals.htm#黃'>Find the 黃 family and its 175 ancestors.</a>.</li>
+<li><a href='toc_individuals.htm#吳'>Search the 吳 family and its 22 persons.</a>.</li>
+<li><a href='toc_individuals.htm#蔡'>Find the 蔡 family and its 13 persons.</a>.</li>
+<li><a href='toc_individuals.htm#李'>Search the 李 family and its 13 people.</a>.</li>
+</ul><p>
+You may also search for the following family names:
+<a href='toc_individuals.htm#陳'>陳</a>, <a href='toc_individuals.htm#許'>許</a>, <a href='toc_individuals.htm#呂'>呂</a>, <a href='toc_individuals.htm#O'>O</a>, <a href='toc_individuals.htm#林'>林</a>, <a href='toc_individuals.htm#江'>江</a>, <a href='toc_individuals.htm#王'>王</a>, <a href='toc_individuals.htm#鄭'>鄭</a>, <a href='toc_individuals.htm#楊'>楊</a>, <a href='toc_individuals.htm#郭'>郭</a>, <a href='toc_individuals.htm#蘇'>蘇</a>, <a href='toc_individuals.htm#謝'>謝</a>, <a href='toc_individuals.htm#張'>張</a>, <a href='toc_individuals.htm#簡'>簡</a>, <a href='toc_individuals.htm#劉'>劉</a>, <a href='toc_individuals.htm#趙'>趙</a>, <a href='toc_individuals.htm#董'>董</a>, <a href='toc_individuals.htm#胡'>胡</a>, <a href='toc_individuals.htm#紀'>紀</a>, <a href='toc_individuals.htm#施'>施</a>, <a href='toc_individuals.htm#侯'>侯</a>.<br /><br />Copyright © 1998-2011 GenoPro Inc. All rights reserved. Download GenoPro from <a href='http://www.genopro.com/'>http://www.genopro.com/</a>
+         </p>
+      </body>
+    </noframes>
+</frameset>
+</html>
